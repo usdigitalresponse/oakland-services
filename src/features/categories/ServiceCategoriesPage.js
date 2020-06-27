@@ -1,3 +1,7 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
-export const ServiceCategoriesPage = () => <h1>Service Categories</h1>;
+export const ServiceCategoriesPage = () => {
+  const { t } = useTranslation();
+  return <h1>{t("Welcome to React")}</h1>;
+};

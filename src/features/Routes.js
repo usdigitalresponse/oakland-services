@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Switch, Route } from "react-router-dom";
 import { PageLayout } from "components/Page";
 
@@ -12,7 +12,9 @@ export const Routes = () => (
   <Switch>
     <Route exact path="/">
       <PageLayout>
-        <ServiceCategoriesPage />
+        <Suspense fallback="loading">
+          <ServiceCategoriesPage />
+        </Suspense>
       </PageLayout>
     </Route>
     <Route path="/about">

@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { debounce } from "lodash";
+import "./i18n";
 
 // resize listeners
 const onResize = () => {
