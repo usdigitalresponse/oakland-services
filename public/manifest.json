@@ -1,0 +1,15 @@
+{
+  "short_name": "Oakland Resources",
+  "name": "Oakland Resources",
+  "icons": [
+    {
+      "src": "favicons/android-icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#8389E1",
+  "background_color": "#FFFFFF"
+}
