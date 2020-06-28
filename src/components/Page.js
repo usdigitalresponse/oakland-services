@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Navigation } from "components/Navigation";
 import { Logo } from "components/Logo";
 
@@ -41,34 +42,42 @@ export const PageFooter = styled.footer`
   }
 `;
 
-export const PageLayout = ({ children }) => (
-  <PageContainer>
-    <Navigation>
-      <NavLink to="/">
-        <Logo />
-      </NavLink>
-      <NavRight>
-        <NavLink to="/about">About</NavLink>
-      </NavRight>
-    </Navigation>
-    {children}
-    <PageFooter>
-      <span>© {new Date().getFullYear()}, Oakland Services</span>
-    </PageFooter>
-  </PageContainer>
-);
+export const PageLayout = ({ children }) => {
+  const { i18n } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+
+  return (
+    <PageContainer>
+      <Navigation>
+        <Link to="/">
+          <Logo />
+        </Link>
+        <NavRight>
+          <button type="button" onClick={() => changeLanguage("en")}>
+            en
+          </button>
+          <button type="button" onClick={() => changeLanguage("es")}>
+            es
+          </button>
+        </NavRight>
+      </Navigation>
+      {children}
+      <PageFooter>
+        <span>© {new Date().getFullYear()}, Oakland Services</span>
+      </PageFooter>
+    </PageContainer>
+  );
+};
 
 const NavRight = styled.div`
-  a {
-    margin-right: ${({ theme }) => theme.spacings(5)};
-    &:last-of-type {
-      margin-right: 0;
+  a,
+  button {
+    padding: ${({ theme }) => theme.spacings(3)};
+    &:hover {
+      color: ${({ theme }) => theme.colors.primary};
     }
-  }
-`;
-
-const NavLink = styled(Link)`
-  &:hover {
-    color: ${({ theme }) => theme.colors.primary};
   }
 `;

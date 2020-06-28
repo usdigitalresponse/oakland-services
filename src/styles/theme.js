@@ -105,6 +105,7 @@ export const lightTheme = {
       hover: {
         shadow: "0 0 2px 0 rgba(131, 137, 225, 0.4);",
         background: "#6e75da",
+        backgroundGrey: colors.lightGrey,
       },
       disabled: {
         background: colors.lightGrey,

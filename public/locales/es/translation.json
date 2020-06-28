@@ -1,6 +1,6 @@
 {
-  "title": "Willkommen zu react und react-i18next",
-  "description": {
-    "part1": "Um loszulegen, ändere <1>src/App(DE).js</1> speicheren und neuladen."
+  "home": {
+    "description1": "No se preocupe, estamos aquí para ayudarlo y nos alegra que haya encontrado su camino aquí. ¿Estás buscando acceso a recursos en Oakland? Vamos a conseguirte lo que necesitas RÁPIDO.",
+    "description2": "Por cierto, no necesitamos ninguna información de usted para comenzar, esto es anónimo."
   }
 }

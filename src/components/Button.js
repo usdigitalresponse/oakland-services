@@ -1,6 +1,9 @@
+import React from "react";
 import styled from "styled-components";
+import { useHistory } from "react-router-dom";
 
 export const Button = styled.button`
+  display: flex;
   padding: ${({ theme }) => `0 ${theme.spacings(5)}`};
   background-color: ${({ theme }) => theme.ui.button.background};
   color: ${({ theme }) => theme.ui.button.color};
@@ -8,8 +11,8 @@ export const Button = styled.button`
   box-shadow: ${({ theme }) => theme.ui.button.shadow};
   border-radius: 4px;
   letter-spacing: -0.2px;
-  height: 36px;
-  line-height: 36px;
+  height: ${({ theme }) => theme.spacings(10)};
+  line-height: ${({ theme }) => theme.spacings(10)};
   transition: 0.2s ease;
 
   &:hover {
@@ -18,7 +21,7 @@ export const Button = styled.button`
   }
 
   &:active {
-    transform: scale(0.95);
+    transform: scale(0.99);
   }
 
   &:disabled {
@@ -27,3 +30,28 @@ export const Button = styled.button`
     box-shadow: ${({ theme }) => theme.ui.button.disabled.shadow};
   }
 `;
+
+export const ButtonLink = styled(Button)`
+  display: inline-flex;
+  background-color: transparent;
+  color: initial;
+  box-shadow: none;
+  &:hover {
+    background-color: ${({ theme }) => theme.ui.button.hover.backgroundGrey};
+  }
+`;
+
+export const BackButton = ({ onClick = () => {}, ...rest }) => {
+  const history = useHistory();
+
+  const handleClick = () => {
+    onClick();
+    history.goBack();
+  };
+
+  return (
+    <ButtonLink onClick={handleClick} {...rest}>
+      Back
+    </ButtonLink>
+  );
+};

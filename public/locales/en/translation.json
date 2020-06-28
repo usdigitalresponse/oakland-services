@@ -1,6 +1,6 @@
 {
-  "title": "Welcome to react using react-i18next",
-  "description": {
-    "part1": "To get started, edit <1>src/App.js</1> and save to reload."
+  "home": {
+    "description1": "Don’t worry, we’re here to help and are glad you found your way here. Are you looking for access to resources in Oakland? Let’s get you what you need FAST.",
+    "description2": "By the way, we don’t need any information from you to start - this is anonymous."
   }
 }

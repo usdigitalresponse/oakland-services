@@ -39,7 +39,6 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     font: inherit;
     cursor: pointer;
-    outline: inherit;
   }
 
   img {
