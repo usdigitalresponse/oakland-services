@@ -13,10 +13,9 @@ export const Button = styled.button`
   letter-spacing: -0.2px;
   height: ${({ theme }) => theme.spacings(10)};
   line-height: ${({ theme }) => theme.spacings(10)};
-  transition: 0.2s ease;
+  transition: 0.1s ease;
 
   &:hover {
-    box-shadow: ${({ theme }) => theme.ui.button.hover.shadow};
     background-color: ${({ theme }) => theme.ui.button.hover.background};
   }
 

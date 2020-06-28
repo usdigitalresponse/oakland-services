@@ -10,8 +10,8 @@ const colors = {
   black: "#292C36",
   white: "#FFFFFF",
   background: "#F7FAFC",
-  primary: "#8389E1",
-  secondary: "#3B475F",
+  primary: "#292C36",
+  secondary: "#4A5568",
   backgroundBlue: "#EBF8FF",
   lightBlue: "#90CDF4",
   blue: "#4299E1",
@@ -93,7 +93,7 @@ export const lightTheme = {
     maxWidth: "786px",
     text: colors.black,
     background: colors.background,
-    border: "#3b475f1a",
+    border: "#4A55681a",
     card: {
       shadow: "0 3px 10px rgba(50, 50, 93, .11), 0 1px 2px rgba(0, 0, 0, .08)",
     },
@@ -101,10 +101,9 @@ export const lightTheme = {
       color: colors.white,
       fontWeight: 400,
       background: colors.primary,
-      shadow: "0 0 10px 0 rgba(131, 137, 225, 0.4);",
+      shadow: "0 0 10px 0 rgba(64, 64, 64, 0.4);",
       hover: {
-        shadow: "0 0 2px 0 rgba(131, 137, 225, 0.4);",
-        background: "#6e75da",
+        background: colors.secondary,
         backgroundGrey: colors.lightGrey,
       },
       disabled: {

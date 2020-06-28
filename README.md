@@ -1,4 +1,4 @@
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/tehkaiyu/yours-sincerely/issues) [![Dependencies Status](https://david-dm.org/tehkaiyu/yours-sincerely/status.svg)](https://david-dm.org/tehkaiyu/yours-sincerely)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/914f5bff-f4c3-43ef-88ab-7b79b75110e2/deploy-status)](https://app.netlify.com/sites/oakland-services/deploys) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/tehkaiyu/oakland-services/issues)
 
 # Oakland Services
 
