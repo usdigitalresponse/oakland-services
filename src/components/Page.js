@@ -48,17 +48,12 @@ export const PageLayout = ({ children }) => (
         <Logo />
       </NavLink>
       <NavRight>
-        <NavLink to="/profile">Profile</NavLink>
-        <NavButtonLink to="/new">New Post</NavButtonLink>
+        <NavLink to="/about">About</NavLink>
       </NavRight>
     </Navigation>
     {children}
     <PageFooter>
-      <span>© {new Date().getFullYear()}, Kaiyu Hsu</span>
-      <div>
-        <Link to="/about">About</Link>
-        <a href="https://github.com/tehkaiyu/yours-sincerely">Github</a>
-      </div>
+      <span>© {new Date().getFullYear()}, Oakland Services</span>
     </PageFooter>
   </PageContainer>
 );
@@ -75,19 +70,5 @@ const NavRight = styled.div`
 const NavLink = styled(Link)`
   &:hover {
     color: ${({ theme }) => theme.colors.primary};
-  }
-`;
-
-const NavButtonLink = styled(Link)`
-  color: ${({ theme }) => theme.colors.primary};
-  border: 2px solid ${({ theme }) => theme.colors.primary};
-  padding: ${({ theme }) => `${theme.spacings(1)} ${theme.spacings(3)}`};
-  border-radius: 4px;
-  &:hover {
-    color: ${({ theme }) => theme.ui.button.hover.background};
-    border-color: ${({ theme }) => theme.ui.button.hover.background};
-  }
-  &:active {
-    transform: scale(0.95);
   }
 `;
