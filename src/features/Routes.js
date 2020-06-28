@@ -11,45 +11,41 @@ import { TermsPage } from "./about/TermsPage";
 import { Error } from "./misc/Error";
 
 export const Routes = () => (
-  <Switch>
-    <Route exact path="/">
-      <Suspense fallback="loading">
+  <Suspense fallback="loading">
+    <Switch>
+      <Route exact path="/">
         <PageLayout>
           <CategoriesPage />
         </PageLayout>
-      </Suspense>
-    </Route>
-    <Route exact path="/category/:slug">
-      <Suspense fallback="loading">
+      </Route>
+      <Route exact path="/category/:slug">
         <PageLayout>
           <ServicesListPage />
         </PageLayout>
-      </Suspense>
-    </Route>
-    <Route exact path="/service/:id">
-      <Suspense fallback="loading">
+      </Route>
+      <Route exact path="/service/:id">
         <PageLayout>
           <ServicePage />
         </PageLayout>
-      </Suspense>
-    </Route>
-    <Route path="/about">
-      <PageLayout>
-        <AboutPage />
-      </PageLayout>
-    </Route>
-    <Route path="/privacy">
-      <PageLayout>
-        <PrivacyPage />
-      </PageLayout>
-    </Route>
-    <Route path="/terms">
-      <PageLayout>
-        <TermsPage />
-      </PageLayout>
-    </Route>
-    <Route>
-      <Error />
-    </Route>
-  </Switch>
+      </Route>
+      <Route path="/about">
+        <PageLayout>
+          <AboutPage />
+        </PageLayout>
+      </Route>
+      <Route path="/privacy">
+        <PageLayout>
+          <PrivacyPage />
+        </PageLayout>
+      </Route>
+      <Route path="/terms">
+        <PageLayout>
+          <TermsPage />
+        </PageLayout>
+      </Route>
+      <Route>
+        <Error />
+      </Route>
+    </Switch>
+  </Suspense>
 );
