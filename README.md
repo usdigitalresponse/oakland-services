@@ -18,3 +18,28 @@
 ## Setting up
 
 This app is bootrapped with [Create React App](https://reactjs.org/docs/create-a-new-react-app.html)
+
+## Backend
+
+### Create DB
+
+```
+psql -h localhost -U postgres   
+```
+
+```
+CREATE DATABASE oakland_services_dev;
+CREATE DATABASE oakland_services_test;
+```
+
+### Migrate
+
+```
+knex migrate:latest
+```
+
+### Run Seed
+
+```
+knex seed:run
+```
