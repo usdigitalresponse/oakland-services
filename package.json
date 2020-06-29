@@ -9,6 +9,7 @@
     "format": "prettier . --write"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "i18next": "^19.5.1",
     "i18next-browser-languagedetector": "^5.0.0",
     "i18next-http-backend": "^1.0.15",
@@ -47,5 +48,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://localhost:8080"
 }
