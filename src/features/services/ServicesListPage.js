@@ -63,6 +63,9 @@ const ServicesHeader = styled.header`
   button {
     background: #fff;
     padding: ${({ theme }) => `${theme.spacings(2)} ${theme.spacings(3)}`};
+    &:hover {
+      background-color: #fff;
+    }
   }
 `;
 
