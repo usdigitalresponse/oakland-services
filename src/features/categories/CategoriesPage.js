@@ -23,7 +23,7 @@ export const CategoriesPage = () => {
         <Text>{t("home.description2")}</Text>
       </CategoriesHeader>
       {categories.map((c) => (
-        <CategoryLink as={Link} key={c.id} to={`/category/${c.slug}`}>
+        <CategoryLink as={Link} key={c.id} to={`/category/${c.slug}`} fullWidth>
           {c.title}
         </CategoryLink>
       ))}

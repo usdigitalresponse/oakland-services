@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { BackButton } from "components/Button";
+import { Button, ButtonOutlined } from "components/Button";
+import { Modal } from "components/Modal";
 
 const services = [
   {
@@ -23,10 +24,14 @@ const services = [
 ];
 
 export const ServicesListPage = () => {
+  const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
+
   return (
     <section>
       <ServicesHeader>
-        <BackButton />
+        <ButtonOutlined onClick={() => setIsFilterModalOpen(true)}>
+          Filters
+        </ButtonOutlined>
       </ServicesHeader>
       {services.map((s) => (
         <ServiceLink key={s.id} to={`/service/${s.id}`}>
@@ -36,12 +41,29 @@ export const ServicesListPage = () => {
           <p>{s.description}</p>
         </ServiceLink>
       ))}
+      <Modal
+        open={isFilterModalOpen}
+        onRequestClose={() => setIsFilterModalOpen(false)}
+        maxWidth={600}
+        closeButton
+      >
+        <h4>Sort By</h4>
+        <Button>Open Now</Button>
+        <h4>Neighborhoods</h4>
+      </Modal>
     </section>
   );
 };
 
 const ServicesHeader = styled.header`
-  margin-bottom: ${({ theme }) => theme.spacings(5)};
+  padding: ${({ theme }) => theme.spacings(5)};
+  background-color: ${({ theme }) => theme.colors.lightGrey};
+  margin: ${({ theme }) => `0 ${theme.spacings(-5)}`};
+
+  button {
+    background: #fff;
+    padding: ${({ theme }) => `${theme.spacings(2)} ${theme.spacings(3)}`};
+  }
 `;
 
 const ServiceLink = styled(Link)``;
