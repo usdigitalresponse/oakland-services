@@ -6,7 +6,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "format": "prettier . --write"
+    "format": "prettier . --write",
+    "knex": "knex",
+    "nodemon": "nodemon"
   },
   "dependencies": {
     "express": "^4.17.1",
@@ -15,6 +17,7 @@
     "i18next-http-backend": "^1.0.15",
     "knex": "^0.21.1",
     "lodash": "^4.17.15",
+    "nodemon": "^2.0.4",
     "pg": "^8.2.1",
     "raw.macro": "^0.3.0",
     "react": "^16.13.1",
