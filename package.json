@@ -4,13 +4,15 @@
   "private": true,
   "homepage": "http://211alamedacounty.org/",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"nodemon server.js\" \"react-scripts start\"",
     "build": "react-scripts build",
     "format": "prettier . --write",
     "knex": "knex",
-    "nodemon": "nodemon"
+    "nodemon": "nodemon",
+    "concurrently": "concurrently"
   },
   "dependencies": {
+    "concurrently": "^5.2.0",
     "express": "^4.17.1",
     "i18next": "^19.5.1",
     "i18next-browser-languagedetector": "^5.0.0",
