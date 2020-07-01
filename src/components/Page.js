@@ -47,6 +47,7 @@ export const PageLayout = ({ children }) => {
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
+    window.location.reload();
   };
 
   return (
