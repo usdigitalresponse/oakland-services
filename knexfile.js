@@ -1,46 +1,45 @@
 // Update with your config settings.
 
 module.exports = {
-
   development: {
-    client: 'pg',
-    connection:'postgres://postgres@localhost/oakland_services_dev',
+    client: "pg",
+    connection: "postgres://postgres@localhost/oakland_services_dev",
     migrations: {
-      directory: './db/migrations'
+      directory: "./db/migrations",
     },
     seeds: {
-      directory: './db/seeds/dev'
+      directory: "./db/seeds/dev",
     },
-    useNullAsDefault: true
+    useNullAsDefault: true,
   },
 
   test: {
-    client: 'pg',
-    connection:'postgres://postgres@localhost/oakland_services_test',
+    client: "pg",
+    connection: "postgres://postgres@localhost/oakland_services_test",
     migrations: {
-      directory: './db/migrations'
+      directory: "./db/migrations",
     },
     seeds: {
-      directory: './db/seeds/test'
+      directory: "./db/seeds/test",
     },
-    useNullAsDefault: true
+    useNullAsDefault: true,
   },
 
   production: {
-    client: 'pg',
+    client: "pg",
     connection: process.env.DATABASE_URL,
     migrations: {
-      directory: './db/migrations'
+      directory: "./db/migrations",
     },
     seeds: {
-      directory: './db/seeds/production'
+      directory: "./db/seeds/production",
     },
-    useNullAsDefault: true
+    useNullAsDefault: true,
   },
-  onUpdateTrigger: table => `
+  onUpdateTrigger: (table) => `
     CREATE TRIGGER ${table}_updated_at
     BEFORE UPDATE ON ${table}
     FOR EACH ROW
     EXECUTE PROCEDURE on_update_timestamp();
-  `
+  `,
 };

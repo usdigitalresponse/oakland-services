@@ -6,11 +6,11 @@ const ON_UPDATE_TIMESTAMP_FUNCTION = `
     RETURN NEW;
   END;
 $$ language 'plpgsql';
-`
-exports.up = function(knex) {
+`;
+exports.up = function (knex) {
   return knex.raw(ON_UPDATE_TIMESTAMP_FUNCTION);
 };
 
-exports.down = function(knex) {
-  return knex.raw('DROP FUNCTION on_update_timestamp');
+exports.down = function (knex) {
+  return knex.raw("DROP FUNCTION on_update_timestamp");
 };
