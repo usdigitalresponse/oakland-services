@@ -72,7 +72,7 @@ const CloseButton = styled.button`
   border-radius: 100%;
   transition: 0.2s ease;
   &:hover {
-    background-color: ${({ theme }) => theme.ui.border};
+    background-color: ${({ theme }) => theme.ui.button.hover.backgroundGrey};
   }
 `;
 

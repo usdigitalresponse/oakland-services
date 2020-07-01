@@ -1,26 +1,43 @@
 import React from "react";
 import styled from "styled-components";
 
-export const Checkbox = ({ ...rest }) => {
+export const Checkbox = ({ children, ...rest }) => {
   return (
     <CheckboxContainer className="checkbox path">
       <input type="checkbox" {...rest} />
       <svg viewBox="0 0 21 21">
         <path d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186" />
       </svg>
+      {!!children ? <div className="text">{children}</div> : null}
     </CheckboxContainer>
   );
 };
 
 const CheckboxContainer = styled.label`
-  --border: #d1d6ee;
-  --border-hover: #bbc1e1;
-  --border-active: ${({ theme }) => theme.colors.secondary};
+  --border: ${({ theme }) => theme.colors.secondary};
+  --border-hover: ${({ theme }) => theme.colors.secondary};
+  --border-active: ${({ theme }) => theme.colors.primary};
   --tick: #fff;
 
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   padding: ${({ theme }) => theme.spacings(3)};
+  cursor: pointer;
+  border-radius: 4px;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.ui.button.hover.backgroundGrey};
+  }
+
+  &::focus,
+  &::active {
+    outline: 1px solid;
+  }
+
+  .text {
+    margin-left: ${({ theme }) => theme.spacings(2)};
+  }
 
   input,
   svg {
@@ -33,7 +50,6 @@ const CheckboxContainer = styled.label`
     -webkit-appearance: none;
     -moz-appearance: none;
     position: relative;
-    outline: none;
     border: none;
     margin: 0;
     padding: 0;

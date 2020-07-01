@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { Button, ButtonOutlined } from "components/Button";
+import { Button } from "components/Button";
+import { Checkbox } from "components/Checkbox";
+import { RadioSwitch } from "components/Radio";
 import { Modal } from "components/Modal";
 
 const services = [
@@ -29,9 +31,9 @@ export const ServicesListPage = () => {
   return (
     <section>
       <ServicesHeader>
-        <ButtonOutlined onClick={() => setIsFilterModalOpen(true)}>
+        <Button variant="outline" onClick={() => setIsFilterModalOpen(true)}>
           Filters
-        </ButtonOutlined>
+        </Button>
       </ServicesHeader>
       {services.map((s) => (
         <ServiceLink key={s.id} to={`/service/${s.id}`}>
@@ -47,9 +49,31 @@ export const ServicesListPage = () => {
         maxWidth={600}
         closeButton
       >
-        <h4>Sort By</h4>
-        <Button>Open Now</Button>
-        <h4>Neighborhoods</h4>
+        <FilterBody>
+          <div className="filter-group">
+            <h4>Sort By</h4>
+            <RadioSwitch
+              switch1={{ id: 1, name: "sort", checked: true, label: "Closest" }}
+              switch2={{
+                id: 2,
+                name: "sort",
+                checked: false,
+                label: "Furthest",
+              }}
+            />
+          </div>
+          <div className="filter-group">
+            <h4>Neighborhoods</h4>
+            <Checkbox>Central Business District</Checkbox>
+            <Checkbox>Fruitvale</Checkbox>
+            <Checkbox>Middle East Oakland</Checkbox>
+          </div>
+          <footer className="submit-container">
+            <Button onClick={() => setIsFilterModalOpen(false)}>
+              Apply Filters
+            </Button>
+          </footer>
+        </FilterBody>
       </Modal>
     </section>
   );
@@ -58,7 +82,7 @@ export const ServicesListPage = () => {
 const ServicesHeader = styled.header`
   padding: ${({ theme }) => theme.spacings(5)};
   background-color: ${({ theme }) => theme.colors.lightGrey};
-  margin: ${({ theme }) => `0 ${theme.spacings(-5)}`};
+  margin: ${({ theme }) => `0 ${theme.spacings(-5)} ${theme.spacings(5)}`};
 
   button {
     background: #fff;
@@ -69,4 +93,32 @@ const ServicesHeader = styled.header`
   }
 `;
 
-const ServiceLink = styled(Link)``;
+const ServiceLink = styled(Link)`
+  display: block;
+  padding: ${({ theme }) => theme.spacings(3)};
+  margin-bottom: ${({ theme }) => theme.spacings(5)};
+
+  h4 {
+    text-decoration: underline;
+  }
+`;
+
+const FilterBody = styled.section`
+  padding: ${({ theme }) => `${theme.spacings(5)} ${theme.spacings(5)}`};
+
+  .filter-group {
+    margin-bottom: ${({ theme }) => theme.spacings(5)};
+  }
+
+  .submit-container {
+    display: flex;
+    justify-content: center;
+    margin-top: ${({ theme }) => theme.spacings(10)};
+  }
+
+  ${({ theme }) => theme.breakpoints.sm`
+    .checkbox {
+      width: 100%;
+    }
+  `}
+`;

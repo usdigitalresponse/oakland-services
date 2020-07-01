@@ -9,9 +9,9 @@ const calculateSpacing = (n) => {
 const colors = {
   black: "#292C36",
   white: "#FFFFFF",
-  background: "#F7FAFC",
   primary: "#292C36",
   secondary: "#4A5568",
+  border: "#4A55681a",
   backgroundBlue: "#EBF8FF",
   lightBlue: "#90CDF4",
   blue: "#4299E1",
@@ -92,7 +92,7 @@ export const lightTheme = {
   ui: {
     maxWidth: "786px",
     text: colors.black,
-    background: colors.background,
+    background: colors.backgroundGrey,
     border: "#4A55681a",
     card: {
       shadow: "0 3px 10px rgba(50, 50, 93, .11), 0 1px 2px rgba(0, 0, 0, .08)",
@@ -104,7 +104,7 @@ export const lightTheme = {
       shadow: "0 0 10px 0 rgba(64, 64, 64, 0.4);",
       hover: {
         background: colors.secondary,
-        backgroundGrey: colors.lightGrey,
+        backgroundGrey: colors.border,
       },
       disabled: {
         background: colors.lightGrey,

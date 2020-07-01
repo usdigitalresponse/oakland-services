@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     color: ${({ theme }) => theme.ui.text};
-    background-color: ${({ theme }) => theme.ui.background};
+    background-color: ${({ theme }) => theme.ui.backgroundGrey};
     text-rendering: optimizeLegibility;
     font-family: 'HelveticaNow', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif,
       'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
@@ -45,7 +45,28 @@ export const GlobalStyle = createGlobalStyle`
     max-width: 100%;
   }
 
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 ${({ theme }) => theme.spacings(3)};
+  }
+
   p {
     margin: 0 0 ${({ theme }) => theme.spacings(2)};
+  }
+
+  ul, li {
+    margin: 0;
+  }
+
+  .sr-only {
+    position: absolute;
+    clip: rect(1px,1px,1px,1px);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    border: 0;
+    white-space: nowrap;
   }
 `;
