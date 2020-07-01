@@ -6,7 +6,7 @@ const calculateSpacing = (n) => {
   return `${n * SPACING_UNIT}px`;
 };
 
-const colors = {
+export const colors = {
   black: "#292C36",
   white: "#FFFFFF",
   primary: "#292C36",

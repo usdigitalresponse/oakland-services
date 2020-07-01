@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Icon } from "components/Icon";
+import { colors } from "styles/theme";
 
 const States = {
   default: "default",
@@ -46,9 +47,9 @@ const Svg = ({ isShown }) => (
   >
     <defs>
       <linearGradient x1="8.042%" y1="0%" x2="65.682%" y2="23.865%" id="a">
-        <stop stopColor="#8389E1" stopOpacity="0" offset="0%" />
-        <stop stopColor="#8389E1" stopOpacity=".631" offset="63.146%" />
-        <stop stopColor="#8389E1" offset="100%" />
+        <stop stopColor={colors.primary} stopOpacity="0" offset="0%" />
+        <stop stopColor={colors.primary} stopOpacity=".631" offset="63.146%" />
+        <stop stopColor={colors.primary} offset="100%" />
       </linearGradient>
     </defs>
     <g fill="none" fillRule="evenodd">
@@ -68,7 +69,7 @@ const Svg = ({ isShown }) => (
             repeatCount="indefinite"
           />
         </path>
-        <circle fill="#8389E1" cx="36" cy="18" r="1">
+        <circle fill={colors.primary} cx="36" cy="18" r="1">
           <animateTransform
             attributeName="transform"
             type="rotate"

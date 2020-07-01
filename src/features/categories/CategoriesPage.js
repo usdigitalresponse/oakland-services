@@ -23,7 +23,7 @@ export const CategoriesPage = () => {
         <Text>{t("home.description2")}</Text>
       </CategoriesHeader>
       {categories.map((c) => (
-        <CategoryLink as={Link} key={c.id} to={`/category/${c.slug}`} fullWidth>
+        <CategoryLink as={Link} key={c.id} to={`/category/${c.slug}`}>
           {c.title}
         </CategoryLink>
       ))}
@@ -36,5 +36,6 @@ const CategoriesHeader = styled.header`
 `;
 
 const CategoryLink = styled(Button)`
+  width: 100%;
   margin-bottom: ${({ theme }) => theme.spacings(2)};
 `;

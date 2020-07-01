@@ -1,6 +1,8 @@
 import React, { Suspense } from "react";
 import { Switch, Route } from "react-router-dom";
+import styled from "styled-components";
 import { PageLayout } from "components/Page";
+import { Spinner } from "components/Spinner";
 
 import { CategoriesPage } from "./categories/CategoriesPage";
 import { ServicesListPage } from "./services/ServicesListPage";
@@ -11,7 +13,13 @@ import { TermsPage } from "./about/TermsPage";
 import { Error } from "./misc/Error";
 
 export const Routes = () => (
-  <Suspense fallback="loading">
+  <Suspense
+    fallback={
+      <SpinnerContainer>
+        <Spinner loading />
+      </SpinnerContainer>
+    }
+  >
     <Switch>
       <Route exact path="/">
         <PageLayout>
@@ -49,3 +57,11 @@ export const Routes = () => (
     </Switch>
   </Suspense>
 );
+
+const SpinnerContainer = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  width: 100%;
+`;
