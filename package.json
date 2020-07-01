@@ -4,12 +4,10 @@
   "private": true,
   "homepage": "http://211alamedacounty.org/",
   "scripts": {
-    "start": "concurrently \"nodemon server.js\" \"react-scripts start\"",
+    "start": "node server.js",
+    "dev": "concurrently \"nodemon server.js\" \"react-scripts start\"",
     "build": "react-scripts build",
     "format": "prettier . --write",
-    "knex": "knex",
-    "nodemon": "nodemon",
-    "concurrently": "concurrently",
     "snyk-protect": "snyk protect",
     "prepare": "npm run snyk-protect"
   },
@@ -58,6 +56,6 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:8080",
+  "proxy": "http://localhost:5000",
   "snyk": true
 }
