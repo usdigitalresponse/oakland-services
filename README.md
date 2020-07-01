@@ -1,5 +1,3 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/914f5bff-f4c3-43ef-88ab-7b79b75110e2/deploy-status)](https://app.netlify.com/sites/oakland-services/deploys)
-
 # Oakland Services
 
 > A USDR project

@@ -2,7 +2,7 @@
   "name": "oakland-services",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://211alamedacounty.org/",
+  "homepage": "https://oakland-services.onrender.com/",
   "scripts": {
     "start": "node server/index.js",
     "dev": "concurrently \"nodemon server/index.js\" \"react-scripts start\"",
@@ -54,6 +54,11 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "nodemonConfig": {
+    "watch": [
+      "server/*"
     ]
   },
   "proxy": "http://localhost:5000",
