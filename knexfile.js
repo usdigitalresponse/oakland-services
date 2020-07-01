@@ -36,6 +36,7 @@ module.exports = {
     },
     useNullAsDefault: true,
   },
+
   onUpdateTrigger: (table) => `
     CREATE TRIGGER ${table}_updated_at
     BEFORE UPDATE ON ${table}

@@ -1,7 +1,8 @@
 const express = require("express");
 const path = require("path");
 const app = express();
-app.use(express.static(path.join(__dirname, "build")));
+
+app.use(express.static(path.join(__dirname, "../build")));
 
 const environment = process.env.NODE_ENV || "development";
 const configuration = require("../knexfile")[environment];
@@ -20,7 +21,7 @@ app.get("/ping", function (_req, res) {
 });
 
 app.get("/", function (_req, res) {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+  res.sendFile(path.join(__dirname, "../", "build", "index.html"));
 });
 
 app.get("/categories", function (req, res) {
