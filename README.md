@@ -10,6 +10,8 @@
 │   ├── /features                # App routes and feature specific code
 │   ├── /styles                  # Global theme definitions
 │   └── /utils                   # Client side helper functions/Utilities/Services
+├── /server                      # Express backend
+├── /db                          # Postgres db
 └── /public                      # Static assets
 ```
 
@@ -42,6 +44,9 @@ npx knex migrate:latest
 ```
 npx knex seed:run
 ```
+
+## Deployment
+Anything merged into master will automatically be deployed on render
 
 ## Notes
 
