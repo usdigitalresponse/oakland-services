@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import useSWR from "swr";
 import { Link } from "react-router-dom";
 import { Button } from "components/Button";
 import { Checkbox } from "components/Checkbox";
 import { RadioSwitch } from "components/Radio";
 import { Modal } from "components/Modal";
+import { ListLoader } from "components/Loader";
 
 const services = [
   {
@@ -27,6 +30,8 @@ const services = [
 
 export const ServicesListPage = () => {
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
+  const { categoryId } = useParams();
+  const { data } = useSWR(`/api/categories/${categoryId}/services`);
 
   return (
     <section>
@@ -35,14 +40,18 @@ export const ServicesListPage = () => {
           Filters
         </Button>
       </ServicesHeader>
-      {services.map((s) => (
-        <ServiceLink key={s.id} to={`/service/${s.id}`}>
-          <h4>{s.title}</h4>
-          <p>{s.address}</p>
-          <p>{s.hours}</p>
-          <p>{s.description}</p>
-        </ServiceLink>
-      ))}
+      {!data ? (
+        <ListLoader />
+      ) : (
+        services.map((s) => (
+          <ServiceLink key={s.id} to={`/service/${s.id}`}>
+            <h4>{s.title}</h4>
+            <p>{s.address}</p>
+            <p>{s.hours}</p>
+            <p>{s.description}</p>
+          </ServiceLink>
+        ))
+      )}
       <Modal
         open={isFilterModalOpen}
         onRequestClose={() => setIsFilterModalOpen(false)}

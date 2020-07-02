@@ -1,16 +1,20 @@
 import React from "react";
 import styled from "styled-components";
+import useSWR from "swr";
+import { useParams } from "react-router-dom";
 import { BackButton } from "components/Button";
-
-const service = { id: 0, title: "A place to sleep tonight", slug: "shelters" };
+import { ListLoader } from "components/Loader";
 
 export const ServicePage = () => {
+  const { serviceId } = useParams();
+  const { data } = useSWR(`/api/services/${serviceId}`);
+
   return (
     <section>
       <ServiceHeader>
         <BackButton />
       </ServiceHeader>
-      {service.title}
+      {!data ? <ListLoader /> : "Hello"}
     </section>
   );
 };

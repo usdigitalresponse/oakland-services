@@ -26,7 +26,7 @@ app.get("/", (_req, res) => {
   res.sendFile(path.join(CLIENT_PATH, "index.html"));
 });
 
-app.get("/categories", async (req, res) => {
+app.get("/api/categories", async (req, res) => {
   const categories = await database("categories")
     .join("category_details", "categories.id", "category_details.category_id")
     .where({ "category_details.lang": getLang(req) });
@@ -34,10 +34,10 @@ app.get("/categories", async (req, res) => {
   res.status(200).json(categories);
 });
 
-app.get("/categories/:category_id/services", async (req, res) => {
+app.get("/api/categories/:category_id/services", async (req, res) => {
   const categoryId = req.params.category_id;
 
-  const services = database("services")
+  const services = await database("services")
     .join("service_details", "services.id", "service_details.service_id")
     .join("categorizations", "services.id", "categorizations.service_id")
     .join("categories", "categorizations.category_id", "categories.id")
@@ -47,10 +47,10 @@ app.get("/categories/:category_id/services", async (req, res) => {
   res.status(200).json(services);
 });
 
-app.get("/services/:service_id", async (req, res) => {
+app.get("/api/services/:service_id", async (req, res) => {
   const serviceId = req.params.service_id;
 
-  const service = database("services")
+  const service = await database("services")
     .join("service_details", "services.id", "service_details.service_id")
     .where({ "service_details.lang": getLang(req) })
     .where({ "services.id": serviceId })
@@ -59,8 +59,8 @@ app.get("/services/:service_id", async (req, res) => {
   res.status(200).json(service);
 });
 
-app.get("/neighborhoods", async (req, res) => {
-  const neighborhoods = database("neighborhoods")
+app.get("/api/neighborhoods", async (req, res) => {
+  const neighborhoods = await database("neighborhoods")
     .join(
       "neighborhood_details",
       "neighborhoods.id",
