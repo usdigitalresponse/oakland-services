@@ -15,6 +15,7 @@ exports.seed = function (knex) {
           id: idx + 1,
           category_id: idx + 1,
           name: cat.name,
+          lang: "en",
         }
       });
 
