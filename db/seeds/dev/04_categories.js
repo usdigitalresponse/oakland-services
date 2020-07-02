@@ -1,13 +1,23 @@
+const categoriesSeed = require("../data/formatted/categories");
+
 exports.seed = function (knex) {
   return knex("categories")
     .del()
     .then(function () {
-      return knex("categories").insert([{ id: 1 }]);
+      const categories = categoriesSeed.map((cat, idx) => {
+        return { id: idx + 1, parent_id: cat.parent_id };
+      });
+      return knex("categories").insert(categories);
     })
     .then(function () {
-      return knex("category_details").insert([
-        { id: 1, category_id: 1, name: "Food to eat", lang: "en" },
-        { id: 2, category_id: 1, name: "Comida para comer", lang: "es" },
-      ]);
+      const categoryDetails = categoriesSeed.map((cat, idx) => {
+        return {
+          id: idx + 1,
+          category_id: idx + 1,
+          name: cat.name,
+        }
+      });
+
+      return knex("category_details").insert(categoryDetails);
     });
 };
