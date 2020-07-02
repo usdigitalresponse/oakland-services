@@ -9,11 +9,9 @@
     "build": "react-scripts build",
     "format": "prettier . --write",
     "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect",
-    "knex": "knex"
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
-    "csv-parser": "^2.3.3",
     "express": "^4.17.1",
     "i18next": "^19.5.1",
     "i18next-browser-languagedetector": "^5.0.0",
@@ -35,8 +33,9 @@
   },
   "devDependencies": {
     "concurrently": "^5.2.0",
-    "nodemon": "^2.0.4",
+    "csv-parser": "^2.3.3",
     "husky": "^4.2.5",
+    "nodemon": "^2.0.4",
     "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1",
     "react-scripts": "^3.4.1"
