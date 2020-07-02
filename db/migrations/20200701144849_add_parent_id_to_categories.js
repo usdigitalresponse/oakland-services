@@ -1,6 +1,7 @@
 
 exports.up = function(knex) {
-  return knex.table("categories", (table) => {
+  return knex.schema.table("categories", (table) => {
+    table.integer("parent_id").unsigned().nullable();
     table
       .foreign("parent_id")
       .references("categories.id")
@@ -9,7 +10,7 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-  return knex.table("categories", (table) => {
+  return knex.schema.table("categories", (table) => {
     table.dropColumn("parent_id");
   });
 };
