@@ -9,9 +9,11 @@
     "build": "react-scripts build",
     "format": "prettier . --write",
     "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect"
+    "prepare": "npm run snyk-protect",
+    "knex": "knex"
   },
   "dependencies": {
+    "csv-parser": "^2.3.3",
     "express": "^4.17.1",
     "i18next": "^19.5.1",
     "i18next-browser-languagedetector": "^5.0.0",
@@ -26,10 +28,10 @@
     "react-i18next": "^11.7.0",
     "react-modal": "^3.11.2",
     "react-router-dom": "^5.2.0",
+    "snyk": "^1.355.0",
     "styled-components": "^5.1.1",
     "styled-normalize": "^8.0.7",
-    "swr": "^0.2.3",
-    "snyk": "^1.355.0"
+    "swr": "^0.2.3"
   },
   "devDependencies": {
     "concurrently": "^5.2.0",
