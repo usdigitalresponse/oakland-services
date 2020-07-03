@@ -26,12 +26,12 @@ export const Routes = () => (
           <CategoriesPage />
         </PageLayout>
       </Route>
-      <Route exact path="/category/:slug">
+      <Route exact path="/category/:categoryId">
         <PageLayout>
           <ServicesListPage />
         </PageLayout>
       </Route>
-      <Route exact path="/service/:id">
+      <Route exact path="/service/:serviceId">
         <PageLayout>
           <ServicePage />
         </PageLayout>
