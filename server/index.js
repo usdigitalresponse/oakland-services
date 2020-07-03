@@ -29,46 +29,44 @@ app.get("/", (_req, res) => {
 app.get("/api/categories", async (req, res) => {
   const categories = await database("categories")
     .join("category_details", "categories.id", "category_details.category_id")
+    .where({ "categories.parent_id": null })
     .where({ "category_details.lang": getLang(req) });
 
   res.status(200).json(categories);
 });
 
-app.get("/api/categories/:category_id/services", async (req, res) => {
+app.get("/categories/:category_id/resources", async (req, res) => {
   const categoryId = req.params.category_id;
 
-  const services = await database("services")
-    .join("service_details", "services.id", "service_details.service_id")
-    .join("categorizations", "services.id", "categorizations.service_id")
+  const resources = await database("resources")
+    .join("resource_details", "resources.id", "resource_details.resource_id")
+    .join("categorizations", "resources.id", "categorizations.resource_id")
     .join("categories", "categorizations.category_id", "categories.id")
-    .where({ category_id: categoryId })
-    .where({ "service_details.lang": getLang(req) });
+    .join("categories as parents", "categorizations.category_id", "parents.id")
+    .where({ "categories.parent_id": categoryId })
+    .where({ "resource_details.lang": getLang(req) });
 
-  res.status(200).json(services);
+  res.status(200).json(resources);
 });
 
-app.get("/api/services/:service_id", async (req, res) => {
-  const serviceId = req.params.service_id;
+app.get("/resources/:resource_id", async (req, res) => {
+  const resourceId = req.params.resource_id;
 
-  const service = await database("services")
-    .join("service_details", "services.id", "service_details.service_id")
-    .where({ "service_details.lang": getLang(req) })
-    .where({ "services.id": serviceId })
+  const resource = await database("resources")
+    .join("resource_details", "resources.id", "resource_details.resource_id")
+    .where({ "resource_details.lang": getLang(req) })
+    .where({ "resources.id": resourceId })
     .first();
 
-  res.status(200).json(service);
+  res.status(200).json(resource);
 });
 
-app.get("/api/neighborhoods", async (req, res) => {
-  const neighborhoods = await database("neighborhoods")
-    .join(
-      "neighborhood_details",
-      "neighborhoods.id",
-      "neighborhood_details.neighborhood_id"
-    )
-    .where({ "neighborhood_details.lang": getLang(req) });
+app.get("/cities", async (req, res) => {
+  const cities = await database("cities")
+    .join("city_details", "cities.id", "city_details.city_id")
+    .where({ "city_details.lang": getLang(req) });
 
-  res.status(200).json(neighborhoods);
+  res.status(200).json(cities);
 });
 
 app.get("*", (_req, res) => {
