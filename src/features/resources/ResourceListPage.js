@@ -9,23 +9,23 @@ import { RadioSwitch } from "components/Radio";
 import { Modal } from "components/Modal";
 import { ListLoader } from "components/Loader";
 
-export const ServicesListPage = () => {
+export const ResourceListPage = () => {
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   const { categoryId } = useParams();
   const { data } = useSWR(`/api/categories/${categoryId}/resources`);
 
   return (
     <section>
-      <ServicesHeader>
+      <Header>
         <Button variant="outline" onClick={() => setIsFilterModalOpen(true)}>
           Filters
         </Button>
-      </ServicesHeader>
+      </Header>
       {!data ? (
         <ListLoader />
       ) : (
         data.map((s) => (
-          <ServiceLink key={s.id} to={`/service/${s.id}`}>
+          <Resource key={s.id} to={`/resource/${s.id}`}>
             <h4>{s.name}</h4>
             <p>{s.address}</p>
             <p>
@@ -34,7 +34,7 @@ export const ServicesListPage = () => {
             <p>{s.phone_number}</p>
             <p>{s.service_hours}</p>
             <p>{s.description}</p>
-          </ServiceLink>
+          </Resource>
         ))
       )}
       <Modal
@@ -73,7 +73,7 @@ export const ServicesListPage = () => {
   );
 };
 
-const ServicesHeader = styled.header`
+const Header = styled.header`
   padding: ${({ theme }) => theme.spacings(5)};
   background-color: ${({ theme }) => theme.colors.lightGrey};
   margin: ${({ theme }) => `0 ${theme.spacings(-5)} ${theme.spacings(5)}`};
@@ -87,7 +87,7 @@ const ServicesHeader = styled.header`
   }
 `;
 
-const ServiceLink = styled(Link)`
+const Resource = styled(Link)`
   display: block;
   padding: ${({ theme }) => theme.spacings(3)};
   margin-bottom: ${({ theme }) => theme.spacings(5)};

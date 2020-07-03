@@ -5,19 +5,19 @@ import { useParams } from "react-router-dom";
 import { BackButton } from "components/Button";
 import { ListLoader } from "components/Loader";
 
-export const ServicePage = () => {
-  const { serviceId } = useParams();
-  const { data } = useSWR(`/api/resources/${serviceId}`);
+export const ResourcePage = () => {
+  const { resourceId } = useParams();
+  const { data } = useSWR(`/api/resources/${resourceId}`);
 
   return (
     <section>
-      <ServiceHeader>
+      <Header>
         <BackButton />
-      </ServiceHeader>
+      </Header>
       {!data ? (
         <ListLoader />
       ) : (
-        <Service>
+        <Resource>
           <h4>{data.name}</h4>
           <p>{data.description}</p>
           <p>
@@ -26,14 +26,14 @@ export const ServicePage = () => {
           <p>{data.phone_number}</p>
           <p>{data.email}</p>
           <p>{data.address}</p>
-        </Service>
+        </Resource>
       )}
     </section>
   );
 };
 
-const ServiceHeader = styled.header`
+const Header = styled.header`
   margin-bottom: ${({ theme }) => theme.spacings(5)};
 `;
 
-const Service = styled.section``;
+const Resource = styled.section``;

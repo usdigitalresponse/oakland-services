@@ -5,8 +5,8 @@ import { PageLayout } from "components/Page";
 import { Spinner } from "components/Spinner";
 
 import { CategoriesPage } from "./categories/CategoriesPage";
-import { ServicesListPage } from "./services/ServicesListPage";
-import { ServicePage } from "./services/ServicePage";
+import { ResourceListPage } from "./resources/ResourceListPage";
+import { ResourcePage } from "./resources/ResourcePage";
 import { AboutPage } from "./about/AboutPage";
 import { PrivacyPage } from "./about/PrivacyPage";
 import { TermsPage } from "./about/TermsPage";
@@ -28,12 +28,12 @@ export const Routes = () => (
       </Route>
       <Route exact path="/category/:categoryId">
         <PageLayout>
-          <ServicesListPage />
+          <ResourceListPage />
         </PageLayout>
       </Route>
-      <Route exact path="/service/:serviceId">
+      <Route exact path="/resource/:resourceId">
         <PageLayout>
-          <ServicePage />
+          <ResourcePage />
         </PageLayout>
       </Route>
       <Route path="/about">
