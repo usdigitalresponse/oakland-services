@@ -149,7 +149,9 @@ function generateResources() {
 
 function generateCategorizations() {
   const categories = require("./formatted/categories");
+
   const categorizations = [];
+  let rowIndex = 0;
 
   return new Promise((resolve) => {
     fs.createReadStream("./raw/Category_Resource-Grid view.csv")
@@ -158,7 +160,7 @@ function generateCategorizations() {
         if (row.category) {
           const rowCategories = row.category.split(',');
 
-          rowCategories.forEach((rowCat, rowIndex) => {
+          rowCategories.forEach((rowCat) => {
             const categoryIndex = categories.findIndex((c) => c.airtable_cat_id === rowCat);
             if (categoryIndex !== -1) {
               categorizations.push({
@@ -168,6 +170,8 @@ function generateCategorizations() {
             }
           });
         }
+
+        rowIndex += 1;
       })
       .on("end", () => {
         const filename = './formatted/categorizations.json';
