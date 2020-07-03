@@ -1,24 +1,19 @@
-const express = require("express");
 const path = require("path");
+const express = require("express");
 const i18next = require("i18next");
-const middleware = require("i18next-http-middleware");
+const i18nextMiddleware = require("i18next-http-middleware");
+const helmet = require("helmet");
+const database = require("./db");
 
 const CLIENT_PATH = path.join(__dirname, "../", "build");
 
-const environment = process.env.NODE_ENV || "development";
-const configuration = require("../knexfile")[environment];
-const database = require("knex")(configuration);
-
-i18next.use(middleware.LanguageDetector).init();
+i18next.use(i18nextMiddleware.LanguageDetector).init();
 
 const app = express();
 
+app.use(helmet());
+app.use(i18nextMiddleware.handle(i18next));
 app.use(express.static(CLIENT_PATH));
-app.use(middleware.handle(i18next));
-
-app.get("/ping", (_req, res) => {
-  res.send("pong");
-});
 
 app.get("/", (_req, res) => {
   res.sendFile(path.join(CLIENT_PATH, "index.html"));
