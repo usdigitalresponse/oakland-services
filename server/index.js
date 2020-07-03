@@ -7,7 +7,10 @@ const database = require("./db");
 
 const CLIENT_PATH = path.join(__dirname, "../", "build");
 
-i18next.use(i18nextMiddleware.LanguageDetector).init();
+i18next.use(i18nextMiddleware.LanguageDetector).init({
+  supportedLngs: ["en", "es"],
+  fallbackLng: "en",
+});
 
 const app = express();
 
