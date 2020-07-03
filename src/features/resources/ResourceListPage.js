@@ -25,7 +25,7 @@ export const ResourceListPage = () => {
         <ListLoader />
       ) : (
         data.map((s) => (
-          <Resource key={s.id} to={`/resource/${s.id}`}>
+          <Resource key={s.resource_id} to={`/resource/${s.resource_id}`}>
             <h4>{s.name}</h4>
             <p>{s.address}</p>
             <p>{s.phone_number}</p>
