@@ -28,9 +28,6 @@ export const ResourceListPage = () => {
           <Resource key={s.id} to={`/resource/${s.id}`}>
             <h4>{s.name}</h4>
             <p>{s.address}</p>
-            <p>
-              <a href={s.website}>Website</a>
-            </p>
             <p>{s.phone_number}</p>
             <p>{s.service_hours}</p>
             <p>{s.description}</p>

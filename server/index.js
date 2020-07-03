@@ -1,22 +1,20 @@
 const express = require("express");
 const path = require("path");
-const app = express();
+const i18next = require("i18next");
+const middleware = require("i18next-http-middleware");
 
 const CLIENT_PATH = path.join(__dirname, "../", "build");
-
-app.use(express.static(CLIENT_PATH));
 
 const environment = process.env.NODE_ENV || "development";
 const configuration = require("../knexfile")[environment];
 const database = require("knex")(configuration);
 
-function getLang(req) {
-  let lang = req.query.lang;
-  if (!lang) {
-    lang = "en";
-  }
-  return lang;
-}
+i18next.use(middleware.LanguageDetector).init();
+
+const app = express();
+
+app.use(express.static(CLIENT_PATH));
+app.use(middleware.handle(i18next));
 
 app.get("/ping", (_req, res) => {
   res.send("pong");
@@ -30,7 +28,7 @@ app.get("/api/categories", async (req, res) => {
   const categories = await database("categories")
     .join("category_details", "categories.id", "category_details.category_id")
     .where({ "categories.parent_id": null })
-    .where({ "category_details.lang": getLang(req) });
+    .where({ "category_details.lang": req.language });
 
   res.status(200).json(categories);
 });
@@ -44,7 +42,7 @@ app.get("/api/categories/:category_id/resources", async (req, res) => {
     .join("categories", "categorizations.category_id", "categories.id")
     .join("categories as parents", "categorizations.category_id", "parents.id")
     .where({ "categories.parent_id": categoryId })
-    .where({ "resource_details.lang": getLang(req) });
+    .where({ "resource_details.lang": req.language });
 
   res.status(200).json(resources);
 });
@@ -54,7 +52,7 @@ app.get("/api/resources/:resource_id", async (req, res) => {
 
   const resource = await database("resources")
     .join("resource_details", "resources.id", "resource_details.resource_id")
-    .where({ "resource_details.lang": getLang(req) })
+    .where({ "resource_details.lang": req.language })
     .where({ "resources.id": resourceId })
     .first();
 
@@ -64,7 +62,7 @@ app.get("/api/resources/:resource_id", async (req, res) => {
 app.get("/api/cities", async (req, res) => {
   const cities = await database("cities")
     .join("city_details", "cities.id", "city_details.city_id")
-    .where({ "city_details.lang": getLang(req) });
+    .where({ "city_details.lang": req.language });
 
   res.status(200).json(cities);
 });

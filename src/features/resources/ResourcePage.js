@@ -19,13 +19,13 @@ export const ResourcePage = () => {
       ) : (
         <Resource>
           <h4>{data.name}</h4>
-          <p>{data.description}</p>
           <p>
             <a href={data.website}>{data.website}</a>
           </p>
           <p>{data.phone_number}</p>
           <p>{data.email}</p>
           <p>{data.address}</p>
+          <p>{data.description}</p>
         </Resource>
       )}
     </section>
