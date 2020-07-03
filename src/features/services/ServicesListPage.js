@@ -9,29 +9,10 @@ import { RadioSwitch } from "components/Radio";
 import { Modal } from "components/Modal";
 import { ListLoader } from "components/Loader";
 
-const services = [
-  {
-    id: 0,
-    title: "Shelter 1",
-    address: "100 Pine Street",
-    hours: "8:00am - 6:00pm",
-    description:
-      "Provides emergency transitional housing to clean and sober females with or without small children that are small enough to sleep with mother",
-  },
-  {
-    id: 1,
-    title: "Shelter 2",
-    address: "100 Pine Street",
-    hours: "8:00am - 6:00pm",
-    description:
-      "Provides emergency transitional housing to clean and sober females with or without small children that are small enough to sleep with mother",
-  },
-];
-
 export const ServicesListPage = () => {
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   const { categoryId } = useParams();
-  const { data } = useSWR(`/api/categories/${categoryId}/services`);
+  const { data } = useSWR(`/api/categories/${categoryId}/resources`);
 
   return (
     <section>
@@ -43,11 +24,15 @@ export const ServicesListPage = () => {
       {!data ? (
         <ListLoader />
       ) : (
-        services.map((s) => (
+        data.map((s) => (
           <ServiceLink key={s.id} to={`/service/${s.id}`}>
-            <h4>{s.title}</h4>
+            <h4>{s.name}</h4>
             <p>{s.address}</p>
-            <p>{s.hours}</p>
+            <p>
+              <a href={s.website}>Website</a>
+            </p>
+            <p>{s.phone_number}</p>
+            <p>{s.service_hours}</p>
             <p>{s.description}</p>
           </ServiceLink>
         ))

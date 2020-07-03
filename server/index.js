@@ -35,7 +35,7 @@ app.get("/api/categories", async (req, res) => {
   res.status(200).json(categories);
 });
 
-app.get("/categories/:category_id/resources", async (req, res) => {
+app.get("/api/categories/:category_id/resources", async (req, res) => {
   const categoryId = req.params.category_id;
 
   const resources = await database("resources")
@@ -49,7 +49,7 @@ app.get("/categories/:category_id/resources", async (req, res) => {
   res.status(200).json(resources);
 });
 
-app.get("/resources/:resource_id", async (req, res) => {
+app.get("/api/resources/:resource_id", async (req, res) => {
   const resourceId = req.params.resource_id;
 
   const resource = await database("resources")
@@ -61,7 +61,7 @@ app.get("/resources/:resource_id", async (req, res) => {
   res.status(200).json(resource);
 });
 
-app.get("/cities", async (req, res) => {
+app.get("/api/cities", async (req, res) => {
   const cities = await database("cities")
     .join("city_details", "cities.id", "city_details.city_id")
     .where({ "city_details.lang": getLang(req) });
