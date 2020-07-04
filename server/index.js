@@ -51,7 +51,7 @@ app.get("/api/categories/:category_id/resources", async (req, res) => {
     .join("categories", "categorizations.category_id", "categories.id")
     .join("categories as parents", "categories.parent_id", "parents.id")
     .where({ "categories.parent_id": categoryId })
-    .andWhere({ "resource_details.lang": req.language })
+    .where({ "resource_details.lang": req.language })
     .distinctOn("resources.id");
 
   res.status(200).json(resources);
@@ -103,6 +103,23 @@ app.get("/api/cities", async (req, res) => {
     .where({ "city_details.lang": req.language });
 
   res.status(200).json(cities);
+});
+
+app.get("/api/cities/:city_id/resources", async (req, res) => {
+  const cityId = req.params.city_id;
+
+  const resources = await database("resources")
+    .select(
+      "resources.id",
+      "resource_details.name",
+      "resource_details.description",
+      "resource_details.phone_number"
+    )
+    .join("resource_details", "resources.id", "resource_details.resource_id")
+    .where({ "resources.city_id": cityId })
+    .where({ "resource_details.lang": req.language });
+
+  res.status(200).json(resources);
 });
 
 app.get("*", (_req, res) => {
