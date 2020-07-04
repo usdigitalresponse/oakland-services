@@ -16,7 +16,7 @@ exports.seed = function (knex) {
           city_id: idx + 1,
           name: city.name,
           lang: "en",
-        }
+        };
       });
 
       return knex("city_details").insert(cityDetails);

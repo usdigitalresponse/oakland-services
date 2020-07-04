@@ -9,19 +9,19 @@ async function generateCategories() {
       .pipe(csv([]))
       .on("data", (row) => {
         formattedRow = {
-          name: row['2'],
-          airtable_cat_id: row['0'],
-          airtable_parent_id: row['4']
+          name: row["2"],
+          airtable_cat_id: row["0"],
+          airtable_parent_id: row["4"],
         };
 
-        if (row['2'] !== "" && row['2'] !== "text") {
+        if (row["2"] !== "" && row["2"] !== "text") {
           categories.push(formattedRow);
         }
       })
       .on("end", () => {
         for (let i = 0; i < categories.length; i++) {
           const currentCategory = categories[i];
-          const parentIndex = categories.findIndex(c => {
+          const parentIndex = categories.findIndex((c) => {
             return c.airtable_cat_id === currentCategory.airtable_parent_id;
           });
 
@@ -32,19 +32,19 @@ async function generateCategories() {
 
         categories.forEach((category) => {
           delete category.airtable_parent_id;
-        })
+        });
 
-        const filename = './formatted/categories.json';
-        fs.writeFile(filename, JSON.stringify(categories), err => {
+        const filename = "./formatted/categories.json";
+        fs.writeFile(filename, JSON.stringify(categories), (err) => {
           if (err) {
-            console.log('error writing to json file', err);
+            console.log("error writing to json file", err);
           } else {
             console.log(`saved as ${filename}`);
           }
           resolve();
         });
       });
-  })
+  });
 }
 
 async function generateCities() {
@@ -63,10 +63,10 @@ async function generateCities() {
         }
       })
       .on("end", () => {
-        const filename = './formatted/cities.json';
-        fs.writeFile(filename, JSON.stringify(cities), err => {
+        const filename = "./formatted/cities.json";
+        fs.writeFile(filename, JSON.stringify(cities), (err) => {
           if (err) {
-            console.log('error writing to json file', err);
+            console.log("error writing to json file", err);
           } else {
             console.log(`saved as ${filename}`);
           }
@@ -94,10 +94,10 @@ async function generateOrganizations() {
         }
       })
       .on("end", () => {
-        const filename = './formatted/organizations.json';
-        fs.writeFile(filename, JSON.stringify(organizations), err => {
+        const filename = "./formatted/organizations.json";
+        fs.writeFile(filename, JSON.stringify(organizations), (err) => {
           if (err) {
-            console.log('error writing to json file', err);
+            console.log("error writing to json file", err);
           } else {
             console.log(`saved as ${filename}`);
           }
@@ -120,12 +120,14 @@ async function generateResources() {
       .pipe(csv())
       .on("data", (row) => {
         const cityId = cities.findIndex((c) => c.name === row.city);
-        const organizationId = organizations.findIndex((o) => o.name === row.organization_name);
+        const organizationId = organizations.findIndex(
+          (o) => o.name === row.organization_name
+        );
 
         if (row.name && resourceNames.indexOf(row.name) === -1) {
           const formattedRow = {
             city_id: cityId === -1 ? null : cityId + 1,
-            organization_id: organizationId === -1 ? null: organizationId + 1,
+            organization_id: organizationId === -1 ? null : organizationId + 1,
             name: row.name,
             address: row.address,
             website: row.website,
@@ -139,9 +141,9 @@ async function generateResources() {
       })
       .on("end", () => {
         const filename = "./formatted/resources.json";
-        fs.writeFile(filename, JSON.stringify(resources), err => {
+        fs.writeFile(filename, JSON.stringify(resources), (err) => {
           if (err) {
-            console.log('error writing to json file', err);
+            console.log("error writing to json file", err);
           } else {
             console.log(`saved as ${filename}`);
           }
@@ -163,11 +165,13 @@ async function generateCategorizations() {
       .pipe(csv())
       .on("data", (row) => {
         if (row.category) {
-          const rowCategories = row.category.split(',');
+          const rowCategories = row.category.split(",");
           const resourceIndex = resources.findIndex((r) => r.name === row.name);
 
           rowCategories.forEach((rowCat) => {
-            const categoryIndex = categories.findIndex((c) => c.airtable_cat_id === rowCat);
+            const categoryIndex = categories.findIndex(
+              (c) => c.airtable_cat_id === rowCat
+            );
 
             if (categoryIndex !== -1) {
               categorizations.push({
@@ -181,10 +185,10 @@ async function generateCategorizations() {
         rowIndex += 1;
       })
       .on("end", () => {
-        const filename = './formatted/categorizations.json';
-        fs.writeFile(filename, JSON.stringify(categorizations), err => {
+        const filename = "./formatted/categorizations.json";
+        fs.writeFile(filename, JSON.stringify(categorizations), (err) => {
           if (err) {
-            console.log('error writing to json file', err);
+            console.log("error writing to json file", err);
           } else {
             console.log(`saved as ${filename}`);
           }

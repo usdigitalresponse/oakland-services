@@ -24,7 +24,7 @@ exports.seed = function (knex) {
           phone_number: resource.phone_number,
           description: resource.description,
           lang: "en",
-        }
+        };
       });
 
       return knex("resource_details").insert(resourceDetails);

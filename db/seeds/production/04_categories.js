@@ -16,7 +16,7 @@ exports.seed = function (knex) {
           category_id: idx + 1,
           name: cat.name,
           lang: "en",
-        }
+        };
       });
 
       return knex("category_details").insert(categoryDetails);

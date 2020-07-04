@@ -1,15 +1,11 @@
-
-exports.up = function(knex) {
+exports.up = function (knex) {
   return knex.schema.table("categories", (table) => {
     table.integer("parent_id").unsigned().nullable();
-    table
-      .foreign("parent_id")
-      .references("categories.id")
-      .onDelete("CASCADE");
+    table.foreign("parent_id").references("categories.id").onDelete("CASCADE");
   });
 };
 
-exports.down = function(knex) {
+exports.down = function (knex) {
   return knex.schema.table("categories", (table) => {
     table.dropColumn("parent_id");
   });

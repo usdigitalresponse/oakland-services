@@ -46,6 +46,7 @@ npx knex seed:run
 ```
 
 ## Deployment
+
 Anything merged into master will automatically be deployed on render
 
 ## Notes

@@ -1,5 +1,4 @@
-
-exports.up = function(knex) {
+exports.up = function (knex) {
   return knex.schema
     .renameTable("neighborhoods", "cities")
     .renameTable("neighborhood_details", "city_details")
@@ -11,8 +10,8 @@ exports.up = function(knex) {
     });
 };
 
-exports.down = function(knex) {
-   return knex.schema
+exports.down = function (knex) {
+  return knex.schema
     .renameTable("cities", "neighborhoods")
     .renameTable("city_details", "neighborhood_details")
     .table("neighborhood_details", (table) => {

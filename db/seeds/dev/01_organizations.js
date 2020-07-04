@@ -16,7 +16,7 @@ exports.seed = function (knex) {
           organization_id: idx + 1,
           name: org.name,
           lang: "en",
-        }
+        };
       });
 
       return knex("organization_details").insert(organizationDetails);
