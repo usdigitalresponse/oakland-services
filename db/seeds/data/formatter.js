@@ -1,7 +1,7 @@
 const fs = require("fs");
 const csv = require("csv-parser");
 
-function generateCategories() {
+async function generateCategories() {
   const categories = [];
 
   return new Promise((resolve) => {
@@ -47,7 +47,7 @@ function generateCategories() {
   })
 }
 
-function generateCities() {
+async function generateCities() {
   const cities = [];
 
   return new Promise((resolve) => {
@@ -76,7 +76,7 @@ function generateCities() {
   });
 }
 
-function generateOrganizations() {
+async function generateOrganizations() {
   const organizations = [];
 
   return new Promise((resolve) => {
@@ -107,9 +107,12 @@ function generateOrganizations() {
   });
 }
 
-function generateResources() {
+async function generateResources() {
   const cities = require("./formatted/cities");
   const organizations = require("./formatted/organizations");
+
+  // Only insert uniqe resource names since some duplicates exist in csv
+  const resourceNames = [];
   const resources = [];
 
   return new Promise((resolve) => {
@@ -119,7 +122,7 @@ function generateResources() {
         const cityId = cities.findIndex((c) => c.name === row.city);
         const organizationId = organizations.findIndex((o) => o.name === row.organization_name);
 
-        if (row.name) {
+        if (row.name && resourceNames.indexOf(row.name) === -1) {
           const formattedRow = {
             city_id: cityId === -1 ? null : cityId + 1,
             organization_id: organizationId === -1 ? null: organizationId + 1,
@@ -130,11 +133,12 @@ function generateResources() {
             description: row.description,
           };
 
+          resourceNames.push(row.name);
           resources.push(formattedRow);
         }
       })
       .on("end", () => {
-        const filename = './formatted/resources.json';
+        const filename = "./formatted/resources.json";
         fs.writeFile(filename, JSON.stringify(resources), err => {
           if (err) {
             console.log('error writing to json file', err);
@@ -147,8 +151,9 @@ function generateResources() {
   });
 }
 
-function generateCategorizations() {
+async function generateCategorizations() {
   const categories = require("./formatted/categories");
+  const resources = require("./formatted/resources");
 
   const categorizations = [];
   let rowIndex = 0;
@@ -159,13 +164,15 @@ function generateCategorizations() {
       .on("data", (row) => {
         if (row.category) {
           const rowCategories = row.category.split(',');
+          const resourceIndex = resources.findIndex((r) => r.name === row.name);
 
           rowCategories.forEach((rowCat) => {
             const categoryIndex = categories.findIndex((c) => c.airtable_cat_id === rowCat);
+
             if (categoryIndex !== -1) {
               categorizations.push({
                 category_id: categoryIndex + 1,
-                resource_id: rowIndex + 1
+                resource_id: resourceIndex + 1,
               });
             }
           });
@@ -187,8 +194,12 @@ function generateCategorizations() {
   });
 }
 
-generateCategories()
-  .then(() => generateCities())
-  .then(() => generateOrganizations())
-  .then(() => generateResources())
-  .then(() => generateCategorizations());
+async function generateJson() {
+  await generateCategories();
+  await generateCities();
+  await generateOrganizations();
+  await generateResources();
+  await generateCategorizations();
+}
+
+generateJson();
