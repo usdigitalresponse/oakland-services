@@ -36,10 +36,18 @@ app.get("/api/categories/:category_id/resources", async (req, res) => {
 
   const resources = await database("resources")
     .join("resource_details", "resources.id", "resource_details.resource_id")
-    .join("categorizations", "resources.id", "categorizations.resource_id")
+    .join("categorizations", "resource_details.resource_id", "categorizations.resource_id")
     .join("categories", "categorizations.category_id", "categories.id")
-    .join("categories as parents", "categorizations.category_id", "parents.id")
+    .join("categories as parents", "categories.parent_id", "parents.id")
     .where({ "categories.parent_id": categoryId })
+    .andWhere({ "resource_details.lang": req.language })
+
+  res.status(200).json(resources.uniq((r) => r.resource_id));
+});
+
+app.get("/api/resources", async (req, res) => {
+  const resources = await database("resources")
+    .join("resource_details", "resources.id", "resource_details.resource_id")
     .where({ "resource_details.lang": req.language });
 
   res.status(200).json(resources);
