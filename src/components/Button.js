@@ -67,10 +67,11 @@ export const BackButton = ({ onClick = () => {}, withIcon, ...rest }) => {
     <Button variant="link" onClick={handleClick} {...rest}>
       {withIcon ? (
         <IconContainer>
-          <Icon icon="arrowLeft" size="sm" />
+          <Icon icon="chevronLeft" size="sm" />
         </IconContainer>
-      ) : null}{" "}
-      Back
+      ) : (
+        "Back"
+      )}
     </Button>
   );
 };

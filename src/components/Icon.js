@@ -8,6 +8,7 @@ export const iconMap = {
   more: raw("./icon-svgs/more-vertical.svg"),
   arrowLeft: raw("./icon-svgs/arrow-left.svg"),
   chevronRight: raw("./icon-svgs/chevron-right.svg"),
+  chevronLeft: raw("./icon-svgs/chevron-left.svg"),
 };
 
 export const Icon = ({ icon, color, size, rotate, ...rest }) => {

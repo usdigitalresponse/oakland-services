@@ -4,6 +4,7 @@ import useSWR from "swr";
 import { useParams } from "react-router-dom";
 import { BackButton } from "components/Button";
 import { ListLoader } from "components/Loader";
+import { Header } from "./components/Header";
 
 export const ResourcePage = () => {
   const { resourceId } = useParams();
@@ -13,12 +14,12 @@ export const ResourcePage = () => {
     <section>
       <Header>
         <BackButton withIcon />
+        {!!data && data.name}
       </Header>
       {!data ? (
         <ListLoader />
       ) : (
         <Resource>
-          <h4>{data.name}</h4>
           <p>
             <a href={data.website}>{data.website}</a>
           </p>
@@ -31,10 +32,6 @@ export const ResourcePage = () => {
     </section>
   );
 };
-
-const Header = styled.header`
-  margin: ${({ theme }) => `0 ${theme.spacings(-5)} ${theme.spacings(5)}`};
-`;
 
 const Resource = styled.section`
   a {

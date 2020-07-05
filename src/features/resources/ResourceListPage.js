@@ -4,10 +4,11 @@ import styled from "styled-components";
 import useSWR from "swr";
 import queryString from "query-string";
 import { Link } from "react-router-dom";
-import { Button } from "components/Button";
+import { Button, BackButton } from "components/Button";
 import { Modal } from "components/Modal";
 import { ListLoader } from "components/Loader";
 import { Icon } from "components/Icon";
+import { Header } from "./components/Header";
 import { ResourceFilterForm } from "./ResourceFilterForm";
 
 export const ResourceListPage = () => {
@@ -23,11 +24,12 @@ export const ResourceListPage = () => {
 
   return (
     <section>
-      <Header>{categoryName}</Header>
+      <Header>
+        <BackButton withIcon />
+        {categoryName}
+      </Header>
       <Subheader>
-        <Button variant="outline" onClick={() => setIsFilterModalOpen(true)}>
-          Filters
-        </Button>
+        <Button onClick={() => setIsFilterModalOpen(true)}>Filters</Button>
       </Subheader>
       {!data ? (
         <ListLoader />
@@ -60,19 +62,14 @@ export const ResourceListPage = () => {
   );
 };
 
-const Header = styled.h2``;
-
 const Subheader = styled.header`
   padding: ${({ theme }) => theme.spacings(5)};
   background-color: ${({ theme }) => theme.colors.lightGrey};
   margin: ${({ theme }) => `0 ${theme.spacings(-5)} ${theme.spacings(5)}`};
 
   button {
-    background: #fff;
+    box-shadow: none;
     padding: ${({ theme }) => `${theme.spacings(2)} ${theme.spacings(3)}`};
-    &:hover {
-      background-color: #fff;
-    }
   }
 `;
 
