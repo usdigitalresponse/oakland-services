@@ -5,9 +5,16 @@ import { RadioSwitch } from "components/Radio";
 import { Button } from "components/Button";
 
 const neighborhoods = [
-  "Central Business District",
+  "West Oakland",
+  "North Oakland",
+  "Northwest Hills",
+  "Lower Hills",
+  "Piedmont",
+  "Chinatown and Central",
+  "San Antonio",
   "Fruitvale",
-  "Middle East Oakland",
+  "Central East",
+  "Elmhurst",
 ];
 
 export const ResourceFilterForm = ({ onComplete, filters, setFilters }) => {
