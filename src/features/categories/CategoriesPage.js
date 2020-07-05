@@ -41,10 +41,12 @@ const CategoriesHeader = styled.header`
 `;
 
 const CategoriesBody = styled.section`
-  padding: 0 ${({ theme }) => theme.spacings(2)};
+  display: flex;
+  flex-direction: column;
 `;
 
 const CategoryLink = styled(Button)`
   width: 100%;
+  max-width: 360px;
   margin-bottom: ${({ theme }) => theme.spacings(2)};
 `;
