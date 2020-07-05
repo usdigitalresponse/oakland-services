@@ -1,13 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import useSWR from "swr";
 import { useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import useSWR from "swr";
 import { BackButton } from "components/Button";
 import { ListLoader } from "components/Loader";
 import { Header } from "./components/Header";
 
 export const ResourcePage = () => {
   const { resourceId } = useParams();
+  const { t } = useTranslation();
   const { data } = useSWR(`/api/resources/${resourceId}`);
 
   return (
@@ -23,43 +25,70 @@ export const ResourcePage = () => {
           <div className="resource-header">
             {!!data.last_updated && (
               <p>
-                <strong>Last updated:</strong> {data.last_updated}
+                <strong>{t("resource.last_updated")}:</strong>{" "}
+                {data.last_updated}
               </p>
             )}
             {!!data.categories && (
               <p>
-                <strong>Categories:</strong> {data.categories}
+                <strong>{t("resource.categories")}:</strong> {data.categories}
               </p>
             )}
             {!!data.provider && (
               <p>
-                <strong>Provider:</strong> {data.provider}
+                <strong>{t("resource.provider")}:</strong> {data.provider}
               </p>
             )}
             {!!data.website && (
               <p>
-                <strong>Website:</strong>{" "}
+                <strong>{t("resource.website")}:</strong>{" "}
                 <a href={data.website}>{data.website}</a>
               </p>
             )}
             {!!data.address && (
               <p>
-                <strong>Address:</strong> {data.address}
+                <strong>{t("resource.address")}:</strong> {data.address}
               </p>
             )}
             {!!data.phone_number && (
               <p>
-                <strong>Phone number:</strong>{" "}
+                <strong>{t("resource.phone_number")}:</strong>{" "}
                 <a href={`tel:${data.phone_number}`}>{data.phone_number}</a>
               </p>
             )}
             {!!data.email && (
               <p>
-                <strong>Email:</strong> {data.email}
+                <strong>{t("resource.email")}:</strong> {data.email}
               </p>
             )}
           </div>
-          <p>{data.description}</p>
+          <div className="resource-description">
+            <h4>{t("resource.description")}</h4>
+            {data.description}
+          </div>
+          <div className="resource-program-information">
+            <h4>{t("resource.program_information")}</h4>
+            {!!data.application && (
+              <p>
+                <strong>{t("resource.application")}:</strong> {data.application}
+              </p>
+            )}
+            {!!data.eligibility && (
+              <p>
+                <strong>{t("resource.eligibility")}:</strong> {data.eligibility}
+              </p>
+            )}
+            {!!data.fee && (
+              <p>
+                <strong>{t("resource.fee")}:</strong> {data.fee}
+              </p>
+            )}
+            {!!data.languages && (
+              <p>
+                <strong>{t("resource.languages")}:</strong> {data.languages}
+              </p>
+            )}
+          </div>
         </Resource>
       )}
     </section>
@@ -67,8 +96,10 @@ export const ResourcePage = () => {
 };
 
 const Resource = styled.section`
-  .resource-header {
-    margin-bottom: ${({ theme }) => theme.spacings(5)};
+  .resource-header,
+  .resource-description,
+  .resource-program-information {
+    margin-bottom: ${({ theme }) => theme.spacings(8)};
   }
   a {
     color: ${({ theme }) => theme.colors.primary};

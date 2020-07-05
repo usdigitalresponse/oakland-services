@@ -1,6 +1,21 @@
 {
   "home": {
     "description1": "No se preocupe, estamos aquí para ayudarlo y nos alegra que haya encontrado su camino aquí. ¿Estás buscando acceso a recursos en Oakland? Vamos a conseguirte lo que necesitas RÁPIDO.",
-    "description2": "Por cierto, no necesitamos ninguna información de usted para comenzar, esto es anónimo."
+    "description2": "Por cierto, no necesitamos ninguna información de usted para comenzar, esto es anónimo.",
+    "resource": {
+      "last_updated": "Last updated (es)",
+      "categories": "Categories (es)",
+      "provider": "Provider (es)",
+      "website": "Website (es)",
+      "address": "Address (es)",
+      "phone_number": "Phone number (es)",
+      "email": "Email (es)",
+      "description": "Description (es)",
+      "program_information": "Program Information (es)",
+      "application": "Application Process (es)",
+      "eligibility": "Eligibility Description (es)",
+      "fee": "Program Fee (es)",
+      "languages": "Languages Offered (es)"
+    }
   }
 }
