@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { Button } from "components/Button";
 import { Modal } from "components/Modal";
 import { ListLoader } from "components/Loader";
+import { Icon } from "components/Icon";
 import { ResourceFilterForm } from "./ResourceFilterForm";
 
 export const ResourceListPage = () => {
@@ -31,11 +32,14 @@ export const ResourceListPage = () => {
       ) : (
         data.map((s) => (
           <Resource key={s.id} to={`/resource/${s.id}`}>
-            <h4>{s.name}</h4>
-            <p>{s.address}</p>
-            <p>{s.phone_number}</p>
-            <p>{s.service_hours}</p>
-            <p>{s.description}</p>
+            <div>
+              <h4>{s.name}</h4>
+              <p>{s.address}</p>
+              <p>{s.phone_number}</p>
+              <p>{s.service_hours}</p>
+              <p>{s.description}</p>
+            </div>
+            <Icon icon="chevronRight" />
           </Resource>
         ))
       )}
@@ -70,8 +74,10 @@ const Header = styled.header`
 `;
 
 const Resource = styled(Link)`
-  display: block;
-  padding: ${({ theme }) => theme.spacings(3)};
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: ${({ theme }) => `${theme.spacings(3)} 0`};
   margin-bottom: ${({ theme }) => theme.spacings(5)};
 
   h4 {

@@ -6,6 +6,8 @@ export const iconMap = {
   x: raw("./icon-svgs/x.svg"),
   check: raw("./icon-svgs/check.svg"),
   more: raw("./icon-svgs/more-vertical.svg"),
+  arrowLeft: raw("./icon-svgs/arrow-left.svg"),
+  chevronRight: raw("./icon-svgs/chevron-right.svg"),
 };
 
 export const Icon = ({ icon, color, size, rotate, ...rest }) => {

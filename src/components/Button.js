@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { useHistory } from "react-router-dom";
+import { Icon } from "./Icon";
 
 const variants = {
   primary: css`
@@ -54,7 +55,7 @@ export const Button = styled.button`
   width: ${({ fullWidth }) => (fullWidth ? "100%" : "auto")};
 `;
 
-export const BackButton = ({ onClick = () => {}, ...rest }) => {
+export const BackButton = ({ onClick = () => {}, withIcon, ...rest }) => {
   const history = useHistory();
 
   const handleClick = () => {
@@ -64,7 +65,17 @@ export const BackButton = ({ onClick = () => {}, ...rest }) => {
 
   return (
     <Button variant="link" onClick={handleClick} {...rest}>
+      {withIcon ? (
+        <IconContainer>
+          <Icon icon="arrowLeft" size="sm" />
+        </IconContainer>
+      ) : null}{" "}
       Back
     </Button>
   );
 };
+
+const IconContainer = styled.span`
+  display: flex;
+  margin-right: ${({ theme }) => theme.spacings(1)};
+`;

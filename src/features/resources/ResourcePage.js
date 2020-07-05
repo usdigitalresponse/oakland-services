@@ -12,7 +12,7 @@ export const ResourcePage = () => {
   return (
     <section>
       <Header>
-        <BackButton />
+        <BackButton withIcon />
       </Header>
       {!data ? (
         <ListLoader />
@@ -33,7 +33,7 @@ export const ResourcePage = () => {
 };
 
 const Header = styled.header`
-  margin-bottom: ${({ theme }) => theme.spacings(5)};
+  margin: ${({ theme }) => `0 ${theme.spacings(-5)} ${theme.spacings(5)}`};
 `;
 
 const Resource = styled.section``;
