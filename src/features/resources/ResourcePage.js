@@ -20,12 +20,45 @@ export const ResourcePage = () => {
         <ListLoader />
       ) : (
         <Resource>
-          <p>
-            <a href={data.website}>{data.website}</a>
-          </p>
-          <p>{data.phone_number}</p>
-          <p>{data.email}</p>
-          <p>{data.address}</p>
+          <div className="resource-header">
+            {!!data.last_updated && (
+              <p>
+                <strong>Last updated:</strong> {data.last_updated}
+              </p>
+            )}
+            {!!data.categories && (
+              <p>
+                <strong>Categories:</strong> {data.categories}
+              </p>
+            )}
+            {!!data.provider && (
+              <p>
+                <strong>Provider:</strong> {data.provider}
+              </p>
+            )}
+            {!!data.website && (
+              <p>
+                <strong>Website:</strong>{" "}
+                <a href={data.website}>{data.website}</a>
+              </p>
+            )}
+            {!!data.address && (
+              <p>
+                <strong>Address:</strong> {data.address}
+              </p>
+            )}
+            {!!data.phone_number && (
+              <p>
+                <strong>Phone number:</strong>{" "}
+                <a href={`tel:${data.phone_number}`}>{data.phone_number}</a>
+              </p>
+            )}
+            {!!data.email && (
+              <p>
+                <strong>Email:</strong> {data.email}
+              </p>
+            )}
+          </div>
           <p>{data.description}</p>
         </Resource>
       )}
@@ -34,6 +67,9 @@ export const ResourcePage = () => {
 };
 
 const Resource = styled.section`
+  .resource-header {
+    margin-bottom: ${({ theme }) => theme.spacings(5)};
+  }
   a {
     color: ${({ theme }) => theme.colors.primary};
   }
