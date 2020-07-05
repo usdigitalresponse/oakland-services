@@ -1,17 +1,1 @@
-[
-  { "name": "Oakland" },
-  { "name": "Richmond" },
-  { "name": "San Francisco" },
-  { "name": "Berkeley" },
-  { "name": "San Leandro" },
-  { "name": "Alameda" },
-  { "name": "Livermore" },
-  { "name": "Pleasanton" },
-  { "name": "Emeryville" },
-  { "name": "Castro Valley" },
-  { "name": "Fremont" },
-  { "name": "Hayward" },
-  { "name": "Palo Alto" },
-  { "name": "Chicago" },
-  { "name": "Union City" }
-]
+[{ "name": "Oakland" }]
