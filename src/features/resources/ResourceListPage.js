@@ -15,18 +15,19 @@ export const ResourceListPage = () => {
     neighborhoods: [],
   });
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
-  const { categoryId } = useParams();
+  const { categoryId, categoryName } = useParams();
   const { data } = useSWR(
     `/api/categories/${categoryId}/resources?${queryString.stringify(filters)}`
   );
 
   return (
     <section>
-      <Header>
+      <Header>{categoryName}</Header>
+      <Subheader>
         <Button variant="outline" onClick={() => setIsFilterModalOpen(true)}>
           Filters
         </Button>
-      </Header>
+      </Subheader>
       {!data ? (
         <ListLoader />
       ) : (
@@ -58,7 +59,9 @@ export const ResourceListPage = () => {
   );
 };
 
-const Header = styled.header`
+const Header = styled.h2``;
+
+const Subheader = styled.header`
   padding: ${({ theme }) => theme.spacings(5)};
   background-color: ${({ theme }) => theme.colors.lightGrey};
   margin: ${({ theme }) => `0 ${theme.spacings(-5)} ${theme.spacings(5)}`};

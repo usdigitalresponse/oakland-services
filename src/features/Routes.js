@@ -26,7 +26,7 @@ export const Routes = () => (
           <CategoriesPage />
         </PageLayout>
       </Route>
-      <Route exact path="/category/:categoryId">
+      <Route exact path="/category/:categoryName/:categoryId">
         <PageLayout>
           <ResourceListPage />
         </PageLayout>

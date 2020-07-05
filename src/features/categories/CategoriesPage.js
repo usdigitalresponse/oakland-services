@@ -22,7 +22,11 @@ export const CategoriesPage = () => {
       ) : (
         <CategoriesBody>
           {data.map((c) => (
-            <CategoryLink as={Link} key={c.id} to={`/category/${c.id}`}>
+            <CategoryLink
+              as={Link}
+              key={c.id}
+              to={`/category/${c.name}/${c.id}`}
+            >
               {c.name}
             </CategoryLink>
           ))}
