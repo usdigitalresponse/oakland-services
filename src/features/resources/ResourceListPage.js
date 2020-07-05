@@ -2,17 +2,22 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import useSWR from "swr";
+import queryString from "query-string";
 import { Link } from "react-router-dom";
 import { Button } from "components/Button";
-import { Checkbox } from "components/Checkbox";
-import { RadioSwitch } from "components/Radio";
 import { Modal } from "components/Modal";
 import { ListLoader } from "components/Loader";
+import { ResourceFilterForm } from "./ResourceFilterForm";
 
 export const ResourceListPage = () => {
+  const [filters, setFilters] = useState({
+    neighborhoods: [],
+  });
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   const { categoryId } = useParams();
-  const { data } = useSWR(`/api/categories/${categoryId}/resources`);
+  const { data } = useSWR(
+    `/api/categories/${categoryId}/resources?${queryString.stringify(filters)}`
+  );
 
   return (
     <section>
@@ -40,31 +45,11 @@ export const ResourceListPage = () => {
         maxWidth={600}
         closeButton
       >
-        <FilterBody>
-          <div className="filter-group">
-            <h4>Sort By</h4>
-            <RadioSwitch
-              switch1={{ id: 1, name: "sort", checked: true, label: "Closest" }}
-              switch2={{
-                id: 2,
-                name: "sort",
-                checked: false,
-                label: "Furthest",
-              }}
-            />
-          </div>
-          <div className="filter-group">
-            <h4>Neighborhoods</h4>
-            <Checkbox>Central Business District</Checkbox>
-            <Checkbox>Fruitvale</Checkbox>
-            <Checkbox>Middle East Oakland</Checkbox>
-          </div>
-          <footer className="submit-container">
-            <Button onClick={() => setIsFilterModalOpen(false)}>
-              Apply Filters
-            </Button>
-          </footer>
-        </FilterBody>
+        <ResourceFilterForm
+          onComplete={() => setIsFilterModalOpen(false)}
+          filters={filters}
+          setFilters={setFilters}
+        />
       </Modal>
     </section>
   );
@@ -92,24 +77,4 @@ const Resource = styled(Link)`
   h4 {
     text-decoration: underline;
   }
-`;
-
-const FilterBody = styled.section`
-  padding: ${({ theme }) => `${theme.spacings(5)} ${theme.spacings(5)}`};
-
-  .filter-group {
-    margin-bottom: ${({ theme }) => theme.spacings(5)};
-  }
-
-  .submit-container {
-    display: flex;
-    justify-content: center;
-    margin-top: ${({ theme }) => theme.spacings(10)};
-  }
-
-  ${({ theme }) => theme.breakpoints.sm`
-    .checkbox {
-      width: 100%;
-    }
-  `}
 `;
