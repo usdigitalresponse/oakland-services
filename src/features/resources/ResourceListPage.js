@@ -35,7 +35,6 @@ export const ResourceListPage = () => {
             <div>
               <h4>{s.name}</h4>
               <p>{s.address}</p>
-              <p>{s.phone_number}</p>
               <p>{s.service_hours}</p>
               <p>{s.description}</p>
             </div>

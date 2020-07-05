@@ -9,7 +9,7 @@ const calculateSpacing = (n) => {
 export const colors = {
   black: "#292C36",
   white: "#FFFFFF",
-  primary: "#2B6CB0",
+  primary: "#005EA2",
   secondary: "#1f4d7d",
   border: "#4A55681a",
   backgroundBlue: "#EBF8FF",
