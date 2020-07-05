@@ -4,12 +4,12 @@ import styled from "styled-components";
 const defaultProps = {
   id: "switch",
   name: "switch",
-  checked: false,
   label: "This is a switch",
 };
 
 export const RadioSwitch = ({
   selected,
+  setSelected = () => {},
   switch1 = defaultProps,
   switch2 = defaultProps,
 }) => {
@@ -20,23 +20,24 @@ export const RadioSwitch = ({
           className="radio-switch-input sr-only"
           type="radio"
           name={switch1.name}
-          id={`radio-${switch1.id}`}
+          id={switch1.id}
           checked={selected === switch1.id}
+          onChange={() => setSelected(switch1)}
         />
-        <label className="radio-switch-label" htmlFor={`radio-${switch1.id}`}>
+        <label className="radio-switch-label" htmlFor={switch1.id}>
           {switch1.label}
         </label>
       </li>
-
       <li className="radio-switch-item">
         <input
           className="radio-switch-input sr-only"
           type="radio"
           name={switch2.name}
-          id={`radio-${switch2.id}`}
+          id={switch2.id}
           checked={selected === switch2.id}
+          onChange={() => setSelected(switch2)}
         />
-        <label className="radio-switch-label" htmlFor={`radio-${switch2.id}`}>
+        <label className="radio-switch-label" htmlFor={switch2.id}>
           {switch2.label}
         </label>
         <div aria-hidden="true" className="radio-switch-marker" />
@@ -47,8 +48,8 @@ export const RadioSwitch = ({
 
 const RadioSwitchContainer = styled.ul`
   --color-primary: ${({ theme }) => theme.colors.primary};
-  --radio-switch-width: 186px;
-  --radio-switch-height: 46px;
+  --radio-switch-width: 250px;
+  --radio-switch-height: 50px;
   --radio-switch-padding: 3px;
   --radio-switch-radius: 50em;
   --radio-switch-animation-duration: 0.3s;

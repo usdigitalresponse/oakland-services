@@ -25,12 +25,20 @@ export const ResourceFilterForm = ({ onComplete, filters, setFilters }) => {
     }
   };
 
+  const onChangeOrder = (order) => {
+    setFilters({
+      ...filters,
+      order: order.id,
+    });
+  };
+
   return (
     <FilterBody>
-      {/* <div className="filter-group">
+      <div className="filter-group">
         <h4>Sort By</h4>
         <RadioSwitch
-          selected="Alphabetical"
+          selected={filters.order}
+          setSelected={onChangeOrder}
           switch1={{
             id: 1,
             name: "sort",
@@ -42,7 +50,7 @@ export const ResourceFilterForm = ({ onComplete, filters, setFilters }) => {
             label: "Last Updated",
           }}
         />
-      </div> */}
+      </div>
       <div className="filter-group">
         <h4>Neighborhoods</h4>
         {neighborhoods.map((n) => {

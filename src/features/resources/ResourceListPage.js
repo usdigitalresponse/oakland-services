@@ -12,6 +12,7 @@ import { ResourceFilterForm } from "./ResourceFilterForm";
 
 export const ResourceListPage = () => {
   const [filters, setFilters] = useState({
+    order: 1,
     neighborhoods: [],
   });
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
