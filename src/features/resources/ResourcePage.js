@@ -36,4 +36,8 @@ const Header = styled.header`
   margin: ${({ theme }) => `0 ${theme.spacings(-5)} ${theme.spacings(5)}`};
 `;
 
-const Resource = styled.section``;
+const Resource = styled.section`
+  a {
+    color: ${({ theme }) => theme.colors.primary};
+  }
+`;
