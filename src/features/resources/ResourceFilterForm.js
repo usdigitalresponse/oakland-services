@@ -30,12 +30,16 @@ export const ResourceFilterForm = ({ onComplete, filters, setFilters }) => {
       {/* <div className="filter-group">
         <h4>Sort By</h4>
         <RadioSwitch
-          switch1={{ id: 1, name: "sort", checked: true, label: "Closest" }}
+          selected="Alphabetical"
+          switch1={{
+            id: 1,
+            name: "sort",
+            label: "Alphabetical",
+          }}
           switch2={{
             id: 2,
             name: "sort",
-            checked: false,
-            label: "Furthest",
+            label: "Last Updated",
           }}
         />
       </div> */}

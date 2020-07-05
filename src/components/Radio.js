@@ -9,6 +9,7 @@ const defaultProps = {
 };
 
 export const RadioSwitch = ({
+  selected,
   switch1 = defaultProps,
   switch2 = defaultProps,
 }) => {
@@ -20,7 +21,7 @@ export const RadioSwitch = ({
           type="radio"
           name={switch1.name}
           id={`radio-${switch1.id}`}
-          defaultChecked={switch1.checked}
+          checked={selected === switch1.id}
         />
         <label className="radio-switch-label" htmlFor={`radio-${switch1.id}`}>
           {switch1.label}
@@ -33,7 +34,7 @@ export const RadioSwitch = ({
           type="radio"
           name={switch2.name}
           id={`radio-${switch2.id}`}
-          defaultChecked={switch2.checked}
+          checked={selected === switch2.id}
         />
         <label className="radio-switch-label" htmlFor={`radio-${switch2.id}`}>
           {switch2.label}

@@ -20,11 +20,13 @@ export const CategoriesPage = () => {
       {!data ? (
         <ListLoader />
       ) : (
-        data.map((c) => (
-          <CategoryLink as={Link} key={c.id} to={`/category/${c.id}`}>
-            {c.name}
-          </CategoryLink>
-        ))
+        <CategoriesBody>
+          {data.map((c) => (
+            <CategoryLink as={Link} key={c.id} to={`/category/${c.id}`}>
+              {c.name}
+            </CategoryLink>
+          ))}
+        </CategoriesBody>
       )}
     </section>
   );
@@ -32,6 +34,10 @@ export const CategoriesPage = () => {
 
 const CategoriesHeader = styled.header`
   margin-bottom: ${({ theme }) => theme.spacings(5)};
+`;
+
+const CategoriesBody = styled.section`
+  padding: 0 ${({ theme }) => theme.spacings(2)};
 `;
 
 const CategoryLink = styled(Button)`
