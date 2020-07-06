@@ -77,10 +77,14 @@ const Resource = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: ${({ theme }) => `${theme.spacings(3)} 0`};
-  margin-bottom: ${({ theme }) => theme.spacings(5)};
+  padding: ${({ theme }) => `${theme.spacings(2)} 0`};
+  margin-bottom: ${({ theme }) => theme.spacings(4)};
 
   h4 {
     text-decoration: underline;
+  }
+
+  p {
+    margin: 0;
   }
 `;
