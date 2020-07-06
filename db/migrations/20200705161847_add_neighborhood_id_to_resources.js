@@ -1,5 +1,5 @@
 exports.up = function (knex) {
-  return knex.schema.table("categories", (table) => {
+  return knex.schema.table("resources", (table) => {
     table.integer("neighborhood_id").unsigned().nullable();
     table
       .foreign("neighborhood_id")

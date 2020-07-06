@@ -61,6 +61,7 @@ app.get("/api/resources", async (req, res) => {
   const resources = await database("resources")
     .select(
       "resources.id",
+      "resources.organization_id",
       "resource_details.name",
       "resource_details.description",
       "resource_details.phone_number"
@@ -77,19 +78,24 @@ app.get("/api/resources/:resource_id", async (req, res) => {
   const resource = await database("resources")
     .select(
       "resources.id",
+      "resources.organization_id",
       "resource_details.name",
+      "resource_details.preferred_name",
       "resource_details.description",
       "resource_details.phone_number",
       "resource_details.email",
       "resource_details.address",
       "resource_details.website",
-      "organization_details.name as organization_name"
+      "resource_details.postal_code",
+      "resource_details.latitude",
+      "resource_details.longitude",
+      "resource_details.application_process",
+      "resource_details.required_documents",
+      "resource_details.eligibility",
+      "resource_details.schedule"
     )
     .join("resource_details", "resources.id", "resource_details.resource_id")
-    .join("organizations", "resources.organization_id", "organizations.id")
-    .join("organization_details", "organizations.id", "organization_details.id")
     .where({ "resource_details.lang": req.language })
-    .where({ "organization_details.lang": req.language })
     .where({ "resources.id": resourceId })
     .first();
 
@@ -103,23 +109,6 @@ app.get("/api/cities", async (req, res) => {
     .where({ "city_details.lang": req.language });
 
   res.status(200).json(cities);
-});
-
-app.get("/api/cities/:city_id/resources", async (req, res) => {
-  const cityId = req.params.city_id;
-
-  const resources = await database("resources")
-    .select(
-      "resources.id",
-      "resource_details.name",
-      "resource_details.description",
-      "resource_details.phone_number"
-    )
-    .join("resource_details", "resources.id", "resource_details.resource_id")
-    .where({ "resources.city_id": cityId })
-    .where({ "resource_details.lang": req.language });
-
-  res.status(200).json(resources);
 });
 
 app.get("*", (_req, res) => {

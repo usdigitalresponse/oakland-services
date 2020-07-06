@@ -4,16 +4,15 @@ exports.up = function (knex) {
     table.string("postal_code");
     table.string("latitude");
     table.string("longitude");
-    table.string("application_process");
-    table.string("required_documents");
-    table.string("eligibility");
-    table.string("schedule");
+    table.text("application_process", "longtext");
+    table.text("eligibility", "longtext");
+    table.text("required_documents", "longtext");
+    table.text("schedule", "longtext");
   });
 };
 
 exports.down = function (knex) {
   return knex.schema.table("resource_details", (table) => {
-    table.dropColumn("name");
     table.dropColumn("preferred_name");
     table.dropColumn("postal_code");
     table.dropColumn("latitude");
