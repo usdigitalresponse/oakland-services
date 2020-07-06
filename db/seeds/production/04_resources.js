@@ -9,6 +9,7 @@ exports.seed = function (knex) {
           id: idx + 1,
           organization_id: resource.organization_id,
           city_id: resource.city_id,
+          neighborhood_id: resource.neighborhood_id,
         };
       });
       return knex("resources").insert(resources);
@@ -19,6 +20,13 @@ exports.seed = function (knex) {
           id: idx + 1,
           resource_id: idx + 1,
           name: resource.name,
+          preferred_name: resource.preferred_name,
+          email: resource.email,
+          application_process: resource.application_process,
+          required_documents: resource.required_documents,
+          eligibility: resource.eligibility,
+          schedule: resource.schedule,
+          postal_code: resource.postal_code,
           address: resource.address,
           website: resource.website,
           phone_number: resource.phone_number,
