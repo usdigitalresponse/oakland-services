@@ -22,9 +22,27 @@ app.get("/", (_req, res) => {
   res.sendFile(path.join(CLIENT_PATH, "index.html"));
 });
 
+app.get("/api/featured-categories", async (req, res) => {
+  const categories = await database("featured_categories")
+    .select(
+      "categories.id",
+      "category_details.name",
+      "category_details.preferred_name"
+    )
+    .join("categories", "categories.id", "featured_categories.category_id")
+    .join("category_details", "categories.id", "category_details.category_id")
+    .where({ "category_details.lang": req.language });
+
+  res.status(200).json(categories);
+});
+
 app.get("/api/categories", async (req, res) => {
   const categories = await database("categories")
-    .select("categories.id", "category_details.name")
+    .select(
+      "categories.id",
+      "category_details.name",
+      "category_details.preferred_name"
+    )
     .join("category_details", "categories.id", "category_details.category_id")
     .where({ "categories.parent_id": null })
     .where({ "category_details.lang": req.language });
