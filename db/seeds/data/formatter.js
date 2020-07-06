@@ -1,5 +1,6 @@
 const fs = require("fs");
 const csv = require("csv-parser");
+const he = require("he");
 
 function writeFile(fileName, arr, resolve) {
   fs.writeFile(fileName, JSON.stringify(arr), (err) => {
@@ -209,14 +210,6 @@ async function generateResources() {
   });
 }
 
-function decodeAndStripHtml(str) {
-  return str
-    .replace(/(<([^>]+)>)/gi, "")
-    .replace(/(&#(\d+);)/g, (_match, _capture, charCode) => {
-      String.fromCharCode(charCode);
-    });
-}
-
 async function enhanceResources() {
   const resources = require("./formatted/resources");
   const enhancedResources = [];
@@ -231,7 +224,13 @@ async function enhanceResources() {
         const currentResource = resources[currentResourceIndex];
 
         currentResource.preferred_name = row.alternate_name;
-        currentResource.description = decodeAndStripHtml(row.description);
+        currentResource.description = he.decode(
+          row.description
+            .replace(/(<([^>]+)>)/gi, "")
+            .replace(/\t/g, " ")
+            .replace(/\n/g, " ")
+            .trim()
+        );
         currentResource.email = row.email;
         currentResource.application_process =
           row["resource_info/application_process"];
