@@ -13,6 +13,16 @@ function writeFile(fileName, arr, resolve) {
   });
 }
 
+function sanitizeText(str) {
+  return he.decode(
+    str
+      .replace(/(<([^>]+)>)/gi, "")
+      .replace(/\t/g, " ")
+      .replace(/\n/g, " ")
+      .trim()
+  );
+}
+
 async function generateCategories() {
   const categories = [];
   const featuredCategories = [];
@@ -224,21 +234,20 @@ async function enhanceResources() {
         const currentResource = resources[currentResourceIndex];
 
         currentResource.preferred_name = row.alternate_name;
-        currentResource.description = he.decode(
-          row.description
-            .replace(/(<([^>]+)>)/gi, "")
-            .replace(/\t/g, " ")
-            .replace(/\n/g, " ")
-            .trim()
-        );
+        currentResource.description = sanitizeText(row.description);
         currentResource.email = row.email;
-        currentResource.application_process =
-          row["resource_info/application_process"];
-        currentResource.required_documents =
-          row["resource_info/required_document"];
-        currentResource.eligibility =
-          row["resource_info/eligibility_description"];
-        currentResource.schedule = row["resource_info/schedule_text"];
+        currentResource.application_process = sanitizeText(
+          row["resource_info/application_process"]
+        );
+        currentResource.required_documents = sanitizeText(
+          row["resource_info/required_document"]
+        );
+        currentResource.eligibility = sanitizeText(
+          row["resource_info/eligibility_description"]
+        );
+        currentResource.schedule = sanitizeText(
+          row["resource_info/schedule_text"]
+        );
         currentResource.website = row["resource_info/url"];
 
         enhancedResources.push(currentResource);
