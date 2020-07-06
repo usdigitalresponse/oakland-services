@@ -29,18 +29,20 @@ exports.seed = function (knex) {
           parent_id: sub.parent_id,
         };
       });
-      return knex("neighborhoods").insert(subneighborhoods)
+      return knex("neighborhoods").insert(subneighborhoods);
     })
     .then(function () {
-      const subneighborhoodDetails = subneighborhoodsSeed.map((subneighborhood, idx) => {
-        return {
-          id: neighborhoodsSeed.length + idx + 1,
-          neighborhood_id: neighborhoodsSeed.length + idx + 1,
-          name: subneighborhood.name,
-          lang: "en",
-        };
-      });
+      const subneighborhoodDetails = subneighborhoodsSeed.map(
+        (subneighborhood, idx) => {
+          return {
+            id: neighborhoodsSeed.length + idx + 1,
+            neighborhood_id: neighborhoodsSeed.length + idx + 1,
+            name: subneighborhood.name,
+            lang: "en",
+          };
+        }
+      );
 
       return knex("neighborhood_details").insert(subneighborhoodDetails);
-    })
+    });
 };

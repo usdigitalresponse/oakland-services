@@ -137,8 +137,17 @@ app.get("/api/cities", async (req, res) => {
 
 app.get("/api/neighborhoods", async (req, res) => {
   const neighborhoods = await database("neighborhoods")
-    .select("neighborhoods.id", "neighborhoods.parent_id", "neighborhood_details.name")
-    .join("neighborhood_details", "neighborhoods.id", "neighborhood_details.neighborhood_id")
+    .select(
+      "neighborhoods.id",
+      "neighborhoods.parent_id",
+      "neighborhood_details.name"
+    )
+    .join(
+      "neighborhood_details",
+      "neighborhoods.id",
+      "neighborhood_details.neighborhood_id"
+    )
+    .where({ "neighborhoods.parent_id": null })
     .where({ "neighborhood_details.lang": req.language });
 
   res.status(200).json(neighborhoods);
