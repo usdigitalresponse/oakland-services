@@ -1,33 +1,25 @@
 import React from "react";
 import styled from "styled-components";
+import useSWR from "swr";
 import { Checkbox } from "components/Checkbox";
 import { RadioSwitch } from "components/Radio";
 import { Button } from "components/Button";
 
-const neighborhoods = [
-  "West Oakland",
-  "North Oakland",
-  "Northwest Hills",
-  "Lower Hills",
-  "Piedmont",
-  "Chinatown and Central",
-  "San Antonio",
-  "Fruitvale",
-  "Central East",
-  "Elmhurst",
-];
-
 export const ResourceFilterForm = ({ onComplete, filters, setFilters }) => {
+  const { data } = useSWR("/api/neighborhoods");
+
   const onChangeNeighborhood = (neighborhood, checked) => {
     if (checked) {
       setFilters({
         ...filters,
-        neighborhoods: filters.neighborhoods.filter((n) => n !== neighborhood),
+        neighborhoods: filters.neighborhoods.filter(
+          (n) => n !== neighborhood.id
+        ),
       });
     } else {
       setFilters({
         ...filters,
-        neighborhoods: [...filters.neighborhoods, neighborhood],
+        neighborhoods: [...filters.neighborhoods, neighborhood.id],
       });
     }
   };
@@ -60,18 +52,19 @@ export const ResourceFilterForm = ({ onComplete, filters, setFilters }) => {
       </div>
       <div className="filter-group">
         <h4>Neighborhoods</h4>
-        {neighborhoods.map((n) => {
-          const checked = filters.neighborhoods.includes(n);
-          return (
-            <Checkbox
-              key={n}
-              checked={checked}
-              onChange={() => onChangeNeighborhood(n, checked)}
-            >
-              {n}
-            </Checkbox>
-          );
-        })}
+        {data &&
+          data.map((n) => {
+            const checked = filters.neighborhoods.includes(n.id);
+            return (
+              <Checkbox
+                key={n.id}
+                checked={checked}
+                onChange={() => onChangeNeighborhood(n, checked)}
+              >
+                {n.name}
+              </Checkbox>
+            );
+          })}
       </div>
       <footer className="submit-container">
         <Button onClick={onComplete}>Apply Filters</Button>
