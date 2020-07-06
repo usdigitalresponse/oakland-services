@@ -6,4 +6,6 @@ exports.up = function (knex) {
 };
 
 // Difficult to add nullable constraint with existing data
-exports.down = function (knex) {};
+exports.down = function (_knex) {
+  return new Promise((resolve) => resolve());
+};
