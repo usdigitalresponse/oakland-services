@@ -10,6 +10,7 @@ import { ListLoader } from "components/Loader";
 import { Icon } from "components/Icon";
 import { Header } from "./components/Header";
 import { ResourceFilterForm } from "./ResourceFilterForm";
+import { truncateString } from "utils";
 
 export const ResourceListPage = () => {
   const location = useLocation();
@@ -42,7 +43,7 @@ export const ResourceListPage = () => {
               <h4>{s.name}</h4>
               <p>{s.address}</p>
               <p>{s.service_hours}</p>
-              <p>{s.description}</p>
+              <p>{truncateString(s.description)}</p>
             </div>
             <Icon icon="chevronRight" />
           </Resource>
