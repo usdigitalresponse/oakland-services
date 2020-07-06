@@ -40,7 +40,8 @@ app.get("/api/categories/:category_id/resources", async (req, res) => {
       "resources.id",
       "resource_details.name",
       "resource_details.description",
-      "resource_details.phone_number"
+      "resource_details.phone_number",
+      database.raw("ARRAY_AGG(categories.id) as subcategories")
     )
     .join("resource_details", "resources.id", "resource_details.resource_id")
     .join(
@@ -52,7 +53,12 @@ app.get("/api/categories/:category_id/resources", async (req, res) => {
     .join("categories as parents", "categories.parent_id", "parents.id")
     .where({ "categories.parent_id": categoryId })
     .where({ "resource_details.lang": req.language })
-    .distinctOn("resources.id");
+    .groupBy(
+      "resources.id",
+      "resource_details.name",
+      "resource_details.description",
+      "resource_details.phone_number"
+    );
 
   res.status(200).json(resources);
 });

@@ -278,10 +278,21 @@ async function generateCategorizations() {
             );
 
             if (categoryIndex !== -1) {
-              categorizations.push({
-                category_id: categoryIndex + 1,
-                resource_id: resourceIndex + 1,
+              const categoryId = categoryIndex + 1;
+              const resourceId = resourceIndex + 1;
+
+              const existingIndex = categorizations.findIndex((c) => {
+                return (
+                  c.category_id === categoryId && c.resource_id === resourceId
+                );
               });
+
+              if (existingIndex === -1) {
+                categorizations.push({
+                  category_id: categoryId,
+                  resource_id: resourceId,
+                });
+              }
             }
           });
         }
