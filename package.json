@@ -37,6 +37,7 @@
   "devDependencies": {
     "concurrently": "^5.2.0",
     "csv-parser": "^2.3.3",
+    "he": "^1.2.0",
     "husky": "^4.2.5",
     "nodemon": "^2.0.4",
     "prettier": "^2.0.5",
