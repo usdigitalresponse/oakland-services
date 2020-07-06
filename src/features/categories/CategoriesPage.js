@@ -9,7 +9,7 @@ import { ListLoader } from "components/Loader";
 
 export const CategoriesPage = () => {
   const { t } = useTranslation();
-  const { data } = useSWR("/api/categories");
+  const { data } = useSWR("/api/featured-categories");
 
   return (
     <section>
@@ -27,7 +27,7 @@ export const CategoriesPage = () => {
               key={c.id}
               to={`/category/${c.name}/${c.id}`}
             >
-              {c.name}
+              {c.preferred_name ?? c.name}
             </CategoryLink>
           ))}
         </CategoriesBody>
