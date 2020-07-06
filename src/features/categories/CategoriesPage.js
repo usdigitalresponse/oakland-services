@@ -25,7 +25,7 @@ export const CategoriesPage = () => {
             <CategoryLink
               as={Link}
               key={c.id}
-              to={`/category/${c.name}/${c.id}`}
+              to={`/category/${c.id}?categoryName=${c.name}`}
             >
               {c.preferred_name ?? c.name}
             </CategoryLink>

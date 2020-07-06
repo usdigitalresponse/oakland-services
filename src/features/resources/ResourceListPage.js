@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import useSWR from "swr";
 import queryString from "query-string";
@@ -12,12 +12,14 @@ import { Header } from "./components/Header";
 import { ResourceFilterForm } from "./ResourceFilterForm";
 
 export const ResourceListPage = () => {
+  const location = useLocation();
+  const { categoryId } = useParams();
+  const { categoryName } = queryString.parse(location.search);
   const [filters, setFilters] = useState({
     order: 1,
     neighborhoods: [],
   });
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
-  const { categoryId, categoryName } = useParams();
   const { data } = useSWR(
     `/api/categories/${categoryId}/resources?${queryString.stringify(filters)}`
   );
