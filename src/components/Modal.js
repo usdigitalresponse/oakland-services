@@ -25,6 +25,7 @@ const ModalStyle = createGlobalStyle`
     right: 0;
     bottom: 0;
     background-color: rgba(59, 71, 95, 0.85);
+    z-index: 10;
   }
 `;
 
