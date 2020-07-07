@@ -31,6 +31,7 @@ app.get("/api/featured-categories", async (req, res) => {
     )
     .join("categories", "categories.id", "featured_categories.category_id")
     .join("category_details", "categories.id", "category_details.category_id")
+    .where({ "categories.parent_id": null })
     .where({ "category_details.lang": req.language });
 
   res.status(200).json(categories);
