@@ -58,13 +58,14 @@ export const ResourcePage = () => {
             )}
             {!!data.email && (
               <p>
-                <strong>{t("resource.email")}:</strong> {data.email}
+                <strong>{t("resource.email")}:</strong>{" "}
+                <a href={`mailto:${data.email}`}>{data.email}</a>
               </p>
             )}
           </div>
           <div className="resource-description">
             <h4>{t("resource.description")}</h4>
-            {data.description}
+            <p>{data.description}</p>
           </div>
           <div className="resource-program-information">
             <h4>{t("resource.program_information")}</h4>
@@ -100,6 +101,10 @@ const Resource = styled.section`
   .resource-description,
   .resource-program-information {
     margin-bottom: ${({ theme }) => theme.spacings(8)};
+  }
+  .resource-description p {
+    overflow-wrap: anywhere;
+    line-height: 1.6;
   }
   a {
     color: ${({ theme }) => theme.colors.primary};

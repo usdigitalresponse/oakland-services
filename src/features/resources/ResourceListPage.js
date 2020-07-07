@@ -4,6 +4,7 @@ import styled from "styled-components";
 import useSWR from "swr";
 import queryString from "query-string";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Button, BackButton } from "components/Button";
 import { Modal } from "components/Modal";
 import { ListLoader } from "components/Loader";
@@ -13,6 +14,7 @@ import { ResourceFilterForm } from "./ResourceFilterForm";
 
 export const ResourceListPage = () => {
   const location = useLocation();
+  const { t } = useTranslation();
   const { categoryId } = useParams();
   const { categoryName } = queryString.parse(location.search);
   const [filters, setFilters] = useState({
@@ -40,9 +42,23 @@ export const ResourceListPage = () => {
           <Resource key={s.id} to={`/resource/${s.id}`}>
             <div>
               <h4>{s.name}</h4>
-              <p>{s.address}</p>
-              <p>{s.service_hours}</p>
-              <p>{s.description}</p>
+              {!!data.categories && (
+                <p>
+                  <strong>{t("resource.categories")}:</strong> {data.categories}
+                </p>
+              )}
+              {!!data.provider && (
+                <p>
+                  <strong>{t("resource.provider")}:</strong> {data.provider}
+                </p>
+              )}
+              {!!s.website && (
+                <p>
+                  <a href={s.website}>{s.website}</a>
+                </p>
+              )}
+              {!!s.address && <p>{s.address}</p>}
+              <p className="description">{s.description}</p>
             </div>
             <Icon icon="chevronRight" />
           </Resource>
@@ -88,5 +104,10 @@ const Resource = styled(Link)`
 
   p {
     margin: 0;
+  }
+
+  .description {
+    overflow-wrap: anywhere;
+    line-height: 1.6;
   }
 `;

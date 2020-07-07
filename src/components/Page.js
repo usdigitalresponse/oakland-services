@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Navigation } from "components/Navigation";
-import { Logo } from "components/Logo";
+import { Icon } from "components/Icon";
 
 export const PageContainer = styled.section`
   max-width: ${({ theme }) => theme.ui.maxWidth};
@@ -43,6 +42,7 @@ export const PageFooter = styled.footer`
 `;
 
 export const PageLayout = ({ children }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { i18n } = useTranslation();
 
   const changeLanguage = (lng) => {
@@ -53,17 +53,31 @@ export const PageLayout = ({ children }) => {
   return (
     <PageContainer>
       <Navigation>
-        <Link to="/">
-          <Logo />
-        </Link>
-        <NavRight>
+        <div className="nav-content">
+          <button
+            className="fixed"
+            type="button"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <Icon icon="menu" />
+          </button>
+          <div className="title">
+            Shelter, Food, and Health Resources in Oakland
+          </div>
+          <div className="fixed" />
+        </div>
+        <div className={`menu-container ${isMenuOpen ? "in" : ""}`}>
+          <h4>Languages</h4>
           <button type="button" onClick={() => changeLanguage("en")}>
-            en
+            English
           </button>
           <button type="button" onClick={() => changeLanguage("es")}>
-            es
+            Español
           </button>
-        </NavRight>
+        </div>
+        {isMenuOpen && (
+          <div className="menu-backdrop" onClick={() => setIsMenuOpen(false)} />
+        )}
       </Navigation>
       {children}
       <PageFooter>
@@ -72,13 +86,3 @@ export const PageLayout = ({ children }) => {
     </PageContainer>
   );
 };
-
-const NavRight = styled.div`
-  a,
-  button {
-    padding: ${({ theme }) => theme.spacings(3)};
-    &:hover {
-      color: ${({ theme }) => theme.colors.primary};
-    }
-  }
-`;

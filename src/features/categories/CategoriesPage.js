@@ -43,6 +43,7 @@ const CategoriesHeader = styled.header`
 const CategoriesBody = styled.section`
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
 const CategoryLink = styled(Button)`
