@@ -11,6 +11,7 @@ import { ListLoader } from "components/Loader";
 import { Icon } from "components/Icon";
 import { Header } from "./components/Header";
 import { ResourceFilterForm } from "./ResourceFilterForm";
+import { truncateString } from "utils";
 
 export const ResourceListPage = () => {
   const location = useLocation();
@@ -58,7 +59,7 @@ export const ResourceListPage = () => {
                 </p>
               )}
               {!!s.address && <p>{s.address}</p>}
-              <p className="description">{s.description}</p>
+              <p className="description">{truncateString(s.description)}</p>
             </div>
             <Icon icon="chevronRight" />
           </Resource>
