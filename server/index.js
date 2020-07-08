@@ -60,7 +60,7 @@ app.get("/api/categories/:category_id/resources", async (req, res) => {
       "resource_details.name",
       "resource_details.description",
       "resource_details.phone_number",
-      database.raw("ARRAY_AGG(categories.id) as subcategories")
+      database.raw("ARRAY_AGG(category_details.name) as subcategories")
     )
     .join("resource_details", "resources.id", "resource_details.resource_id")
     .join(
@@ -69,6 +69,7 @@ app.get("/api/categories/:category_id/resources", async (req, res) => {
       "categorizations.resource_id"
     )
     .join("categories", "categorizations.category_id", "categories.id")
+    .join("category_details", "category_details.category_id", "categories.id")
     .join("categories as parents", "categories.parent_id", "parents.id")
     .where({ "categories.parent_id": categoryId })
     .where({ "resource_details.lang": req.language })
@@ -117,11 +118,36 @@ app.get("/api/resources/:resource_id", async (req, res) => {
       "resource_details.application_process",
       "resource_details.required_documents",
       "resource_details.eligibility",
-      "resource_details.schedule"
+      "resource_details.schedule",
+      database.raw("ARRAY_AGG(category_details.name) as subcategories")
     )
     .join("resource_details", "resources.id", "resource_details.resource_id")
+    .join(
+      "categorizations",
+      "resource_details.resource_id",
+      "categorizations.resource_id"
+    )
+    .join("categories", "categorizations.category_id", "categories.id")
+    .join("category_details", "category_details.category_id", "categories.id")
     .where({ "resource_details.lang": req.language })
     .where({ "resources.id": resourceId })
+    .groupBy(
+      "resources.id",
+      "resource_details.name",
+      "resource_details.description",
+      "resource_details.phone_number",
+      "resource_details.preferred_name",
+      "resource_details.email",
+      "resource_details.address",
+      "resource_details.website",
+      "resource_details.postal_code",
+      "resource_details.latitude",
+      "resource_details.longitude",
+      "resource_details.application_process",
+      "resource_details.required_documents",
+      "resource_details.eligibility",
+      "resource_details.schedule"
+    )
     .first();
 
   res.status(200).json(resource);

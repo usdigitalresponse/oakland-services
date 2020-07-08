@@ -29,9 +29,10 @@ export const ResourcePage = () => {
                 {data.last_updated}
               </p>
             )}
-            {!!data.categories && (
+            {data.subcategories && (
               <p>
-                <strong>{t("resource.categories")}:</strong> {data.categories}
+                <strong>{t("resource.categories")}:</strong>{" "}
+                {data.subcategories.join(", ")}
               </p>
             )}
             {!!data.provider && (
