@@ -60,6 +60,7 @@ app.get("/api/categories/:category_id/resources", async (req, res) => {
       "resource_details.name",
       "resource_details.description",
       "resource_details.phone_number",
+      "organization_details.name as organization",
       database.raw("ARRAY_AGG(category_details.name) as subcategories")
     )
     .join("resource_details", "resources.id", "resource_details.resource_id")
@@ -71,13 +72,16 @@ app.get("/api/categories/:category_id/resources", async (req, res) => {
     .join("categories", "categorizations.category_id", "categories.id")
     .join("category_details", "category_details.category_id", "categories.id")
     .join("categories as parents", "categories.parent_id", "parents.id")
+    .join("organizations", "organizations.id", "resources.organization_id")
+    .join("organization_details", "organization_details.organization_id", "organizations.id")
     .where({ "categories.parent_id": categoryId })
     .where({ "resource_details.lang": req.language })
     .groupBy(
       "resources.id",
       "resource_details.name",
       "resource_details.description",
-      "resource_details.phone_number"
+      "resource_details.phone_number",
+      "organization_details.name"
     );
 
   res.status(200).json(resources);
@@ -119,6 +123,7 @@ app.get("/api/resources/:resource_id", async (req, res) => {
       "resource_details.required_documents",
       "resource_details.eligibility",
       "resource_details.schedule",
+      "organization_details.name as organization",
       database.raw("ARRAY_AGG(category_details.name) as subcategories")
     )
     .join("resource_details", "resources.id", "resource_details.resource_id")
@@ -129,6 +134,8 @@ app.get("/api/resources/:resource_id", async (req, res) => {
     )
     .join("categories", "categorizations.category_id", "categories.id")
     .join("category_details", "category_details.category_id", "categories.id")
+    .join("organizations", "organizations.id", "resources.organization_id")
+    .join("organization_details", "organization_details.organization_id", "organizations.id")
     .where({ "resource_details.lang": req.language })
     .where({ "resources.id": resourceId })
     .groupBy(
@@ -146,7 +153,9 @@ app.get("/api/resources/:resource_id", async (req, res) => {
       "resource_details.application_process",
       "resource_details.required_documents",
       "resource_details.eligibility",
-      "resource_details.schedule"
+      "resource_details.schedule",
+      "resource_details.phone_number",
+      "organization_details.name"
     )
     .first();
 

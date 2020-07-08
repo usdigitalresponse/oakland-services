@@ -51,9 +51,9 @@ export const ResourceListPage = () => {
                   {s.subcategories.join(", ")}
                 </p>
               )}
-              {!!data.provider && (
+              {s.organization && (
                 <p>
-                  <strong>{t("resource.provider")}:</strong> {data.provider}
+                  <strong>{t("resource.provider")}:</strong> {s.organization}
                 </p>
               )}
               {!!s.website && (

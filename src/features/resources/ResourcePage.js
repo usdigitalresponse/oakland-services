@@ -35,9 +35,9 @@ export const ResourcePage = () => {
                 {data.subcategories.join(", ")}
               </p>
             )}
-            {!!data.provider && (
+            {data.organization && (
               <p>
-                <strong>{t("resource.provider")}:</strong> {data.provider}
+                <strong>{t("resource.provider")}:</strong> {data.organization}
               </p>
             )}
             {!!data.website && (
