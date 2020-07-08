@@ -56,12 +56,12 @@ export const ResourceListPage = () => {
                   <strong>{t("resource.provider")}:</strong> {s.organization}
                 </p>
               )}
-              {!!s.website && (
+              {s.website && (
                 <p>
                   <a href={s.website}>{s.website}</a>
                 </p>
               )}
-              {!!s.address && <p>{s.address}</p>}
+              {s.address && <p>{s.address}</p>}
               <p className="description">{truncateString(s.description)}</p>
             </div>
             <Icon icon="chevronRight" />

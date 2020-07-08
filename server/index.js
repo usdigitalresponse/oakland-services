@@ -60,6 +60,8 @@ app.get("/api/categories/:category_id/resources", async (req, res) => {
       "resource_details.name",
       "resource_details.description",
       "resource_details.phone_number",
+      "resource_details.website",
+      "resource_details.address",
       "organization_details.name as organization",
       database.raw("ARRAY_AGG(category_details.name) as subcategories")
     )
@@ -81,6 +83,8 @@ app.get("/api/categories/:category_id/resources", async (req, res) => {
       "resource_details.name",
       "resource_details.description",
       "resource_details.phone_number",
+      "resource_details.website",
+      "resource_details.address",
       "organization_details.name"
     );
 
