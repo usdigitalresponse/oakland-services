@@ -112,7 +112,6 @@ app.get("/api/resources/:resource_id", async (req, res) => {
   const resource = await database("resources")
     .select(
       "resources.id",
-      "resources.organization_id",
       "resource_details.name",
       "resource_details.preferred_name",
       "resource_details.description",
@@ -127,6 +126,7 @@ app.get("/api/resources/:resource_id", async (req, res) => {
       "resource_details.required_documents",
       "resource_details.eligibility",
       "resource_details.schedule",
+      "resource_details.updated_at",
       "organization_details.name as organization",
       database.raw("ARRAY_AGG(category_details.name) as subcategories")
     )
@@ -145,9 +145,9 @@ app.get("/api/resources/:resource_id", async (req, res) => {
     .groupBy(
       "resources.id",
       "resource_details.name",
+      "resource_details.preferred_name",
       "resource_details.description",
       "resource_details.phone_number",
-      "resource_details.preferred_name",
       "resource_details.email",
       "resource_details.address",
       "resource_details.website",
@@ -158,8 +158,9 @@ app.get("/api/resources/:resource_id", async (req, res) => {
       "resource_details.required_documents",
       "resource_details.eligibility",
       "resource_details.schedule",
-      "resource_details.phone_number",
-      "organization_details.name"
+      "resource_details.updated_at",
+      "organization_details.name",
+      "category_details.name"
     )
     .first();
 

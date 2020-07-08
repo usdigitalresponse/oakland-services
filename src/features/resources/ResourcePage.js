@@ -23,10 +23,10 @@ export const ResourcePage = () => {
       ) : (
         <Resource>
           <div className="resource-header">
-            {!!data.last_updated && (
+            {data.updated_at && (
               <p>
                 <strong>{t("resource.last_updated")}:</strong>{" "}
-                {data.last_updated}
+                {new Date(data.updated_at).toDateString()}
               </p>
             )}
             {data.subcategories && (
