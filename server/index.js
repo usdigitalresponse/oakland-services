@@ -75,9 +75,34 @@ app.get("/api/categories/:category_id/resources", async (req, res) => {
     .join("category_details", "category_details.category_id", "categories.id")
     .join("categories as parents", "categories.parent_id", "parents.id")
     .join("organizations", "organizations.id", "resources.organization_id")
-    .join("organization_details", "organization_details.organization_id", "organizations.id")
+    .join(
+      "organization_details",
+      "organization_details.organization_id",
+      "organizations.id"
+    )
     .where({ "categories.parent_id": categoryId })
     .where({ "resource_details.lang": req.language })
+    .modify((queryBuilder) => {
+      if (!req.query.neighborhoods) {
+        return;
+      }
+      if (Array.isArray(req.query.neighborhoods)) {
+        return queryBuilder.whereIn(
+          "resources.neighborhood_id",
+          req.query.neighborhoods.map((n) => parseInt(n))
+        );
+      }
+      return queryBuilder.where(
+        "resources.neighborhood_id",
+        parseInt(req.query.neighborhoods)
+      );
+    })
+    .modify((queryBuilder) => {
+      if (req.query.order === "1") {
+        return queryBuilder.orderBy("resource_details.name", "asc");
+      }
+      return queryBuilder.orderBy("resource_details.updated_at", "desc");
+    })
     .groupBy(
       "resources.id",
       "resource_details.name",
@@ -85,6 +110,7 @@ app.get("/api/categories/:category_id/resources", async (req, res) => {
       "resource_details.phone_number",
       "resource_details.website",
       "resource_details.address",
+      "resource_details.updated_at",
       "organization_details.name"
     );
 
@@ -139,7 +165,11 @@ app.get("/api/resources/:resource_id", async (req, res) => {
     .join("categories", "categorizations.category_id", "categories.id")
     .join("category_details", "category_details.category_id", "categories.id")
     .join("organizations", "organizations.id", "resources.organization_id")
-    .join("organization_details", "organization_details.organization_id", "organizations.id")
+    .join(
+      "organization_details",
+      "organization_details.organization_id",
+      "organizations.id"
+    )
     .where({ "resource_details.lang": req.language })
     .where({ "resources.id": resourceId })
     .groupBy(
