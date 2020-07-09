@@ -23,19 +23,19 @@ export const ResourcePage = () => {
       ) : (
         <Resource>
           <div className="resource-header">
-            {data.updated_at && (
+            {!!data.updated_at && (
               <p>
                 <strong>{t("resource.last_updated")}:</strong>{" "}
                 {new Date(data.updated_at).toDateString()}
               </p>
             )}
-            {data.subcategories && (
+            {!!data.subcategories && (
               <p>
                 <strong>{t("resource.categories")}:</strong>{" "}
                 {data.subcategories.join(", ")}
               </p>
             )}
-            {data.organization && (
+            {!!data.organization && (
               <p>
                 <strong>{t("resource.provider")}:</strong> {data.organization}
               </p>
@@ -103,7 +103,7 @@ const Resource = styled.section`
   .resource-program-information {
     margin-bottom: ${({ theme }) => theme.spacings(8)};
   }
-  .resource-description p {
+  p {
     overflow-wrap: anywhere;
     line-height: 1.6;
   }

@@ -27,8 +27,6 @@ export const ResourceListPage = () => {
     `/api/categories/${categoryId}/resources?${queryString.stringify(filters)}`
   );
 
-  console.log("data", data);
-
   return (
     <section>
       <Header>
@@ -45,23 +43,18 @@ export const ResourceListPage = () => {
           <Resource key={s.id} to={`/resource/${s.id}`}>
             <div>
               <h4>{s.name}</h4>
-              {s.subcategories && (
+              {!!s.subcategories && (
                 <p>
                   <strong>{t("resource.categories")}:</strong>{" "}
                   {s.subcategories.join(", ")}
                 </p>
               )}
-              {s.organization && (
+              {!!s.organization && (
                 <p>
                   <strong>{t("resource.provider")}:</strong> {s.organization}
                 </p>
               )}
-              {s.website && (
-                <p>
-                  <a href={s.website}>{s.website}</a>
-                </p>
-              )}
-              {s.address && <p>{s.address}</p>}
+              {!!s.address && <p>{s.address}</p>}
               <p className="description">{truncateString(s.description)}</p>
             </div>
             <Icon icon="chevronRight" />
@@ -104,10 +97,6 @@ const Resource = styled(Link)`
 
   h4 {
     text-decoration: underline;
-  }
-
-  p {
-    margin: 0;
   }
 
   .description {
