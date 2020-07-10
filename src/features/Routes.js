@@ -12,51 +12,56 @@ import { PrivacyPage } from "./about/PrivacyPage";
 import { TermsPage } from "./about/TermsPage";
 import { Error } from "./misc/Error";
 
-export const Routes = () => (
-  <Suspense
-    fallback={
-      <SpinnerContainer>
-        <Spinner loading />
-      </SpinnerContainer>
-    }
-  >
-    <Switch>
-      <Route exact path="/">
-        <PageLayout>
-          <CategoriesPage />
-        </PageLayout>
-      </Route>
-      <Route exact path="/category/:categoryId">
-        <PageLayout>
-          <ResourceListPage />
-        </PageLayout>
-      </Route>
-      <Route exact path="/resource/:resourceId">
-        <PageLayout>
-          <ResourcePage />
-        </PageLayout>
-      </Route>
-      <Route path="/about">
-        <PageLayout>
-          <AboutPage />
-        </PageLayout>
-      </Route>
-      <Route path="/privacy">
-        <PageLayout>
-          <PrivacyPage />
-        </PageLayout>
-      </Route>
-      <Route path="/terms">
-        <PageLayout>
-          <TermsPage />
-        </PageLayout>
-      </Route>
-      <Route>
-        <Error />
-      </Route>
-    </Switch>
-  </Suspense>
-);
+import { useTracking } from "utils/useTracking";
+
+export const Routes = () => {
+  useTracking("UA-172308259-1");
+  return (
+    <Suspense
+      fallback={
+        <SpinnerContainer>
+          <Spinner loading />
+        </SpinnerContainer>
+      }
+    >
+      <Switch>
+        <Route exact path="/">
+          <PageLayout>
+            <CategoriesPage />
+          </PageLayout>
+        </Route>
+        <Route exact path="/category/:categoryId">
+          <PageLayout>
+            <ResourceListPage />
+          </PageLayout>
+        </Route>
+        <Route exact path="/resource/:resourceId">
+          <PageLayout>
+            <ResourcePage />
+          </PageLayout>
+        </Route>
+        <Route path="/about">
+          <PageLayout>
+            <AboutPage />
+          </PageLayout>
+        </Route>
+        <Route path="/privacy">
+          <PageLayout>
+            <PrivacyPage />
+          </PageLayout>
+        </Route>
+        <Route path="/terms">
+          <PageLayout>
+            <TermsPage />
+          </PageLayout>
+        </Route>
+        <Route>
+          <Error />
+        </Route>
+      </Switch>
+    </Suspense>
+  );
+};
 
 const SpinnerContainer = styled.section`
   display: flex;
