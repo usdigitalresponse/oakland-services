@@ -66,7 +66,7 @@ export const ResourcePage = () => {
           </div>
           <div className="resource-description">
             <h4>{t("resource.description")}</h4>
-            <p>{data.description}</p>
+            <p dangerouslySetInnerHTML={{ __html: data.description }} />
           </div>
           <div className="resource-program-information">
             <h4>{t("resource.program_information")}</h4>

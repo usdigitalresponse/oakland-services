@@ -55,7 +55,12 @@ export const ResourceListPage = () => {
                 </p>
               )}
               {!!s.address && <p>{s.address}</p>}
-              <p className="description">{truncateString(s.description)}</p>
+              <p
+                className="description"
+                dangerouslySetInnerHTML={{
+                  __html: truncateString(s.description),
+                }}
+              />
             </div>
             <Icon icon="chevronRight" />
           </Resource>

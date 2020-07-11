@@ -129,7 +129,11 @@ app.get("/api/categories/:category_id/resources", async (req, res) => {
       }
       return queryBuilder.orderBy("resource_details.updated_at", "desc");
     })
-    .groupBy("resources.id", "resource_details.name", "resource_details.updated_at");
+    .groupBy(
+      "resources.id",
+      "resource_details.name",
+      "resource_details.updated_at"
+    );
 
   res
     .status(200)

@@ -1,6 +1,7 @@
 const fs = require("fs");
 const csv = require("csv-parser");
 const he = require("he");
+const sanitizeHtml = require("sanitize-html");
 
 function writeFile(fileName, arr, resolve) {
   fs.writeFile(fileName, JSON.stringify(arr), (err) => {
@@ -14,13 +15,29 @@ function writeFile(fileName, arr, resolve) {
 }
 
 function sanitizeText(str) {
-  return he.decode(
-    str
-      .replace(/(<([^>]+)>)/gi, "")
-      .replace(/\t/g, " ")
-      .replace(/\n/g, " ")
-      .trim()
-  );
+  const sanitizedHtml = sanitizeHtml(str, {
+    allowedTags: [
+      "b",
+      "i",
+      "em",
+      "strong",
+      "a",
+      "table",
+      "tbody",
+      "tr",
+      "td",
+      "ul",
+      "li",
+      "ol",
+      "br",
+    ],
+    allowedAttributes: {
+      a: ["href"],
+    },
+    allowedIframeHostnames: ["www.youtube.com"],
+  });
+
+  return he.decode(sanitizedHtml.trim());
 }
 
 async function generateCategories() {
