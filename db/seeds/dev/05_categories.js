@@ -21,5 +21,17 @@ exports.seed = function (knex) {
       });
 
       return knex("category_details").insert(categoryDetails);
+    })
+    .then(function () {
+      const idx = categoriesSeed.length;
+      return knex("category_details").insert([
+        {
+          id: idx + 1,
+          category_id: 1,
+          name: "spanish name",
+          preferred_name: "spanish preferred name",
+          lang: "es",
+        },
+      ]);
     });
 };
