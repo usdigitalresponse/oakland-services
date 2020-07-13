@@ -270,7 +270,9 @@ app.get("/api/neighborhoods", async (req, res) => {
     .select(
       "neighborhoods.id",
       "neighborhoods.parent_id",
-      "neighborhood_details.name"
+      database.raw(
+        "ARRAY_AGG(neighborhood_details.name ORDER BY neighborhood_details.lang) as name"
+      )
     )
     .join(
       "neighborhood_details",
@@ -278,9 +280,9 @@ app.get("/api/neighborhoods", async (req, res) => {
       "neighborhood_details.neighborhood_id"
     )
     .where({ "neighborhoods.parent_id": null })
-    .where({ "neighborhood_details.lang": req.language });
+    .groupBy("neighborhoods.id");
 
-  res.status(200).json(neighborhoods);
+  res.status(200).json(translateInput(neighborhoods, req.lang, ["name"]));
 });
 
 app.get("*", (_req, res) => {
