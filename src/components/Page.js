@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import { Navigation } from "components/Navigation";
 import { Icon } from "components/Icon";
 
@@ -61,9 +62,9 @@ export const PageLayout = ({ children }) => {
           >
             <Icon icon="menu" />
           </button>
-          <div className="title">
+          <Link className="title" to="/">
             Shelter, Food, and Health Resources in Oakland
-          </div>
+          </Link>
           <div className="fixed" />
         </div>
         <div className={`menu-container ${isMenuOpen ? "in" : ""}`}>

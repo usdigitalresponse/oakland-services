@@ -15,6 +15,7 @@ export const Navigation = styled.nav`
   }
 
   .title {
+    display: block;
     color: #525f7f;
     text-align: center;
     line-height: 1.4;
