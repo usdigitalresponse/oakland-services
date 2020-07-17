@@ -33,6 +33,10 @@ const CheckboxContainer = styled.div`
     border: 2px solid ${({ theme }) => theme.colors.grey};
     background: transparent;
     border-radius: 4px;
+
+    &:hover {
+      border-color: ${({ theme }) => theme.colors.secondary};
+    }
   }
 
   .icon {
@@ -44,11 +48,11 @@ const CheckboxContainer = styled.div`
     transition: all 0.2s;
   }
 
-  /* checked mark aspect changes */
+  /* states */
   input:checked {
     & + label:before {
       background: ${({ theme }) => theme.colors.primary};
-      border: 2px solid ${({ theme }) => theme.colors.primary};
+      border-color: ${({ theme }) => theme.colors.primary};
     }
 
     & + label + .icon {
@@ -57,26 +61,17 @@ const CheckboxContainer = styled.div`
     }
   }
 
-  /* disabled checkbox */
-  input:disabled + label:before {
-    box-shadow: none;
-    border-color: #bbb;
-    background-color: #ddd;
-  }
-  input:disabled:checked + label + .icon {
-    color: #999;
-  }
-  input:disabled + label {
-    color: #aaa;
+  input:disabled {
+    & + label:before {
+      border-color: ${({ theme }) => theme.colors.grey};
+      background-color: ${({ theme }) => theme.colors.lightGrey};
+      &:hover {
+        border-color: ${({ theme }) => theme.colors.grey};
+      }
+    }
   }
 
-  /* accessibility */
   input:focus + label:before {
-    border: 2px solid ${({ theme }) => theme.colors.primary};
-  }
-
-  /* hover style just for information */
-  label:hover:before {
-    border: 2px solid ${({ theme }) => theme.colors.secondary};
+    border-color: ${({ theme }) => theme.colors.primary};
   }
 `;
