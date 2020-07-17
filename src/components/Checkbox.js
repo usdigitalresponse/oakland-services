@@ -21,6 +21,10 @@ const CheckboxContainer = styled.div`
     width: 100%;
     padding: ${({ theme }) => `${theme.spacings(2)}`};
     padding-left: ${({ theme }) => theme.spacings(7)};
+
+    &:hover:before {
+      border-color: ${({ theme }) => theme.colors.secondary};
+    }
   }
 
   label:before {
@@ -33,10 +37,6 @@ const CheckboxContainer = styled.div`
     border: 2px solid ${({ theme }) => theme.colors.grey};
     background: transparent;
     border-radius: 4px;
-
-    &:hover {
-      border-color: ${({ theme }) => theme.colors.secondary};
-    }
   }
 
   .icon {
