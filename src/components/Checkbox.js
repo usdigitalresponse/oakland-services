@@ -21,6 +21,7 @@ const CheckboxContainer = styled.div`
     width: 100%;
     padding: ${({ theme }) => `${theme.spacings(2)}`};
     padding-left: ${({ theme }) => theme.spacings(7)};
+    border-radius: 4px;
 
     &:hover:before {
       border-color: ${({ theme }) => theme.colors.secondary};
@@ -49,6 +50,12 @@ const CheckboxContainer = styled.div`
   }
 
   /* states */
+  input:focus {
+    & + label:before {
+      border-color: ${({ theme }) => theme.colors.primary};
+    }
+  }
+
   input:checked {
     & + label:before {
       background: ${({ theme }) => theme.colors.primary};
@@ -62,6 +69,10 @@ const CheckboxContainer = styled.div`
   }
 
   input:disabled {
+    & + label {
+      cursor: not-allowed;
+    }
+
     & + label:before {
       border-color: ${({ theme }) => theme.colors.grey};
       background-color: ${({ theme }) => theme.colors.lightGrey};
@@ -69,9 +80,5 @@ const CheckboxContainer = styled.div`
         border-color: ${({ theme }) => theme.colors.grey};
       }
     }
-  }
-
-  input:focus + label:before {
-    border-color: ${({ theme }) => theme.colors.primary};
   }
 `;
