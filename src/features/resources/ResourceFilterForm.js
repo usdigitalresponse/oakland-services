@@ -31,10 +31,24 @@ export const ResourceFilterForm = ({ onComplete, filters, setFilters }) => {
     });
   };
 
+  const onToggleNeighborhoodSelectAll = () => {
+    if (filters.neighborhoods.length) {
+      setFilters({
+        ...filters,
+        neighborhoods: [],
+      });
+    } else {
+      setFilters({
+        ...filters,
+        neighborhoods: [...data.map((n) => n.id)],
+      });
+    }
+  };
+
   return (
     <FilterBody>
       <div className="filter-group">
-        <h4>Sort By</h4>
+        <h4 className="filter-title">Sort By</h4>
         <RadioSwitch
           selected={filters.order}
           setSelected={onChangeOrder}
@@ -51,13 +65,19 @@ export const ResourceFilterForm = ({ onComplete, filters, setFilters }) => {
         />
       </div>
       <div className="filter-group">
-        <h4>Neighborhoods</h4>
+        <h4 className="filter-title">
+          Neighborhoods{" "}
+          <Button variant="link" onClick={onToggleNeighborhoodSelectAll}>
+            {filters.neighborhoods.length ? "Select none" : "Select all"}
+          </Button>
+        </h4>
         {data &&
           data.map((n) => {
             const checked = filters.neighborhoods.includes(n.id);
             return (
               <Checkbox
                 key={n.id}
+                id={`n-${n.id}`}
                 checked={checked}
                 onChange={() => onChangeNeighborhood(n, checked)}
               >
@@ -78,6 +98,21 @@ const FilterBody = styled.section`
 
   .filter-group {
     margin-bottom: ${({ theme }) => theme.spacings(5)};
+  }
+
+  .filter-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    button {
+      font-size: 0.8rem;
+      color: ${({ theme }) => theme.colors.primary};
+    }
+  }
+
+  .checkbox {
+    margin-right: ${({ theme }) => theme.spacings(2)};
+    margin-bottom: ${({ theme }) => theme.spacings(2)};
   }
 
   .submit-container {

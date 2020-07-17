@@ -1,129 +1,82 @@
 import React from "react";
 import styled from "styled-components";
+import { Icon } from "./Icon";
 
-export const Checkbox = ({ children, ...rest }) => {
+export const Checkbox = ({ id, children, ...rest }) => {
   return (
-    <CheckboxContainer className="checkbox path">
-      <input type="checkbox" {...rest} />
-      <svg viewBox="0 0 21 21">
-        <path d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186" />
-      </svg>
-      {!!children ? <div className="text">{children}</div> : null}
+    <CheckboxContainer className="checkbox">
+      <input type="checkbox" id={id} className="sr-only" {...rest} />
+      {!!children ? <label htmlFor={id}>{children}</label> : null}
+      <Icon icon="check" iconSize="sm" iconColor="white" />
     </CheckboxContainer>
   );
 };
 
-const CheckboxContainer = styled.label`
-  --border: ${({ theme }) => theme.colors.secondary};
-  --border-hover: ${({ theme }) => theme.colors.secondary};
-  --border-active: ${({ theme }) => theme.colors.primary};
-  --tick: #fff;
-
+const CheckboxContainer = styled.div`
   position: relative;
   display: inline-flex;
-  align-items: center;
-  padding: ${({ theme }) => theme.spacings(3)};
-  cursor: pointer;
-  border-radius: 4px;
 
-  &:hover {
-    background-color: ${({ theme }) => theme.ui.button.hover.backgroundGrey};
-  }
-
-  &::focus,
-  &::active {
-    outline: 1px solid;
-  }
-
-  .text {
-    margin-left: ${({ theme }) => theme.spacings(2)};
-  }
-
-  input,
-  svg {
-    width: 21px;
-    height: 21px;
-    display: block;
-  }
-
-  input {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    position: relative;
-    border: none;
-    margin: 0;
-    padding: 0;
+  label {
     cursor: pointer;
-    border-radius: 4px;
-    transition: box-shadow 0.3s;
-    box-shadow: inset 0 0 0 var(--s, 1px) var(--b, var(--border));
-    &:hover {
-      --s: 2px;
-      --b: var(--border-hover);
-    }
-    &:checked {
-      --b: var(--border-active);
-    }
+    width: 100%;
+    padding: ${({ theme }) => `${theme.spacings(2)}`};
+    padding-left: ${({ theme }) => theme.spacings(7)};
   }
 
-  svg {
-    pointer-events: none;
-    fill: none;
-    stroke-width: 2px;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke: var(--stroke, var(--border-active));
+  label:before {
+    content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 21px;
-    height: 21px;
-    transform: scale(var(--scale, 1)) translateZ(0);
-    margin: ${({ theme }) => theme.spacings(3)};
+    left: ${({ theme }) => theme.spacings(0)};
+    top: ${({ theme }) => theme.spacings(1)};
+    width: ${({ theme }) => theme.spacings(6)};
+    height: ${({ theme }) => theme.spacings(6)};
+    border: 2px solid ${({ theme }) => theme.colors.grey};
+    background: transparent;
+    border-radius: 4px;
   }
 
-  &.path {
-    input {
-      &:checked {
-        --s: 2px;
-        transition-delay: 0.4s;
-        & + svg {
-          --a: 16.1 86.12;
-          --o: 102.22;
-        }
-      }
-    }
-    svg {
-      stroke-dasharray: var(--a, 86.12);
-      stroke-dashoffset: var(--o, 86.12);
-      transition: stroke-dasharray 0.6s, stroke-dashoffset 0.6s;
-    }
+  .icon {
+    position: absolute;
+    top: ${({ theme }) => theme.spacings(1.5)};
+    left: ${({ theme }) => theme.spacings(0.5)};
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.2s;
   }
 
-  &.bounce {
-    --stroke: var(--tick);
-    input {
-      &:checked {
-        --s: 11px;
-        & + svg {
-          animation: bounce 0.4s linear forwards 0.2s;
-        }
-      }
+  /* checked mark aspect changes */
+  input:checked {
+    & + label:before {
+      background: ${({ theme }) => theme.colors.primary};
+      border: 2px solid ${({ theme }) => theme.colors.primary};
     }
-    svg {
-      --scale: 0;
-    }
-  }
 
-  @keyframes bounce {
-    50% {
-      transform: scale(1.2);
-    }
-    75% {
-      transform: scale(0.9);
-    }
-    100% {
+    & + label + .icon {
+      opacity: 1;
       transform: scale(1);
     }
+  }
+
+  /* disabled checkbox */
+  input:disabled + label:before {
+    box-shadow: none;
+    border-color: #bbb;
+    background-color: #ddd;
+  }
+  input:disabled:checked + label + .icon {
+    color: #999;
+  }
+  input:disabled + label {
+    color: #aaa;
+  }
+
+  /* accessibility */
+  input:focus + label:before {
+    border: 2px solid ${({ theme }) => theme.colors.primary};
+  }
+
+  /* hover style just for information */
+  label:hover:before {
+    border: 2px solid ${({ theme }) => theme.colors.secondary};
   }
 `;
