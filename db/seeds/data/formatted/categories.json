@@ -44,6 +44,7 @@
     "airtable_cat_id": "5330",
     "show": false
   },
+  { "name": "Personal Services", "airtable_cat_id": "50000", "show": true },
   {
     "name": "Alameda County Housing Choices",
     "airtable_cat_id": "3524",
@@ -108,19 +109,19 @@
     "name": "Personal/Grooming Supplies",
     "airtable_cat_id": "5552",
     "show": true,
-    "parent_id": 2
+    "parent_id": 16
   },
   {
     "name": "Laundry Facilities",
     "airtable_cat_id": "5553",
     "show": true,
-    "parent_id": 2
+    "parent_id": 16
   },
   {
     "name": "Temporary Mailing Address",
     "airtable_cat_id": "5554",
     "show": true,
-    "parent_id": 2
+    "parent_id": 16
   },
   {
     "name": "Mobile Healthcare",

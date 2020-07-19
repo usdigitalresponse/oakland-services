@@ -14,6 +14,7 @@ cat_id,order,text,alternative_text,url,parent_id,recs,recs_oak,show
 5329,1,Child and Youth Resources,,,13,40,,
 5506,1,Accessibility and Independent Living,,,14,2,,
 5330,1,OTHER SPECIALIZED RESOURCE PORTALS,,,15,4,,
+50000,1,Personal Services,,,16,,,checked
 3524,2,Alameda County Housing Choices,,http://achousingchoices.org,3523,,,
 5335,2,Housing Resources for People Living with HIV,,http://edenir.org/ahip-resources/,3523,,,
 5543,2,Low Cost Home Rental Listings,,,3523,,,
@@ -24,9 +25,9 @@ cat_id,order,text,alternative_text,url,parent_id,recs,recs_oak,show
 5548,2,Domestic Violence Shelters,,,5320,9,,checked
 5550,2,Homeless Shelter,,,5320,24,,checked
 5551,2,Transitional Housing/Shelter,,,5320,36,,checked
-5552,2,Personal/Grooming Supplies,,,5320,8,,checked
-5553,2,Laundry Facilities,,,5320,10,,checked
-5554,2,Temporary Mailing Address,,,5320,3,,checked
+5552,2,Personal/Grooming Supplies,,,50000,8,,checked
+5553,2,Laundry Facilities,,,50000,10,,checked
+5554,2,Temporary Mailing Address,,,50000,3,,checked
 5555,2,Mobile Healthcare,,,5320,0,,
 5559,2,Utility Bill Payment Plans,,,5321,,,
 5560,2,Discounted Utility Services,,,5321,,,
