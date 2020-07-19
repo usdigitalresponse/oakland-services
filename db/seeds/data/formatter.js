@@ -213,6 +213,7 @@ async function generateResources() {
             latitude: row.latitude,
             longitude: row.longitude,
             phone_number: row.phone_number,
+            scraped_at: row.last_scraped,
           };
 
           if (row.neighborhood_id && row.neighborhood_id !== "") {

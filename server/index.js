@@ -155,6 +155,7 @@ app.get("/api/resources/:resource_id", async (req, res) => {
   const resource = await database("resources")
     .select(
       "resources.id",
+      "resources.scraped_at",
 
       database.raw(
         "ARRAY_AGG(resource_details.name ORDER BY resource_details.lang) as name"
@@ -221,6 +222,7 @@ app.get("/api/resources/:resource_id", async (req, res) => {
     .where({ "resources.id": resourceId })
     .groupBy(
       "resources.id",
+      "resources.scraped_at",
       "resource_details.name",
       "resource_details.preferred_name",
       "resource_details.description",
