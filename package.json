@@ -29,7 +29,7 @@
     "react-i18next": "^11.7.0",
     "react-modal": "^3.11.2",
     "react-router-dom": "^5.2.0",
-    "snyk": "^1.355.0",
+    "snyk": "^1.359.0",
     "styled-components": "^5.1.1",
     "styled-normalize": "^8.0.7",
     "swr": "^0.2.3"
