@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { debounce } from "lodash";
+import * as serviceWorker from "./serviceWorker";
 import "./i18n";
 
 // resize listeners
@@ -23,3 +24,5 @@ render();
 if (process.env.NODE_ENV === "development" && module.hot) {
   module.hot.accept("./features/App", render);
 }
+
+serviceWorker.register();
