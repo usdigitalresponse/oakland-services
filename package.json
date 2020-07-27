@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server/index.js",
     "dev": "concurrently \"nodemon server/index.js\" \"react-scripts start\"",
-    "build": "react-scripts build",
+    "build": "npx react-scripts build",
     "format": "prettier . --write",
     "snyk-protect": "snyk protect",
     "prepare": "npm run snyk-protect"
@@ -18,9 +18,9 @@
     "i18next-browser-languagedetector": "^5.0.0",
     "i18next-http-backend": "^1.0.16",
     "i18next-http-middleware": "^3.0.2",
-    "knex": "^0.21.1",
-    "lodash": "^4.17.15",
-    "pg": "^8.2.1",
+    "knex": "^0.21.2",
+    "lodash": "^4.17.19",
+    "pg": "^8.3.0",
     "query-string": "^6.13.1",
     "raw.macro": "^0.3.1",
     "react": "^16.13.1",
