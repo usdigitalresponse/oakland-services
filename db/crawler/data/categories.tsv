@@ -1,0 +1,163 @@
+3523	Housing	TRUE	
+5320	Shelter and Homeless Resources	TRUE	checked
+5321	Utility Assistance	TRUE	
+3493	Food	TRUE	checked
+5322	Physical Health	TRUE	checked
+5566	Mental Wellness	TRUE	checked
+5323	Substance Abuse	TRUE	checked
+5324	Legal Assistance	TRUE	checked
+5325	Employment Assistance	TRUE	
+5326	Financial Assistance and Public Benefits	TRUE	checked
+5328	Military and Veteran Resources	TRUE	
+5327	Senior Resources	TRUE	
+5329	Child and Youth Resources	TRUE	
+5506	Accessibility and Independent Living	TRUE	
+5330	OTHER SPECIALIZED RESOURCE PORTALS	TRUE	
+3524	Alameda County Housing Choices	3523	
+5335	Housing Resources for People Living with HIV	3523	
+5543	Low Cost Home Rental Listings	3523	
+5544	Senior Housing Information and Referral	3523	
+5545	Housing Issues and Counseling	3523	
+5546	Residential Housing Options	3523	
+5547	Extreme Weather Shelters	5320	checked
+5548	Domestic Violence Shelters	5320	checked
+5550	Homeless Shelter	5320	checked
+5551	Transitional Housing/Shelter	5320	checked
+5552	Personal/Grooming Supplies	5320	checked
+5553	Laundry Facilities	5320	checked
+5554	Temporary Mailing Address	5320	checked
+5555	Mobile Healthcare	5320	
+5559	Utility Bill Payment Plans	5321	
+5560	Discounted Utility Services	5321	
+3521	WIC	3493	checked
+3522	Food Stamps/SNAP Applications	3493	checked
+5556	Food Pantries	3493	checked
+5557	Brown Bag Food Programs	3493	checked
+5567	Outpatient Health Facilities	5322	checked
+5568	Health Care Discount Enrollment Programs	5322	checked
+5569	Medical Care Expense Assistance	5322	checked
+5570	Hospitals	5322	checked
+5571	Community Clinics	5322	checked
+5572	Physician Referral	5322	checked
+5587	Domestic Violence Hotlines	5322	checked
+5672	Pregnant Women	5322	
+6005	Resources for People Living with HIV	5322	
+5573	Crisis Counseling	5566	checked
+5574	General Crisis Intervention Hotlines	5566	checked
+5575	Suicide Prevention Crisis Intervention Hotlines	5566	checked
+5576	Human Trafficking Crisis Intervention Hotlines	5566	checked
+5577	Adult Rape Survivors	5566	checked
+5578	Mental Health Evaluation	5566	checked
+5579	Psychiatric Disorders	5566	checked
+5580	Adult Psychiatric Hospitals	5566	checked
+5581	Mental Health Evaluation for Children	5566	
+5582	Geriatric Mental Illness Counseling	5566	
+5583	Outpatient Behavioral Health Facilities	5566	checked
+5584	Mutual Support Groups	5566	checked
+5585	Domestic Violence Support Groups	5566	checked
+5586	Domestic Violence Hotlines	5566	checked
+5588	General Bereavement Support Groups	5566	checked
+5590	Smoking/Vaping Quitting Support	5566	checked
+6006	LGBTQ Support Groups	5566	checked
+5561	Assessment for Substance Abuse	5323	checked
+5562	Chemical Dependency Treatment Programs	5323	checked
+5563	Alcholism Treatment Programs	5323	checked
+5564	Substance Abuse Treatment Programs	5323	checked
+5591	General Benefits Assistance	5324	checked
+5592	Immigrant Benefits Assistance	5324	checked
+5593	Pension Benefits Assistance	5324	checked
+5594	Protection and Advocacy for Individuals with Disab...	5324	checked
+5595	Unemployment Insurance Benefits Assistance	5324	checked
+5596	Public/Subsidized Housing Appeals Assistance	5324	checked
+5597	Employment Discrimination Assistance	5324	checked
+5598	Housing Discrimination Assistance	5324	checked
+5599	Family Law	5324	checked
+5600	General Legal Aid	5324	checked
+5601	Immigration/Naturalization Legal Services	5324	checked
+5602	Landlord/Tenant Dispute Resolution	5324	checked
+5603	Landlord Rights Information/Counseling	5324	checked
+5604	Tenant Rights/Information/Counseling	5324	checked
+5605	Lawyer Referral Services	5324	checked
+5606	Patient Rights Assistance	5324	checked
+5607	Probate Assistance	5324	checked
+5608	Comprehensive Job Assistance Centers	5325	
+5609	Employment Preparation	5325	
+5610	Job Finding Assistance	5325	
+5611	Vocational Rehabilitation	5325	
+5612	Rent Payment Assistance	5326	checked
+5613	Senior Ride Programs	5326	
+5614	Student Financial Aid	5326	
+5615	In Home Supportive Services Subsidies	5326	
+5616	Medically Indigent Adult Programs	5326	
+5617	Medicare	5326	
+5618	Supplemental Nutrition Assistance Program	5326	
+5619	WIC	5326	
+5620	Mortuary Services	5326	
+5621	Veteran Home Loans	5328	
+5622	Veteran Benefits Assistance	5328	
+5623	Veteran Outpatient Health Facilities	5328	
+5624	Veteran Burial Benefits	5328	
+5625	Insurance Claims Assistance for Veterans	5328	
+5626	Veteran Reintegration Counseling	5328	
+5627	Military Family Service/Support Centers	5328	
+5628	Families of Military Personnel/Veterans	5328	
+5629	Active Military	5328	
+5630	Veteran Employment Programs	5328	
+5631	Homeless Veterans	5328	
+5621	Veteran Home Loans	5328	
+5622	Veteran Benefits Assistance	5328	
+5623	Veteran Outpatient Health Facilities	5328	
+5624	Veteran Burial Benefits	5328	
+5625	Insurance Claims Assistance for Veterans	5328	
+5626	Veteran Reintegration Counseling	5328	
+5627	Military Family Service/Support Centers	5328	
+5628	Families of Military Personnel/Veterans	5328	
+5629	Active Military	5328	
+5630	Veteran Employment Programs	5328	
+5631	Homeless Veterans	5328	checked
+5632	After School Meal Programs	5329	checked
+5633	Summer Food Service Programs	5329	checked
+5634	Runaway/Youth Shelters	5329	checked
+5635	Runaway Help	5329	checked
+5636	Clothing	5329	
+5637	Child Care Complaints	5329	
+5638	Child Care	5329	
+5639	Children's	5329	
+5640	Anti Bullying Programs	5329	
+5641	Child Abuse Prevention	5329	
+5642	Child Sexual Assault Prevention	5329	
+5643	Advance Medical Directives	5329	
+5644	Child Custody/Visitation Assistance	5329	
+5645	Child Support Assistance/Enforcement	5329	
+5646	Preschools	5329	
+5647	Migrant Education Programs	5329	
+5648	Special Education and Assessment	5329	
+5649	Home Safety Evaluations	5329	
+5650	Childbirth Education	5329	
+5651	Birth Control	5329	
+5652	Abortion Services	5329	
+5653	Prenatal Care	5329	
+5654	Reproductive Health Education	5329	
+5655	Early Intervention for Children With Disabilties/D...	5329	
+5656	Childhood Immunizations	5329	
+5657	Pediatric Dental Services	5329	
+5658	Pediatrics	5329	
+5659	WIC	5329	
+5660	Leisure Activities	5329	
+5661	Sexual Assualt/Incest Support Groups	5329	
+5662	Bereaved Child and Parent Support Groups	5329	
+5663	Adoption and Foster/Kinship Support Groups	5329	
+5664	Youth Development	5329	
+5665	Child Guidance	5329	
+5666	Youth Issues Lines	5329	
+5667	Youth Development and Youth Centers	5329	
+5668	Pregnant Women	5329	
+5669	Single Parent Families	5329	
+5670	Juvenile Detention Facilities	5329	
+5671	Abused Children	5329	
+6003	Home Safety Evaluations and Accessibility Improvem...	5506	
+6004	Independent Living Skills Instruction	5506	
+5331	Resources for People Living with HIV	5330	
+5332	Transportation Resources Portal	5330	
+5334	Reentry Resources Portal	5330	
+5336	Alameda County Housing Choices	5330	

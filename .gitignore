@@ -21,3 +21,6 @@ serviceAccountKey*
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# private keys for crawler
+db/crawler/private/*
