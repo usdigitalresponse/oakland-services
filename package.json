@@ -29,7 +29,7 @@
     "react-i18next": "^11.7.0",
     "react-modal": "^3.11.2",
     "react-router-dom": "^5.2.0",
-    "snyk": "^1.359.0",
+    "snyk": "^1.369.2",
     "styled-components": "^5.1.1",
     "styled-normalize": "^8.0.7",
     "swr": "^0.2.3"
@@ -43,7 +43,7 @@
     "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1",
     "react-scripts": "^3.4.1",
-    "sanitize-html": "^1.27.0"
+    "sanitize-html": "^1.27.2"
   },
   "husky": {
     "hooks": {
