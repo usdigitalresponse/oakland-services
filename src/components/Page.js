@@ -44,7 +44,7 @@ export const PageFooter = styled.footer`
 
 export const PageLayout = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
@@ -63,7 +63,7 @@ export const PageLayout = ({ children }) => {
             <Icon icon="menu" />
           </button>
           <Link className="title" to="/">
-            Shelter, Food, and Health Resources in Oakland
+            {t("title")}
           </Link>
           <div className="fixed" />
         </div>
