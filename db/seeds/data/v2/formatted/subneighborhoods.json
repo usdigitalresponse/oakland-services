@@ -1,0 +1,14 @@
+[
+  { "name": "Clinton", "parent_id": 6 },
+  { "name": "Downtown Oakland", "parent_id": 1 },
+  { "name": "Fitchburg", "parent_id": 9 },
+  { "name": "Jefferson", "parent_id": 7 },
+  { "name": "North Stonehurst", "parent_id": 9 },
+  { "name": "Oak Center", "parent_id": 2 },
+  { "name": "Oak Knoll Golf Links", "parent_id": 5 },
+  { "name": "Saint Elizabeth", "parent_id": 7 },
+  { "name": "Temescal", "parent_id": 3 },
+  { "name": "Chinatown", "parent_id": 1 },
+  { "name": "Hoover-Foster", "parent_id": 1 },
+  { "name": "Hegenberger", "parent_id": 8 }
+]

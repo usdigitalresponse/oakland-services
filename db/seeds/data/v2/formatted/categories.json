@@ -1,0 +1,2219 @@
+[
+  { "name": "Housing", "airtable_cat_id": "3523", "show": false },
+  {
+    "name": "Shelter and Homeless Resources",
+    "airtable_cat_id": "5320",
+    "show": true
+  },
+  { "name": "Utility Assistance", "airtable_cat_id": "5321", "show": false },
+  { "name": "Food", "airtable_cat_id": "3493", "show": true },
+  { "name": "Physical Health", "airtable_cat_id": "5322", "show": true },
+  { "name": "Mental Wellness", "airtable_cat_id": "5566", "show": true },
+  {
+    "name": "Substance Abuse",
+    "airtable_cat_id": "5323",
+    "show": true,
+    "preferred_name": "Substance Use Disorder"
+  },
+  { "name": "Legal Assistance", "airtable_cat_id": "5324", "show": true },
+  { "name": "Employment Assistance", "airtable_cat_id": "5325", "show": false },
+  {
+    "name": "Financial Assistance and Public Benefits",
+    "airtable_cat_id": "5326",
+    "show": true,
+    "preferred_name": "Rental Assistance"
+  },
+  {
+    "name": "Military and Veteran Resources",
+    "airtable_cat_id": "5328",
+    "show": false
+  },
+  { "name": "Senior Resources", "airtable_cat_id": "5327", "show": false },
+  {
+    "name": "Child and Youth Resources",
+    "airtable_cat_id": "5329",
+    "show": false
+  },
+  {
+    "name": "Accessibility and Independent Living",
+    "airtable_cat_id": "5506",
+    "show": false
+  },
+  {
+    "name": "OTHER SPECIALIZED RESOURCE PORTALS",
+    "airtable_cat_id": "5330",
+    "show": false
+  },
+  { "name": "Personal Services", "airtable_cat_id": "50000", "show": true },
+  {
+    "name": "Alameda County Housing Choices",
+    "airtable_cat_id": "3524",
+    "show": false,
+    "parent_id": 1
+  },
+  {
+    "name": "Housing Resources for People Living with HIV",
+    "airtable_cat_id": "5335",
+    "show": false,
+    "parent_id": 1
+  },
+  {
+    "name": "Low Cost Home Rental Listings",
+    "airtable_cat_id": "5543",
+    "show": false,
+    "parent_id": 1
+  },
+  {
+    "name": "Senior Housing Information and Referral",
+    "airtable_cat_id": "5544",
+    "show": false,
+    "parent_id": 1
+  },
+  {
+    "name": "Housing Issues and Counseling",
+    "airtable_cat_id": "5545",
+    "show": false,
+    "parent_id": 1
+  },
+  {
+    "name": "Residential Housing Options",
+    "airtable_cat_id": "5546",
+    "show": false,
+    "parent_id": 1
+  },
+  {
+    "name": "Extreme Weather Shelters",
+    "airtable_cat_id": "5547",
+    "show": true,
+    "parent_id": 2
+  },
+  {
+    "name": "Domestic Violence Shelters",
+    "airtable_cat_id": "5548",
+    "show": true,
+    "parent_id": 2
+  },
+  {
+    "name": "Homeless Shelter",
+    "airtable_cat_id": "5550",
+    "show": true,
+    "parent_id": 2
+  },
+  {
+    "name": "Transitional Housing/Shelter",
+    "airtable_cat_id": "5551",
+    "show": true,
+    "parent_id": 2
+  },
+  {
+    "name": "Personal/Grooming Supplies",
+    "airtable_cat_id": "5552",
+    "show": true,
+    "parent_id": 16
+  },
+  {
+    "name": "Laundry Facilities",
+    "airtable_cat_id": "5553",
+    "show": true,
+    "parent_id": 16
+  },
+  {
+    "name": "Temporary Mailing Address",
+    "airtable_cat_id": "5554",
+    "show": true,
+    "parent_id": 16
+  },
+  {
+    "name": "Mobile Healthcare",
+    "airtable_cat_id": "5555",
+    "show": false,
+    "parent_id": 2
+  },
+  {
+    "name": "Utility Bill Payment Plans",
+    "airtable_cat_id": "5559",
+    "show": false,
+    "parent_id": 3
+  },
+  {
+    "name": "Discounted Utility Services",
+    "airtable_cat_id": "5560",
+    "show": false,
+    "parent_id": 3
+  },
+  { "name": "WIC", "airtable_cat_id": "3521", "show": true, "parent_id": 4 },
+  {
+    "name": "Food Stamps/SNAP Applications",
+    "airtable_cat_id": "3522",
+    "show": true,
+    "parent_id": 4
+  },
+  {
+    "name": "Food Pantries",
+    "airtable_cat_id": "5556",
+    "show": true,
+    "parent_id": 4
+  },
+  {
+    "name": "Brown Bag Food Programs",
+    "airtable_cat_id": "5557",
+    "show": true,
+    "parent_id": 4
+  },
+  {
+    "name": "Outpatient Health Facilities",
+    "airtable_cat_id": "5567",
+    "show": true,
+    "parent_id": 5
+  },
+  {
+    "name": "Health Care Discount Enrollment Programs",
+    "airtable_cat_id": "5568",
+    "show": true,
+    "parent_id": 5
+  },
+  {
+    "name": "Medical Care Expense Assistance",
+    "airtable_cat_id": "5569",
+    "show": true,
+    "parent_id": 5
+  },
+  {
+    "name": "Hospitals",
+    "airtable_cat_id": "5570",
+    "show": true,
+    "parent_id": 5
+  },
+  {
+    "name": "Community Clinics",
+    "airtable_cat_id": "5571",
+    "show": true,
+    "parent_id": 5
+  },
+  {
+    "name": "Physician Referral",
+    "airtable_cat_id": "5572",
+    "show": true,
+    "parent_id": 5
+  },
+  {
+    "name": "Domestic Violence Hotlines",
+    "airtable_cat_id": "5587",
+    "show": true,
+    "parent_id": 5
+  },
+  {
+    "name": "Pregnant Women",
+    "airtable_cat_id": "5672",
+    "show": false,
+    "parent_id": 5
+  },
+  {
+    "name": "Resources for People Living with HIV",
+    "airtable_cat_id": "6005",
+    "show": false,
+    "parent_id": 5
+  },
+  {
+    "name": "Crisis Counseling",
+    "airtable_cat_id": "5573",
+    "show": true,
+    "parent_id": 6
+  },
+  {
+    "name": "General Crisis Intervention Hotlines",
+    "airtable_cat_id": "5574",
+    "show": true,
+    "parent_id": 6
+  },
+  {
+    "name": "Suicide Prevention Crisis Intervention Hotlines",
+    "airtable_cat_id": "5575",
+    "show": true,
+    "parent_id": 6
+  },
+  {
+    "name": "Human Trafficking Crisis Intervention Hotlines",
+    "airtable_cat_id": "5576",
+    "show": true,
+    "parent_id": 6
+  },
+  {
+    "name": "Adult Rape Survivors",
+    "airtable_cat_id": "5577",
+    "show": true,
+    "parent_id": 6
+  },
+  {
+    "name": "Mental Health Evaluation",
+    "airtable_cat_id": "5578",
+    "show": true,
+    "parent_id": 6
+  },
+  {
+    "name": "Psychiatric Disorders",
+    "airtable_cat_id": "5579",
+    "show": true,
+    "parent_id": 6
+  },
+  {
+    "name": "Adult Psychiatric Hospitals",
+    "airtable_cat_id": "5580",
+    "show": true,
+    "parent_id": 6
+  },
+  {
+    "name": "Mental Health Evaluation for Children",
+    "airtable_cat_id": "5581",
+    "show": false,
+    "parent_id": 6
+  },
+  {
+    "name": "Geriatric Mental Illness Counseling",
+    "airtable_cat_id": "5582",
+    "show": false,
+    "parent_id": 6
+  },
+  {
+    "name": "Outpatient Behavioral Health Facilities",
+    "airtable_cat_id": "5583",
+    "show": true,
+    "parent_id": 6
+  },
+  {
+    "name": "Mutual Support Groups",
+    "airtable_cat_id": "5584",
+    "show": true,
+    "parent_id": 6
+  },
+  {
+    "name": "Domestic Violence Support Groups",
+    "airtable_cat_id": "5585",
+    "show": true,
+    "parent_id": 6
+  },
+  {
+    "name": "Domestic Violence Hotlines",
+    "airtable_cat_id": "5586",
+    "show": true,
+    "parent_id": 6
+  },
+  {
+    "name": "General Bereavement Support Groups",
+    "airtable_cat_id": "5588",
+    "show": true,
+    "parent_id": 6
+  },
+  {
+    "name": "Smoking/Vaping Quitting Support",
+    "airtable_cat_id": "5590",
+    "show": true,
+    "parent_id": 6
+  },
+  {
+    "name": "LGBTQ Support Groups",
+    "airtable_cat_id": "6006",
+    "show": true,
+    "parent_id": 6
+  },
+  {
+    "name": "Assessment for Substance Abuse",
+    "airtable_cat_id": "5561",
+    "show": true,
+    "preferred_name": "Assessment for Substance Use Disorder",
+    "parent_id": 7
+  },
+  {
+    "name": "Chemical Dependency Treatment Programs",
+    "airtable_cat_id": "5562",
+    "show": true,
+    "parent_id": 7
+  },
+  {
+    "name": "Alcholism Treatment Programs",
+    "airtable_cat_id": "5563",
+    "show": true,
+    "parent_id": 7
+  },
+  {
+    "name": "Substance Abuse Treatment Programs",
+    "airtable_cat_id": "5564",
+    "show": true,
+    "preferred_name": "Substance Use Treatment Programs",
+    "parent_id": 7
+  },
+  {
+    "name": "General Benefits Assistance",
+    "airtable_cat_id": "5591",
+    "show": true,
+    "parent_id": 8
+  },
+  {
+    "name": "Immigrant Benefits Assistance",
+    "airtable_cat_id": "5592",
+    "show": true,
+    "parent_id": 8
+  },
+  {
+    "name": "Pension Benefits Assistance",
+    "airtable_cat_id": "5593",
+    "show": true,
+    "parent_id": 8
+  },
+  {
+    "name": "Protection and Advocacy for Individuals with Disab...",
+    "airtable_cat_id": "5594",
+    "show": true,
+    "parent_id": 8
+  },
+  {
+    "name": "Unemployment Insurance Benefits Assistance",
+    "airtable_cat_id": "5595",
+    "show": true,
+    "parent_id": 8
+  },
+  {
+    "name": "Public/Subsidized Housing Appeals Assistance",
+    "airtable_cat_id": "5596",
+    "show": true,
+    "parent_id": 8
+  },
+  {
+    "name": "Employment Discrimination Assistance",
+    "airtable_cat_id": "5597",
+    "show": true,
+    "parent_id": 8
+  },
+  {
+    "name": "Housing Discrimination Assistance",
+    "airtable_cat_id": "5598",
+    "show": true,
+    "parent_id": 8
+  },
+  {
+    "name": "Family Law",
+    "airtable_cat_id": "5599",
+    "show": true,
+    "parent_id": 8
+  },
+  {
+    "name": "General Legal Aid",
+    "airtable_cat_id": "5600",
+    "show": true,
+    "parent_id": 8
+  },
+  {
+    "name": "Immigration/Naturalization Legal Services",
+    "airtable_cat_id": "5601",
+    "show": true,
+    "parent_id": 8
+  },
+  {
+    "name": "Landlord/Tenant Dispute Resolution",
+    "airtable_cat_id": "5602",
+    "show": true,
+    "parent_id": 8
+  },
+  {
+    "name": "Landlord Rights Information/Counseling",
+    "airtable_cat_id": "5603",
+    "show": true,
+    "parent_id": 8
+  },
+  {
+    "name": "Tenant Rights/Information/Counseling",
+    "airtable_cat_id": "5604",
+    "show": true,
+    "parent_id": 8
+  },
+  {
+    "name": "Lawyer Referral Services",
+    "airtable_cat_id": "5605",
+    "show": true,
+    "parent_id": 8
+  },
+  {
+    "name": "Patient Rights Assistance",
+    "airtable_cat_id": "5606",
+    "show": true,
+    "parent_id": 8
+  },
+  {
+    "name": "Probate Assistance",
+    "airtable_cat_id": "5607",
+    "show": true,
+    "parent_id": 8
+  },
+  {
+    "name": "Comprehensive Job Assistance Centers",
+    "airtable_cat_id": "5608",
+    "show": false,
+    "parent_id": 9
+  },
+  {
+    "name": "Employment Preparation",
+    "airtable_cat_id": "5609",
+    "show": false,
+    "parent_id": 9
+  },
+  {
+    "name": "Job Finding Assistance",
+    "airtable_cat_id": "5610",
+    "show": false,
+    "parent_id": 9
+  },
+  {
+    "name": "Vocational Rehabilitation",
+    "airtable_cat_id": "5611",
+    "show": false,
+    "parent_id": 9
+  },
+  {
+    "name": "Rent Payment Assistance",
+    "airtable_cat_id": "5612",
+    "show": true,
+    "parent_id": 10
+  },
+  {
+    "name": "Senior Ride Programs",
+    "airtable_cat_id": "5613",
+    "show": false,
+    "parent_id": 10
+  },
+  {
+    "name": "Student Financial Aid",
+    "airtable_cat_id": "5614",
+    "show": false,
+    "parent_id": 10
+  },
+  {
+    "name": "In Home Supportive Services Subsidies",
+    "airtable_cat_id": "5615",
+    "show": false,
+    "parent_id": 10
+  },
+  {
+    "name": "Medically Indigent Adult Programs",
+    "airtable_cat_id": "5616",
+    "show": false,
+    "parent_id": 10
+  },
+  {
+    "name": "Medicare",
+    "airtable_cat_id": "5617",
+    "show": false,
+    "parent_id": 10
+  },
+  {
+    "name": "Supplemental Nutrition Assistance Program",
+    "airtable_cat_id": "5618",
+    "show": false,
+    "parent_id": 10
+  },
+  { "name": "WIC", "airtable_cat_id": "5619", "show": false, "parent_id": 10 },
+  {
+    "name": "Mortuary Services",
+    "airtable_cat_id": "5620",
+    "show": false,
+    "parent_id": 10
+  },
+  {
+    "name": "Veteran Home Loans",
+    "airtable_cat_id": "5621",
+    "show": false,
+    "parent_id": 11
+  },
+  {
+    "name": "Veteran Benefits Assistance",
+    "airtable_cat_id": "5622",
+    "show": false,
+    "parent_id": 11
+  },
+  {
+    "name": "Veteran Outpatient Health Facilities",
+    "airtable_cat_id": "5623",
+    "show": false,
+    "parent_id": 11
+  },
+  {
+    "name": "Veteran Burial Benefits",
+    "airtable_cat_id": "5624",
+    "show": false,
+    "parent_id": 11
+  },
+  {
+    "name": "Insurance Claims Assistance for Veterans",
+    "airtable_cat_id": "5625",
+    "show": false,
+    "parent_id": 11
+  },
+  {
+    "name": "Veteran Reintegration Counseling",
+    "airtable_cat_id": "5626",
+    "show": false,
+    "parent_id": 11
+  },
+  {
+    "name": "Military Family Service/Support Centers",
+    "airtable_cat_id": "5627",
+    "show": false,
+    "parent_id": 11
+  },
+  {
+    "name": "Families of Military Personnel/Veterans",
+    "airtable_cat_id": "5628",
+    "show": false,
+    "parent_id": 11
+  },
+  {
+    "name": "Active Military",
+    "airtable_cat_id": "5629",
+    "show": false,
+    "parent_id": 11
+  },
+  {
+    "name": "Veteran Employment Programs",
+    "airtable_cat_id": "5630",
+    "show": false,
+    "parent_id": 11
+  },
+  {
+    "name": "Homeless Veterans",
+    "airtable_cat_id": "5631",
+    "show": false,
+    "parent_id": 11
+  },
+  {
+    "name": "Veteran Home Loans",
+    "airtable_cat_id": "5621",
+    "show": false,
+    "parent_id": 11
+  },
+  {
+    "name": "Veteran Benefits Assistance",
+    "airtable_cat_id": "5622",
+    "show": false,
+    "parent_id": 11
+  },
+  {
+    "name": "Veteran Outpatient Health Facilities",
+    "airtable_cat_id": "5623",
+    "show": false,
+    "parent_id": 11
+  },
+  {
+    "name": "Veteran Burial Benefits",
+    "airtable_cat_id": "5624",
+    "show": false,
+    "parent_id": 11
+  },
+  {
+    "name": "Insurance Claims Assistance for Veterans",
+    "airtable_cat_id": "5625",
+    "show": false,
+    "parent_id": 11
+  },
+  {
+    "name": "Veteran Reintegration Counseling",
+    "airtable_cat_id": "5626",
+    "show": false,
+    "parent_id": 11
+  },
+  {
+    "name": "Military Family Service/Support Centers",
+    "airtable_cat_id": "5627",
+    "show": false,
+    "parent_id": 11
+  },
+  {
+    "name": "Families of Military Personnel/Veterans",
+    "airtable_cat_id": "5628",
+    "show": false,
+    "parent_id": 11
+  },
+  {
+    "name": "Active Military",
+    "airtable_cat_id": "5629",
+    "show": false,
+    "parent_id": 11
+  },
+  {
+    "name": "Veteran Employment Programs",
+    "airtable_cat_id": "5630",
+    "show": false,
+    "parent_id": 11
+  },
+  {
+    "name": "Homeless Veterans",
+    "airtable_cat_id": "5631",
+    "show": true,
+    "parent_id": 11
+  },
+  {
+    "name": "After School Meal Programs",
+    "airtable_cat_id": "5632",
+    "show": true,
+    "parent_id": 13
+  },
+  {
+    "name": "Summer Food Service Programs",
+    "airtable_cat_id": "5633",
+    "show": true,
+    "parent_id": 13
+  },
+  {
+    "name": "Runaway/Youth Shelters",
+    "airtable_cat_id": "5634",
+    "show": true,
+    "parent_id": 13
+  },
+  {
+    "name": "Runaway Help",
+    "airtable_cat_id": "5635",
+    "show": true,
+    "parent_id": 13
+  },
+  {
+    "name": "Clothing",
+    "airtable_cat_id": "5636",
+    "show": false,
+    "parent_id": 13
+  },
+  {
+    "name": "Child Care Complaints",
+    "airtable_cat_id": "5637",
+    "show": false,
+    "parent_id": 13
+  },
+  {
+    "name": "Child Care",
+    "airtable_cat_id": "5638",
+    "show": false,
+    "parent_id": 13
+  },
+  {
+    "name": "Children's",
+    "airtable_cat_id": "5639",
+    "show": false,
+    "parent_id": 13
+  },
+  {
+    "name": "Anti Bullying Programs",
+    "airtable_cat_id": "5640",
+    "show": false,
+    "parent_id": 13
+  },
+  {
+    "name": "Child Abuse Prevention",
+    "airtable_cat_id": "5641",
+    "show": false,
+    "parent_id": 13
+  },
+  {
+    "name": "Child Sexual Assault Prevention",
+    "airtable_cat_id": "5642",
+    "show": false,
+    "parent_id": 13
+  },
+  {
+    "name": "Advance Medical Directives",
+    "airtable_cat_id": "5643",
+    "show": false,
+    "parent_id": 13
+  },
+  {
+    "name": "Child Custody/Visitation Assistance",
+    "airtable_cat_id": "5644",
+    "show": false,
+    "parent_id": 13
+  },
+  {
+    "name": "Child Support Assistance/Enforcement",
+    "airtable_cat_id": "5645",
+    "show": false,
+    "parent_id": 13
+  },
+  {
+    "name": "Preschools",
+    "airtable_cat_id": "5646",
+    "show": false,
+    "parent_id": 13
+  },
+  {
+    "name": "Migrant Education Programs",
+    "airtable_cat_id": "5647",
+    "show": false,
+    "parent_id": 13
+  },
+  {
+    "name": "Special Education and Assessment",
+    "airtable_cat_id": "5648",
+    "show": false,
+    "parent_id": 13
+  },
+  {
+    "name": "Home Safety Evaluations",
+    "airtable_cat_id": "5649",
+    "show": false,
+    "parent_id": 13
+  },
+  {
+    "name": "Childbirth Education",
+    "airtable_cat_id": "5650",
+    "show": false,
+    "parent_id": 13
+  },
+  {
+    "name": "Birth Control",
+    "airtable_cat_id": "5651",
+    "show": false,
+    "parent_id": 13
+  },
+  {
+    "name": "Abortion Services",
+    "airtable_cat_id": "5652",
+    "show": false,
+    "parent_id": 13
+  },
+  {
+    "name": "Prenatal Care",
+    "airtable_cat_id": "5653",
+    "show": false,
+    "parent_id": 13
+  },
+  {
+    "name": "Reproductive Health Education",
+    "airtable_cat_id": "5654",
+    "show": false,
+    "parent_id": 13
+  },
+  {
+    "name": "Early Intervention for Children With Disabilties/D...",
+    "airtable_cat_id": "5655",
+    "show": false,
+    "parent_id": 13
+  },
+  {
+    "name": "Childhood Immunizations",
+    "airtable_cat_id": "5656",
+    "show": false,
+    "parent_id": 13
+  },
+  {
+    "name": "Pediatric Dental Services",
+    "airtable_cat_id": "5657",
+    "show": false,
+    "parent_id": 13
+  },
+  {
+    "name": "Pediatrics",
+    "airtable_cat_id": "5658",
+    "show": false,
+    "parent_id": 13
+  },
+  { "name": "WIC", "airtable_cat_id": "5659", "show": false, "parent_id": 13 },
+  {
+    "name": "Leisure Activities",
+    "airtable_cat_id": "5660",
+    "show": false,
+    "parent_id": 13
+  },
+  {
+    "name": "Sexual Assualt/Incest Support Groups",
+    "airtable_cat_id": "5661",
+    "show": false,
+    "parent_id": 13
+  },
+  {
+    "name": "Bereaved Child and Parent Support Groups",
+    "airtable_cat_id": "5662",
+    "show": false,
+    "parent_id": 13
+  },
+  {
+    "name": "Adoption and Foster/Kinship Support Groups",
+    "airtable_cat_id": "5663",
+    "show": false,
+    "parent_id": 13
+  },
+  {
+    "name": "Youth Development",
+    "airtable_cat_id": "5664",
+    "show": false,
+    "parent_id": 13
+  },
+  {
+    "name": "Child Guidance",
+    "airtable_cat_id": "5665",
+    "show": false,
+    "parent_id": 13
+  },
+  {
+    "name": "Youth Issues Lines",
+    "airtable_cat_id": "5666",
+    "show": false,
+    "parent_id": 13
+  },
+  {
+    "name": "Youth Development and Youth Centers",
+    "airtable_cat_id": "5667",
+    "show": false,
+    "parent_id": 13
+  },
+  {
+    "name": "Pregnant Women",
+    "airtable_cat_id": "5668",
+    "show": false,
+    "parent_id": 13
+  },
+  {
+    "name": "Single Parent Families",
+    "airtable_cat_id": "5669",
+    "show": false,
+    "parent_id": 13
+  },
+  {
+    "name": "Juvenile Detention Facilities",
+    "airtable_cat_id": "5670",
+    "show": false,
+    "parent_id": 13
+  },
+  {
+    "name": "Abused Children",
+    "airtable_cat_id": "5671",
+    "show": false,
+    "parent_id": 13
+  },
+  {
+    "name": "Home Safety Evaluations and Accessibility Improvem...",
+    "airtable_cat_id": "6003",
+    "show": false,
+    "parent_id": 14
+  },
+  {
+    "name": "Independent Living Skills Instruction",
+    "airtable_cat_id": "6004",
+    "show": false,
+    "parent_id": 14
+  },
+  {
+    "name": "Resources for People Living with HIV",
+    "airtable_cat_id": "5331",
+    "show": false,
+    "parent_id": 15
+  },
+  {
+    "name": "Transportation Resources Portal",
+    "airtable_cat_id": "5332",
+    "show": false,
+    "parent_id": 15
+  },
+  {
+    "name": "Reentry Resources Portal",
+    "airtable_cat_id": "5334",
+    "show": false,
+    "parent_id": 15
+  },
+  {
+    "name": "Alameda County Housing Choices",
+    "airtable_cat_id": "5336",
+    "show": false,
+    "parent_id": 15
+  },
+  {
+    "lang": "es",
+    "name": "Housing",
+    "airtable_cat_id": "3523",
+    "show": false,
+    "preferred_name": "Vivienda"
+  },
+  {
+    "lang": "es",
+    "name": "Shelter and Homeless Resources",
+    "airtable_cat_id": "5320",
+    "show": true,
+    "preferred_name": "Albergue y recursos para personas sin hogar"
+  },
+  {
+    "lang": "es",
+    "name": "Utility Assistance",
+    "airtable_cat_id": "5321",
+    "show": false,
+    "preferred_name": "Ayuda con el pago de servicios públicos"
+  },
+  {
+    "lang": "es",
+    "name": "Food",
+    "airtable_cat_id": "3493",
+    "show": true,
+    "preferred_name": "Alimentos"
+  },
+  {
+    "lang": "es",
+    "name": "Physical Health",
+    "airtable_cat_id": "5322",
+    "show": true,
+    "preferred_name": "Salud física"
+  },
+  {
+    "lang": "es",
+    "name": "Mental Wellness",
+    "airtable_cat_id": "5566",
+    "show": true,
+    "preferred_name": "Bienestar mental"
+  },
+  {
+    "lang": "es",
+    "name": "Substance Abuse",
+    "airtable_cat_id": "5323",
+    "show": true,
+    "preferred_name": "Substance Use Disorder",
+    "preferred_name_2": "Abuso de sustancias controladas"
+  },
+  {
+    "lang": "es",
+    "name": "Legal Assistance",
+    "airtable_cat_id": "5324",
+    "show": true,
+    "preferred_name": "Asistencia legal"
+  },
+  {
+    "lang": "es",
+    "name": "Employment Assistance",
+    "airtable_cat_id": "5325",
+    "show": false,
+    "preferred_name": "Ayuda en la búsqueda de empleo"
+  },
+  {
+    "lang": "es",
+    "name": "Financial Assistance and Public Benefits",
+    "airtable_cat_id": "5326",
+    "show": true,
+    "preferred_name": "Rental Assistance",
+    "preferred_name_2": "Ayuda financiera y beneficios públicos",
+    "preferred_name_3": "Ayuda con el pago del alquiler"
+  },
+  {
+    "lang": "es",
+    "name": "Military and Veteran Resources",
+    "airtable_cat_id": "5328",
+    "show": false,
+    "preferred_name": "Recursos para militares y veteranos"
+  },
+  {
+    "lang": "es",
+    "name": "Senior Resources",
+    "airtable_cat_id": "5327",
+    "show": false,
+    "preferred_name": "Recursos para adultos mayores"
+  },
+  {
+    "lang": "es",
+    "name": "Child and Youth Resources",
+    "airtable_cat_id": "5329",
+    "show": false,
+    "preferred_name": "Recursos para niños y jóvenes"
+  },
+  {
+    "lang": "es",
+    "name": "Accessibility and Independent Living",
+    "airtable_cat_id": "5506",
+    "show": false,
+    "preferred_name": "Accesibilidad y vida independiente"
+  },
+  {
+    "lang": "es",
+    "name": "OTHER SPECIALIZED RESOURCE PORTALS",
+    "airtable_cat_id": "5330",
+    "show": false,
+    "preferred_name": "OTROS PORTALES DE RECURSOS ESPECIALIZADOS"
+  },
+  {
+    "lang": "es",
+    "name": "Alameda County Housing Choices",
+    "airtable_cat_id": "3524",
+    "show": false,
+    "parent_id": 1,
+    "preferred_name": "Opciones de vivienda del condado de Alameda"
+  },
+  {
+    "lang": "es",
+    "name": "Housing Resources for People Living with HIV",
+    "airtable_cat_id": "5335",
+    "show": false,
+    "parent_id": 1,
+    "preferred_name": "Recursos de vivienda para personas que viven con el VIH"
+  },
+  {
+    "lang": "es",
+    "name": "Low Cost Home Rental Listings",
+    "airtable_cat_id": "5543",
+    "show": false,
+    "parent_id": 1,
+    "preferred_name": "Listados de alquiler de viviendas de bajo costo"
+  },
+  {
+    "lang": "es",
+    "name": "Senior Housing Information and Referral",
+    "airtable_cat_id": "5544",
+    "show": false,
+    "parent_id": 1,
+    "preferred_name": "Información y referencia de vivienda para adultos mayores"
+  },
+  {
+    "lang": "es",
+    "name": "Housing Issues and Counseling",
+    "airtable_cat_id": "5545",
+    "show": false,
+    "parent_id": 1,
+    "preferred_name": "Problemas de vivienda y asesoramiento"
+  },
+  {
+    "lang": "es",
+    "name": "Residential Housing Options",
+    "airtable_cat_id": "5546",
+    "show": false,
+    "parent_id": 1,
+    "preferred_name": "Opciones de vivienda residencial"
+  },
+  {
+    "lang": "es",
+    "name": "Extreme Weather Shelters",
+    "airtable_cat_id": "5547",
+    "show": true,
+    "parent_id": 2,
+    "preferred_name": "Refugios para condiciones climáticas extremas"
+  },
+  {
+    "lang": "es",
+    "name": "Domestic Violence Shelters",
+    "airtable_cat_id": "5548",
+    "show": true,
+    "parent_id": 2,
+    "preferred_name": "Refugios para víctimas de violencia doméstica"
+  },
+  {
+    "lang": "es",
+    "name": "Homeless Shelter",
+    "airtable_cat_id": "5550",
+    "show": true,
+    "parent_id": 2,
+    "preferred_name": "Refugio para personas sin hogar"
+  },
+  {
+    "lang": "es",
+    "name": "Transitional Housing/Shelter",
+    "airtable_cat_id": "5551",
+    "show": true,
+    "parent_id": 2,
+    "preferred_name": "Vivienda / refugio de transición"
+  },
+  {
+    "lang": "es",
+    "name": "Personal/Grooming Supplies",
+    "airtable_cat_id": "5552",
+    "show": true,
+    "parent_id": 2,
+    "preferred_name": "Suministros personales / de aseo"
+  },
+  {
+    "lang": "es",
+    "name": "Laundry Facilities",
+    "airtable_cat_id": "5553",
+    "show": true,
+    "parent_id": 2,
+    "preferred_name": "Instalaciones de lavandería"
+  },
+  {
+    "lang": "es",
+    "name": "Temporary Mailing Address",
+    "airtable_cat_id": "5554",
+    "show": true,
+    "parent_id": 2,
+    "preferred_name": "Dirección postal temporal"
+  },
+  {
+    "lang": "es",
+    "name": "Mobile Healthcare",
+    "airtable_cat_id": "5555",
+    "show": false,
+    "parent_id": 2,
+    "preferred_name": "Servicios de salud móviles"
+  },
+  {
+    "lang": "es",
+    "name": "Utility Bill Payment Plans",
+    "airtable_cat_id": "5559",
+    "show": false,
+    "parent_id": 3,
+    "preferred_name": "Planes de pago de facturas de servicios públicos"
+  },
+  {
+    "lang": "es",
+    "name": "Discounted Utility Services",
+    "airtable_cat_id": "5560",
+    "show": false,
+    "parent_id": 3,
+    "preferred_name": "Servicios públicos con tarifas en descuento"
+  },
+  {
+    "lang": "es",
+    "name": "WIC",
+    "airtable_cat_id": "3521",
+    "show": true,
+    "parent_id": 4,
+    "preferred_name": "Programa Especial de Nutrición Suplementaria para Mujeres, Bebés y Niños (WIC)"
+  },
+  {
+    "lang": "es",
+    "name": "Food Stamps/SNAP Applications",
+    "airtable_cat_id": "3522",
+    "show": true,
+    "parent_id": 4,
+    "preferred_name": "Cupones de alimentos / Solicitudes para el programa de ayuda nutricional suplementaria (SNAP)"
+  },
+  {
+    "lang": "es",
+    "name": "Food Pantries",
+    "airtable_cat_id": "5556",
+    "show": true,
+    "parent_id": 4,
+    "preferred_name": "Despensas públicas de alimento"
+  },
+  {
+    "lang": "es",
+    "name": "Brown Bag Food Programs",
+    "airtable_cat_id": "5557",
+    "show": true,
+    "parent_id": 4,
+    "preferred_name": "Programas de alimentos 'Brown Bag'"
+  },
+  {
+    "lang": "es",
+    "name": "Outpatient Health Facilities",
+    "airtable_cat_id": "5567",
+    "show": true,
+    "parent_id": 5,
+    "preferred_name": "Instalaciones de salud para pacientes ambulatorios"
+  },
+  {
+    "lang": "es",
+    "name": "Health Care Discount Enrollment Programs",
+    "airtable_cat_id": "5568",
+    "show": true,
+    "parent_id": 5,
+    "preferred_name": "Programas de inscripción para descuentos en atención médica"
+  },
+  {
+    "lang": "es",
+    "name": "Medical Care Expense Assistance",
+    "airtable_cat_id": "5569",
+    "show": true,
+    "parent_id": 5,
+    "preferred_name": "Ayuda con gastos de atención médica"
+  },
+  {
+    "lang": "es",
+    "name": "Hospitals",
+    "airtable_cat_id": "5570",
+    "show": true,
+    "parent_id": 5,
+    "preferred_name": "Hospitales"
+  },
+  {
+    "lang": "es",
+    "name": "Community Clinics",
+    "airtable_cat_id": "5571",
+    "show": true,
+    "parent_id": 5,
+    "preferred_name": "Clínicas comunitarias"
+  },
+  {
+    "lang": "es",
+    "name": "Physician Referral",
+    "airtable_cat_id": "5572",
+    "show": true,
+    "parent_id": 5,
+    "preferred_name": "Referencia médica"
+  },
+  {
+    "lang": "es",
+    "name": "Domestic Violence Hotlines",
+    "airtable_cat_id": "5587",
+    "show": true,
+    "parent_id": 5,
+    "preferred_name": "Líneas de atención contra la violencia doméstica"
+  },
+  {
+    "lang": "es",
+    "name": "Pregnant Women",
+    "airtable_cat_id": "5672",
+    "show": false,
+    "parent_id": 5,
+    "preferred_name": "Mujeres embarazadas"
+  },
+  {
+    "lang": "es",
+    "name": "Resources for People Living with HIV",
+    "airtable_cat_id": "6005",
+    "show": false,
+    "parent_id": 5,
+    "preferred_name": "Recursos para personas viviendo con el VIH"
+  },
+  {
+    "lang": "es",
+    "name": "Crisis Counseling",
+    "airtable_cat_id": "5573",
+    "show": true,
+    "parent_id": 6,
+    "preferred_name": "Consejería de crisis"
+  },
+  {
+    "lang": "es",
+    "name": "General Crisis Intervention Hotlines",
+    "airtable_cat_id": "5574",
+    "show": true,
+    "parent_id": 6,
+    "preferred_name": "Líneas de atención para la intervención en crisis generales"
+  },
+  {
+    "lang": "es",
+    "name": "Suicide Prevention Crisis Intervention Hotlines",
+    "airtable_cat_id": "5575",
+    "show": true,
+    "parent_id": 6,
+    "preferred_name": "Líneas de atención para la prevención del suicidio"
+  },
+  {
+    "lang": "es",
+    "name": "Human Trafficking Crisis Intervention Hotlines",
+    "airtable_cat_id": "5576",
+    "show": true,
+    "parent_id": 6,
+    "preferred_name": "Líneas directas de intervención en la crisis de trata de personas"
+  },
+  {
+    "lang": "es",
+    "name": "Adult Rape Survivors",
+    "airtable_cat_id": "5577",
+    "show": true,
+    "parent_id": 6,
+    "preferred_name": "Adultos sobrevivientes de violación"
+  },
+  {
+    "lang": "es",
+    "name": "Mental Health Evaluation",
+    "airtable_cat_id": "5578",
+    "show": true,
+    "parent_id": 6,
+    "preferred_name": "Evaluación de salud mental"
+  },
+  {
+    "lang": "es",
+    "name": "Psychiatric Disorders",
+    "airtable_cat_id": "5579",
+    "show": true,
+    "parent_id": 6,
+    "preferred_name": "Trastornos psiquiátricos"
+  },
+  {
+    "lang": "es",
+    "name": "Adult Psychiatric Hospitals",
+    "airtable_cat_id": "5580",
+    "show": true,
+    "parent_id": 6,
+    "preferred_name": "Hospitales psiquiátricos para adultos"
+  },
+  {
+    "lang": "es",
+    "name": "Mental Health Evaluation for Children",
+    "airtable_cat_id": "5581",
+    "show": false,
+    "parent_id": 6,
+    "preferred_name": "Evaluación de salud mental para niños"
+  },
+  {
+    "lang": "es",
+    "name": "Geriatric Mental Illness Counseling",
+    "airtable_cat_id": "5582",
+    "show": false,
+    "parent_id": 6,
+    "preferred_name": "Consejería de enfermedad mental geriátrica"
+  },
+  {
+    "lang": "es",
+    "name": "Outpatient Behavioral Health Facilities",
+    "airtable_cat_id": "5583",
+    "show": true,
+    "parent_id": 6,
+    "preferred_name": "Instalaciones de salud conductual para pacientes ambulatorios"
+  },
+  {
+    "lang": "es",
+    "name": "Mutual Support Groups",
+    "airtable_cat_id": "5584",
+    "show": true,
+    "parent_id": 6,
+    "preferred_name": "Grupos de apoyo mutuo"
+  },
+  {
+    "lang": "es",
+    "name": "Domestic Violence Support Groups",
+    "airtable_cat_id": "5585",
+    "show": true,
+    "parent_id": 6,
+    "preferred_name": "Grupos de apoyo para víctimas de violencia doméstica"
+  },
+  {
+    "lang": "es",
+    "name": "Domestic Violence Hotlines",
+    "airtable_cat_id": "5586",
+    "show": true,
+    "parent_id": 6,
+    "preferred_name": "Líneas de atención para víctimas de violencia doméstica"
+  },
+  {
+    "lang": "es",
+    "name": "General Bereavement Support Groups",
+    "airtable_cat_id": "5588",
+    "show": true,
+    "parent_id": 6,
+    "preferred_name": "Grupos de apoyo para personas en duelo"
+  },
+  {
+    "lang": "es",
+    "name": "Smoking/Vaping Quitting Support",
+    "airtable_cat_id": "5590",
+    "show": true,
+    "parent_id": 6,
+    "preferred_name": "Ayuda para dejar de fumar"
+  },
+  {
+    "lang": "es",
+    "name": "LGBTTQ+ Support Groups",
+    "airtable_cat_id": "6006",
+    "show": true,
+    "parent_id": 6,
+    "preferred_name": "Grupos de apoyo para personas de la comunidad LGBTTQ+"
+  },
+  {
+    "lang": "es",
+    "name": "Assessment for Substance Abuse",
+    "airtable_cat_id": "5561",
+    "show": true,
+    "preferred_name": "Assessment for Substance Use Disorder",
+    "parent_id": 7,
+    "preferred_name_2": "Evaluación de abuso de sustancias controladas",
+    "preferred_name_3": "Evaluación para el trastorno por uso de sustancias controladas"
+  },
+  {
+    "lang": "es",
+    "name": "Chemical Dependency Treatment Programs",
+    "airtable_cat_id": "5562",
+    "show": true,
+    "parent_id": 7,
+    "preferred_name": "Programas de tratamiento a la dependencia química"
+  },
+  {
+    "lang": "es",
+    "name": "Alcholism Treatment Programs",
+    "airtable_cat_id": "5563",
+    "show": true,
+    "parent_id": 7,
+    "preferred_name": "Programas de tratamiento del alcoholismo"
+  },
+  {
+    "lang": "es",
+    "name": "Substance Abuse Treatment Programs",
+    "airtable_cat_id": "5564",
+    "show": true,
+    "preferred_name": "Substance Use Treatment Programs",
+    "parent_id": 7,
+    "preferred_name_2": "Programas de tratamiento del abuso de sustancias controladas",
+    "preferred_name_3": "Programas de tratamiento del uso de sustancias controladas"
+  },
+  {
+    "lang": "es",
+    "name": "General Benefits Assistance",
+    "airtable_cat_id": "5591",
+    "show": true,
+    "parent_id": 8,
+    "preferred_name": "Ayuda con beneficios generales"
+  },
+  {
+    "lang": "es",
+    "name": "Immigrant Benefits Assistance",
+    "airtable_cat_id": "5592",
+    "show": true,
+    "parent_id": 8,
+    "preferred_name": "Ayuda con beneficios para inmigrantes"
+  },
+  {
+    "lang": "es",
+    "name": "Pension Benefits Assistance",
+    "airtable_cat_id": "5593",
+    "show": true,
+    "parent_id": 8,
+    "preferred_name": "Ayuda con beneficios de pensión"
+  },
+  {
+    "lang": "es",
+    "name": "Protection and Advocacy for Individuals with Disabilties",
+    "airtable_cat_id": "5594",
+    "show": true,
+    "parent_id": 8,
+    "preferred_name": "Protección y defensa para personas con discapacidad"
+  },
+  {
+    "lang": "es",
+    "name": "Unemployment Insurance Benefits Assistance",
+    "airtable_cat_id": "5595",
+    "show": true,
+    "parent_id": 8,
+    "preferred_name": "Ayuda con beneficios del seguro de desempleo"
+  },
+  {
+    "lang": "es",
+    "name": "Public/Subsidized Housing Appeals Assistance",
+    "airtable_cat_id": "5596",
+    "show": true,
+    "parent_id": 8,
+    "preferred_name": "Ayuda con apelaciones de vivienda pública / subsidiada"
+  },
+  {
+    "lang": "es",
+    "name": "Employment Discrimination Assistance",
+    "airtable_cat_id": "5597",
+    "show": true,
+    "parent_id": 8,
+    "preferred_name": "Ayuda para personas discriminadas en el empleo"
+  },
+  {
+    "lang": "es",
+    "name": "Housing Discrimination Assistance",
+    "airtable_cat_id": "5598",
+    "show": true,
+    "parent_id": 8,
+    "preferred_name": "Ayuda para personas discriminadas en el ámbito de la vivienda"
+  },
+  {
+    "lang": "es",
+    "name": "Family Law",
+    "airtable_cat_id": "5599",
+    "show": true,
+    "parent_id": 8,
+    "preferred_name": "Derecho de familia"
+  },
+  {
+    "lang": "es",
+    "name": "General Legal Aid",
+    "airtable_cat_id": "5600",
+    "show": true,
+    "parent_id": 8,
+    "preferred_name": "Asistencia legal general"
+  },
+  {
+    "lang": "es",
+    "name": "Immigration/Naturalization Legal Services",
+    "airtable_cat_id": "5601",
+    "show": true,
+    "parent_id": 8,
+    "preferred_name": "Servicios legales de inmigración / naturalización"
+  },
+  {
+    "lang": "es",
+    "name": "Landlord/Tenant Dispute Resolution",
+    "airtable_cat_id": "5602",
+    "show": true,
+    "parent_id": 8,
+    "preferred_name": "Resolución de disputas entre propietarios e inquilinos"
+  },
+  {
+    "lang": "es",
+    "name": "Landlord Rights Information/Counseling",
+    "airtable_cat_id": "5603",
+    "show": true,
+    "parent_id": 8,
+    "preferred_name": "Información / asesoramiento sobre los derechos del propietario"
+  },
+  {
+    "lang": "es",
+    "name": "Tenant Rights/Information/Counseling",
+    "airtable_cat_id": "5604",
+    "show": true,
+    "parent_id": 8,
+    "preferred_name": "Información / asesoramiento sobre los derechos del inquilino"
+  },
+  {
+    "lang": "es",
+    "name": "Lawyer Referral Services",
+    "airtable_cat_id": "5605",
+    "show": true,
+    "parent_id": 8,
+    "preferred_name": "Servicios de referencia de abogados"
+  },
+  {
+    "lang": "es",
+    "name": "Patient Rights Assistance",
+    "airtable_cat_id": "5606",
+    "show": true,
+    "parent_id": 8,
+    "preferred_name": "Ayuda de derechos del paciente"
+  },
+  {
+    "lang": "es",
+    "name": "Probate Assistance",
+    "airtable_cat_id": "5607",
+    "show": true,
+    "parent_id": 8,
+    "preferred_name": "Ayuda con la legitimación testamentaria"
+  },
+  {
+    "lang": "es",
+    "name": "Comprehensive Job Assistance Centers",
+    "airtable_cat_id": "5608",
+    "show": false,
+    "parent_id": 9,
+    "preferred_name": "Centros integrales de asistencia laboral"
+  },
+  {
+    "lang": "es",
+    "name": "Employment Preparation",
+    "airtable_cat_id": "5609",
+    "show": false,
+    "parent_id": 9,
+    "preferred_name": "Preparación para el empleo"
+  },
+  {
+    "lang": "es",
+    "name": "Job Finding Assistance",
+    "airtable_cat_id": "5610",
+    "show": false,
+    "parent_id": 9,
+    "preferred_name": "Ayuda para encontrar empleo"
+  },
+  {
+    "lang": "es",
+    "name": "Vocational Rehabilitation",
+    "airtable_cat_id": "5611",
+    "show": false,
+    "parent_id": 9,
+    "preferred_name": "Rehabilitación vocacional"
+  },
+  {
+    "lang": "es",
+    "name": "Rent Payment Assistance",
+    "airtable_cat_id": "5612",
+    "show": true,
+    "parent_id": 10,
+    "preferred_name": "Ayuda con el pago del alquiler"
+  },
+  {
+    "lang": "es",
+    "name": "Senior Ride Programs",
+    "airtable_cat_id": "5613",
+    "show": false,
+    "parent_id": 10,
+    "preferred_name": "Programas de transporte para adultos mayores"
+  },
+  {
+    "lang": "es",
+    "name": "Student Financial Aid",
+    "airtable_cat_id": "5614",
+    "show": false,
+    "parent_id": 10,
+    "preferred_name": "Ayuda financiera para estudiantes"
+  },
+  {
+    "lang": "es",
+    "name": "In Home Supportive Services Subsidies",
+    "airtable_cat_id": "5615",
+    "show": false,
+    "parent_id": 10,
+    "preferred_name": "Subsidios para servicios de apoyo a domicilio"
+  },
+  {
+    "lang": "es",
+    "name": "Medically Indigent Adult Programs",
+    "airtable_cat_id": "5616",
+    "show": false,
+    "parent_id": 10,
+    "preferred_name": "Programas para adultos médicamente indigentes"
+  },
+  {
+    "lang": "es",
+    "name": "Medicare",
+    "airtable_cat_id": "5617",
+    "show": false,
+    "parent_id": 10,
+    "preferred_name": "Programa federal de seguro médico (Medicare)"
+  },
+  {
+    "lang": "es",
+    "name": "Supplemental Nutrition Assistance Program",
+    "airtable_cat_id": "5618",
+    "show": false,
+    "parent_id": 10,
+    "preferred_name": "Programa de ayuda nutricional suplementaria (SNAP)"
+  },
+  {
+    "lang": "es",
+    "name": "WIC",
+    "airtable_cat_id": "5619",
+    "show": false,
+    "parent_id": 10,
+    "preferred_name": "Programa Especial de Nutrición Suplementaria para Mujeres, Bebés y Niños (WIC)"
+  },
+  {
+    "lang": "es",
+    "name": "Mortuary Services",
+    "airtable_cat_id": "5620",
+    "show": false,
+    "parent_id": 10,
+    "preferred_name": "Servicios mortuorios"
+  },
+  {
+    "lang": "es",
+    "name": "Veteran Home Loans",
+    "airtable_cat_id": "5621",
+    "show": false,
+    "parent_id": 11,
+    "preferred_name": "Préstamos hipotecarios para veteranos"
+  },
+  {
+    "lang": "es",
+    "name": "Veteran Benefits Assistance",
+    "airtable_cat_id": "5622",
+    "show": false,
+    "parent_id": 11,
+    "preferred_name": "Ayuda con los beneficios para veteranos"
+  },
+  {
+    "lang": "es",
+    "name": "Veteran Outpatient Health Facilities",
+    "airtable_cat_id": "5623",
+    "show": false,
+    "parent_id": 11,
+    "preferred_name": "Centros ambulatorios de salud para veteranos"
+  },
+  {
+    "lang": "es",
+    "name": "Veteran Burial Benefits",
+    "airtable_cat_id": "5624",
+    "show": false,
+    "parent_id": 11,
+    "preferred_name": "Beneficios de entierro para veteranos"
+  },
+  {
+    "lang": "es",
+    "name": "Insurance Claims Assistance for Veterans",
+    "airtable_cat_id": "5625",
+    "show": false,
+    "parent_id": 11,
+    "preferred_name": "Ayuda con reclamos de seguro para veteranos"
+  },
+  {
+    "lang": "es",
+    "name": "Veteran Reintegration Counseling",
+    "airtable_cat_id": "5626",
+    "show": false,
+    "parent_id": 11,
+    "preferred_name": "Asesoramiento para la reintegración de veteranos"
+  },
+  {
+    "lang": "es",
+    "name": "Military Family Service/Support Centers",
+    "airtable_cat_id": "5627",
+    "show": false,
+    "parent_id": 11,
+    "preferred_name": "Centros de servicios y apoyo a familias militares"
+  },
+  {
+    "lang": "es",
+    "name": "Families of Military Personnel/Veterans",
+    "airtable_cat_id": "5628",
+    "show": false,
+    "parent_id": 11,
+    "preferred_name": "Familias de militares / veteranos"
+  },
+  {
+    "lang": "es",
+    "name": "Active Military",
+    "airtable_cat_id": "5629",
+    "show": false,
+    "parent_id": 11,
+    "preferred_name": "Militar activo"
+  },
+  {
+    "lang": "es",
+    "name": "Veteran Employment Programs",
+    "airtable_cat_id": "5630",
+    "show": false,
+    "parent_id": 11,
+    "preferred_name": "Programas de empleo para veteranos"
+  },
+  {
+    "lang": "es",
+    "name": "Homeless Veterans",
+    "airtable_cat_id": "5631",
+    "show": false,
+    "parent_id": 11,
+    "preferred_name": "Veteranos sin hogar"
+  },
+  {
+    "lang": "es",
+    "name": "Veteran Home Loans",
+    "airtable_cat_id": "5621",
+    "show": false,
+    "parent_id": 11,
+    "preferred_name": "Préstamos hipotecarios para veteranos"
+  },
+  {
+    "lang": "es",
+    "name": "Veteran Benefits Assistance",
+    "airtable_cat_id": "5622",
+    "show": false,
+    "parent_id": 11,
+    "preferred_name": "Ayuda con los beneficios para veteranos"
+  },
+  {
+    "lang": "es",
+    "name": "Veteran Outpatient Health Facilities",
+    "airtable_cat_id": "5623",
+    "show": false,
+    "parent_id": 11,
+    "preferred_name": "Centros ambulatorios de salud para veteranos"
+  },
+  {
+    "lang": "es",
+    "name": "Veteran Burial Benefits",
+    "airtable_cat_id": "5624",
+    "show": false,
+    "parent_id": 11,
+    "preferred_name": "Beneficios de entierro para veteranos"
+  },
+  {
+    "lang": "es",
+    "name": "Insurance Claims Assistance for Veterans",
+    "airtable_cat_id": "5625",
+    "show": false,
+    "parent_id": 11,
+    "preferred_name": "Ayuda con reclamos de seguro para veteranos"
+  },
+  {
+    "lang": "es",
+    "name": "Veteran Reintegration Counseling",
+    "airtable_cat_id": "5626",
+    "show": false,
+    "parent_id": 11,
+    "preferred_name": "Asesoramiento para la reintegración de veteranos"
+  },
+  {
+    "lang": "es",
+    "name": "Military Family Service/Support Centers",
+    "airtable_cat_id": "5627",
+    "show": false,
+    "parent_id": 11,
+    "preferred_name": "Centros de servicios y apoyo a familias militares"
+  },
+  {
+    "lang": "es",
+    "name": "Families of Military Personnel/Veterans",
+    "airtable_cat_id": "5628",
+    "show": false,
+    "parent_id": 11,
+    "preferred_name": "Familias de militares / veteranos"
+  },
+  {
+    "lang": "es",
+    "name": "Active Military",
+    "airtable_cat_id": "5629",
+    "show": false,
+    "parent_id": 11,
+    "preferred_name": "Militar activo"
+  },
+  {
+    "lang": "es",
+    "name": "Veteran Employment Programs",
+    "airtable_cat_id": "5630",
+    "show": false,
+    "parent_id": 11,
+    "preferred_name": "Programas de empleo para veteranos"
+  },
+  {
+    "lang": "es",
+    "name": "Homeless Veterans",
+    "airtable_cat_id": "5631",
+    "show": true,
+    "parent_id": 11,
+    "preferred_name": "Veteranos sin hogar"
+  },
+  {
+    "lang": "es",
+    "name": "After School Meal Programs",
+    "airtable_cat_id": "5632",
+    "show": true,
+    "parent_id": 13,
+    "preferred_name": "Programas de comidas después de la escuela"
+  },
+  {
+    "lang": "es",
+    "name": "Summer Food Service Programs",
+    "airtable_cat_id": "5633",
+    "show": true,
+    "parent_id": 13,
+    "preferred_name": "Programas de servicio de alimentos durante el verano"
+  },
+  {
+    "lang": "es",
+    "name": "Runaway/Youth Shelters",
+    "airtable_cat_id": "5634",
+    "show": true,
+    "parent_id": 13,
+    "preferred_name": "Refugios para jóvenes que han huído del hogar"
+  },
+  {
+    "lang": "es",
+    "name": "Runaway Help",
+    "airtable_cat_id": "5635",
+    "show": true,
+    "parent_id": 13,
+    "preferred_name": "Ayuda para jóvenes que han huído del hogar"
+  },
+  {
+    "lang": "es",
+    "name": "Clothing",
+    "airtable_cat_id": "5636",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Ropa"
+  },
+  {
+    "lang": "es",
+    "name": "Child Care Complaints",
+    "airtable_cat_id": "5637",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Quejas sobre el cuidado infantil"
+  },
+  {
+    "lang": "es",
+    "name": "Child Care",
+    "airtable_cat_id": "5638",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Cuidado infantil"
+  },
+  {
+    "lang": "es",
+    "name": "Children's",
+    "airtable_cat_id": "5639",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Niños"
+  },
+  {
+    "lang": "es",
+    "name": "Anti Bullying Programs",
+    "airtable_cat_id": "5640",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Programas contra el acoso/intimidación de jóvenes (anti bullying)"
+  },
+  {
+    "lang": "es",
+    "name": "Child Abuse Prevention",
+    "airtable_cat_id": "5641",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Prevención del abuso infantil"
+  },
+  {
+    "lang": "es",
+    "name": "Child Sexual Assault Prevention",
+    "airtable_cat_id": "5642",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Prevención de agresión sexual infantil"
+  },
+  {
+    "lang": "es",
+    "name": "Advance Medical Directives",
+    "airtable_cat_id": "5643",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Dispocisiones adelantadas para el cuidado médico"
+  },
+  {
+    "lang": "es",
+    "name": "Child Custody/Visitation Assistance",
+    "airtable_cat_id": "5644",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Ayuda con la custodia y derechos de visita de menores"
+  },
+  {
+    "lang": "es",
+    "name": "Child Support Assistance/Enforcement",
+    "airtable_cat_id": "5645",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Ayuda con el cumplimiento de manutención infantil"
+  },
+  {
+    "lang": "es",
+    "name": "Preschools",
+    "airtable_cat_id": "5646",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Preescolares"
+  },
+  {
+    "lang": "es",
+    "name": "Migrant Education Programs",
+    "airtable_cat_id": "5647",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Programas de educación para migrantes"
+  },
+  {
+    "lang": "es",
+    "name": "Special Education and Assessment",
+    "airtable_cat_id": "5648",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Educación especial y evaluación"
+  },
+  {
+    "lang": "es",
+    "name": "Home Safety Evaluations",
+    "airtable_cat_id": "5649",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Evaluaciones de seguridad en el hogar"
+  },
+  {
+    "lang": "es",
+    "name": "Childbirth Education",
+    "airtable_cat_id": "5650",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Educación sobre el parto"
+  },
+  {
+    "lang": "es",
+    "name": "Birth Control",
+    "airtable_cat_id": "5651",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Control de la natalidad"
+  },
+  {
+    "lang": "es",
+    "name": "Abortion Services",
+    "airtable_cat_id": "5652",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Servicios de aborto"
+  },
+  {
+    "lang": "es",
+    "name": "Prenatal Care",
+    "airtable_cat_id": "5653",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Atención prenatal"
+  },
+  {
+    "lang": "es",
+    "name": "Reproductive Health Education",
+    "airtable_cat_id": "5654",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Educación en salud reproductiva"
+  },
+  {
+    "lang": "es",
+    "name": "Early Intervention for Children With Disabilties/D...",
+    "airtable_cat_id": "5655",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Intervención temprana para niños con discapacidades"
+  },
+  {
+    "lang": "es",
+    "name": "Childhood Immunizations",
+    "airtable_cat_id": "5656",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Vacunas infantiles"
+  },
+  {
+    "lang": "es",
+    "name": "Pediatric Dental Services",
+    "airtable_cat_id": "5657",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Servicios dentales pediátricos"
+  },
+  {
+    "lang": "es",
+    "name": "Pediatrics",
+    "airtable_cat_id": "5658",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Pediatría"
+  },
+  {
+    "lang": "es",
+    "name": "WIC",
+    "airtable_cat_id": "5659",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Programa Especial de Nutrición Suplementaria para Mujeres, Bebés y Niños (WIC)"
+  },
+  {
+    "lang": "es",
+    "name": "Leisure Activities",
+    "airtable_cat_id": "5660",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Actividades durante el tiempo libre"
+  },
+  {
+    "lang": "es",
+    "name": "Sexual Assault/Incest Support Groups",
+    "airtable_cat_id": "5661",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Grupos de apoyo para víctimas de agresión sexual / incesto"
+  },
+  {
+    "lang": "es",
+    "name": "Bereaved Child and Parent Support Groups",
+    "airtable_cat_id": "5662",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Grupos de apoyo para niños y padres desconsolados"
+  },
+  {
+    "lang": "es",
+    "name": "Adoption and Foster/Kinship Support Groups",
+    "airtable_cat_id": "5663",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Grupos de apoyo para la adopción, el cuidado tutelar estatal y el cuidado de niños por parte de parientes"
+  },
+  {
+    "lang": "es",
+    "name": "Youth Development",
+    "airtable_cat_id": "5664",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Desarrollo juvenil"
+  },
+  {
+    "lang": "es",
+    "name": "Child Guidance",
+    "airtable_cat_id": "5665",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Orientación del niño"
+  },
+  {
+    "lang": "es",
+    "name": "Youth Issues Lines",
+    "airtable_cat_id": "5666",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Líneas de atención a temas de la juventud"
+  },
+  {
+    "lang": "es",
+    "name": "Youth Development and Youth Centers",
+    "airtable_cat_id": "5667",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Desarrollo juvenil y centros juveniles"
+  },
+  {
+    "lang": "es",
+    "name": "Pregnant Women",
+    "airtable_cat_id": "5668",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Mujeres embarazadas"
+  },
+  {
+    "lang": "es",
+    "name": "Single Parent Families",
+    "airtable_cat_id": "5669",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Familias monoparentales"
+  },
+  {
+    "lang": "es",
+    "name": "Juvenile Detention Facilities",
+    "airtable_cat_id": "5670",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Instalaciones de detención de menores"
+  },
+  {
+    "lang": "es",
+    "name": "Abused Children",
+    "airtable_cat_id": "5671",
+    "show": false,
+    "parent_id": 13,
+    "preferred_name": "Niños maltratados"
+  },
+  {
+    "lang": "es",
+    "name": "Home Safety Evaluations and Accessibility Improvement Programs",
+    "airtable_cat_id": "6003",
+    "show": false,
+    "parent_id": 14,
+    "preferred_name": "Programas de evaluaciones de seguridad en el hogar y mejoras de accesibilidad"
+  },
+  {
+    "lang": "es",
+    "name": "Independent Living Skills Instruction",
+    "airtable_cat_id": "6004",
+    "show": false,
+    "parent_id": 14,
+    "preferred_name": "Instrucción de destrezas para la vida independiente"
+  },
+  {
+    "lang": "es",
+    "name": "Resources for People Living with HIV",
+    "airtable_cat_id": "5331",
+    "show": false,
+    "parent_id": 15,
+    "preferred_name": "Recursos para personas que viven con el VIH"
+  },
+  {
+    "lang": "es",
+    "name": "Transportation Resources Portal",
+    "airtable_cat_id": "5332",
+    "show": false,
+    "parent_id": 15,
+    "preferred_name": "Portal de recursos de transporte"
+  },
+  {
+    "lang": "es",
+    "name": "Reentry Resources Portal",
+    "airtable_cat_id": "5334",
+    "show": false,
+    "parent_id": 15,
+    "preferred_name": "Portal de recursos de reentrada en la sociedad"
+  },
+  {
+    "lang": "es",
+    "name": "Alameda County Housing Choices",
+    "airtable_cat_id": "5336",
+    "show": false,
+    "parent_id": 15,
+    "preferred_name": "Opciones de vivienda del condado de Alameda"
+  }
+]

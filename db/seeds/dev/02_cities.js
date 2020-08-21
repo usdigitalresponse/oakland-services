@@ -1,4 +1,4 @@
-const citiesSeed = require("../data/formatted/cities");
+const citiesSeed = require("../data/v3/formatted/cities");
 
 exports.seed = function (knex) {
   return knex("cities")
