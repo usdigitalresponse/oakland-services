@@ -7,35 +7,20 @@ const calculateSpacing = (n) => {
 };
 
 export const colors = {
-  black: "#292C36",
+  black: "#000000",
+  grayDarkest: "#0C0C0C",
+  grayMedDark: "#4F4F4F",
+  grayMed: "#828282",
+  grayMedLight: "#BDBDBD",
+  grayLight: "#E0E0E0",
+  grayLightest: "#F2F2F2",
   white: "#FFFFFF",
-  primary: "#005EA2",
-  secondary: "#1f4d7d",
-  border: "#4A55681a",
-  backgroundBlue: "#EBF8FF",
-  lightBlue: "#90CDF4",
-  blue: "#4299E1",
-  darkBlue: "#2B6CB0",
-  backgroundGreen: "#F0FFF4",
-  lightGreen: "#9AE6B4",
-  green: "#48BB78",
-  darkGreen: "#2F855A",
-  backgroundRed: "#FFF5F5",
-  lightRed: "#FEB2B2",
-  red: "#F56565",
-  darkRed: "#C53030",
-  backgroundYellow: "#FFFFF0",
-  lightYellow: "#FAF089",
-  yellow: "#ECC94B",
-  darkYellow: "#B7791F",
-  backgroundOrange: "#FFFAF0",
-  lightOrange: "#FBD38D",
-  orange: "#ED8936",
-  darkOrange: "#C05621",
-  backgroundGrey: "#F7FAFC",
-  lightGrey: "#E2E8F0",
-  grey: "#A0AEC0",
-  darkGrey: "#4A5568",
+  blue: "#1A75E0",
+  purple: "#681AB0",
+  red: "#C91919",
+  orange: "#E17617",
+  green: "#0A9143",
+  highlight: "#C1FED2",
 };
 
 const breakpointsMap = {
@@ -87,52 +72,28 @@ export const lightTheme = {
       lineHeight: "32px",
     },
   },
-  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   spacings: memoize(calculateSpacing),
   ui: {
-    maxWidth: "786px",
+    maxWidth: `${breakpointsMap.md}px`,
     text: colors.black,
-    background: colors.backgroundGrey,
-    border: "#4A55681a",
-    card: {
-      shadow: "0 3px 10px rgba(50, 50, 93, .11), 0 1px 2px rgba(0, 0, 0, .08)",
-    },
+    background: colors.white,
+    border: colors.grayLight,
     button: {
-      color: colors.white,
-      fontWeight: 400,
-      background: colors.primary,
-      shadow: "0 0 10px 0 rgba(64, 64, 64, 0.4);",
-      hover: {
-        background: colors.secondary,
-        backgroundGrey: colors.border,
+      primary: {
+        color: colors.white,
+        background: colors.primary,
+        hover: {
+          background: colors.secondary,
+        },
+        disabled: {
+          background: colors.grayMedLight,
+        },
       },
-      disabled: {
-        background: colors.lightGrey,
-        shadow: "none",
+      link: {
+        hover: {
+          background: colors.grayLight,
+        },
       },
-    },
-    modal: {
-      background: colors.white,
-    },
-  },
-};
-
-export const darkTheme = {
-  ...lightTheme,
-  ui: {
-    text: colors.white,
-    background: colors.black,
-    card: {
-      border: colors.lightGrey,
-    },
-    button: {
-      color: colors.white,
-      background: colors.black,
-      border: colors.lightGrey,
-    },
-    modal: {
-      border: colors.lightGrey,
-      background: colors.black,
     },
   },
 };

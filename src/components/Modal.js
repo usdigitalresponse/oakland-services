@@ -13,7 +13,7 @@ const ModalStyle = createGlobalStyle`
     right: 20px;
     max-width: 600px;
     border-radius: 10px;
-    background: ${({ theme }) => theme.ui.modal.background};
+    background: white;
     outline: none;
     margin: 0 auto;
   }

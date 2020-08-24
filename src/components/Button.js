@@ -5,37 +5,24 @@ import { Icon } from "./Icon";
 
 const variants = {
   primary: css`
-    background-color: ${({ theme }) => theme.ui.button.background};
-    color: ${({ theme }) => theme.ui.button.color};
-    box-shadow: ${({ theme }) => theme.ui.button.shadow};
+    background-color: ${({ theme }) => theme.ui.button.primary.background};
+    color: ${({ theme }) => theme.ui.button.primary.color};
     &:hover {
-      background-color: ${({ theme }) => theme.ui.button.hover.background};
+      background-color: ${({ theme }) =>
+        theme.ui.button.primary.hover.background};
     }
     &:disabled {
       cursor: not-allowed;
-      background-color: ${({ theme }) => theme.ui.button.disabled.background};
-      box-shadow: ${({ theme }) => theme.ui.button.disabled.shadow};
+      background-color: ${({ theme }) =>
+        theme.ui.button.primary.disabled.background};
     }
-  `,
-  secondary: css`
-    color: blue;
-    background-color: red;
   `,
   link: css`
     background-color: transparent;
     color: initial;
     box-shadow: none;
     &:hover {
-      background-color: ${({ theme }) => theme.ui.button.hover.backgroundGrey};
-    }
-  `,
-  outline: css`
-    border: 2px solid ${({ theme }) => theme.ui.border};
-    background-color: transparent;
-    color: initial;
-    box-shadow: none;
-    &:hover {
-      background-color: ${({ theme }) => theme.ui.button.hover.backgroundGrey};
+      background-color: ${({ theme }) => theme.ui.button.link.hover.background};
     }
   `,
 };
@@ -44,7 +31,6 @@ export const Button = styled.button`
   display: inline-flex;
   align-items: center;
   padding: ${({ theme }) => `${theme.spacings(3)} ${theme.spacings(5)}`};
-  font-weight: ${({ theme }) => theme.ui.button.fontWeight};
   border-radius: 4px;
   letter-spacing: -0.2px;
   transition: 0.1s ease;
