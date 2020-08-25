@@ -1,31 +1,27 @@
 import styled from "styled-components";
 
 export const Navigation = styled.nav`
-  margin: ${({ theme }) => `0 ${theme.spacings(-4)} ${theme.spacings(6)}`};
-  background-color: #f2f2f2;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
-
   .nav-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: ${({ theme }) => theme.spacings(3)} 0;
+    padding: ${({ theme }) => `${theme.spacings(3)} 0 ${theme.spacings(5)}`};
     position: relative;
     z-index: 2;
   }
 
   .title {
-    display: block;
-    color: #525f7f;
-    text-align: center;
-    line-height: 1.4;
-    font-weight: 600;
-    width: 100%;
-    margin: 0 12px;
-  }
-
-  .fixed {
-    width: 50px;
+    padding: 0;
+    h1,
+    h2 {
+      font-size: ${({ theme }) => theme.typography.h4.fontSize};
+    }
+    h1 {
+      margin-bottom: ${({ theme }) => theme.spacings(1)};
+    }
+    h2 {
+      font-weight: 400;
+    }
   }
 
   a,

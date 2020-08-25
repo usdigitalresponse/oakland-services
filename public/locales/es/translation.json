@@ -1,8 +1,18 @@
 {
-  "title": "Recursos de refugio, alimentos y salud en Oakland",
-  "home": {
-    "description1": "No se preocupe, estamos aquí para ayudarle y nos alegra que su camino le haya traído hasta aquí. ¿Está buscando acceso a recursos en Oakland? Vamos a conseguirle lo que necesita rápidamente.",
-    "description2": "Por cierto, no necesitamos ninguna información de usted para comenzar, este proceso es completamente anónimo."
+  "title": "Underhoused Resources:",
+  "subtitle": "Alameda County",
+  "categories": {
+    "title": "Welcome!",
+    "description": "Por cierto, no necesitamos ninguna información de usted para comenzar, este proceso es completamente anónimo.",
+    "speakTitle": "Speak to Someone",
+    "categoriesTitle": "Resource Categories"
+  },
+  "resources": {
+    "resultTitle": "Relevant Resources:",
+    "resultsDescription1": "NOTE:",
+    "resultsDescription2": "Not all resources are available to everyone. Please check",
+    "resultsDescription3": "eligibility",
+    "resultsDescription4": "info to see if you can access this resource."
   },
   "resource": {
     "last_updated": "Última actualización",

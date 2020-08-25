@@ -30,9 +30,10 @@ const variants = {
 export const Button = styled.button`
   display: inline-flex;
   align-items: center;
+  font-size: 14px;
+  line-height: 18px;
   padding: ${({ theme }) => `${theme.spacings(3)} ${theme.spacings(5)}`};
   border-radius: 4px;
-  letter-spacing: -0.2px;
   transition: 0.1s ease;
   &:active {
     transform: scale(0.99);

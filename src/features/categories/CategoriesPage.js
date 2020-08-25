@@ -3,7 +3,7 @@ import styled from "styled-components";
 import useSWR from "swr";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { Text } from "components/Text";
+import { Heading, Heading2, Text } from "components/Text";
 import { Button } from "components/Button";
 import { ListLoader } from "components/Loader";
 
@@ -14,40 +14,67 @@ export const CategoriesPage = () => {
   return (
     <section>
       <CategoriesHeader>
-        <Text>{t("home.description1")}</Text>
-        <Text>{t("home.description2")}</Text>
+        <Heading>{t("categories.title")}</Heading>
+        <Text>{t("categories.description")}</Text>
       </CategoriesHeader>
+      <CategoriesSection>
+        <Heading2>{t("categories.speakTitle")}</Heading2>
+        <CategoriesSectionItemsContainer>
+          <CategoryLink as="a" href="tel:+1-211">
+            Call 2-1-1
+          </CategoryLink>
+          <CategoryLink as="a" href="sms:898211">
+            Text 898211
+          </CategoryLink>
+        </CategoriesSectionItemsContainer>
+      </CategoriesSection>
       {!data ? (
         <ListLoader />
       ) : (
-        <CategoriesBody>
-          {data.map((c) => (
-            <CategoryLink
-              as={Link}
-              key={c.id}
-              to={`/category/${c.id}?categoryName=${c.name}`}
-            >
-              {c.preferred_name ?? c.name}
-            </CategoryLink>
-          ))}
-        </CategoriesBody>
+        <CategoriesSection>
+          <Heading2>{t("categories.categoriesTitle")}</Heading2>
+          <CategoriesSectionItemsContainer>
+            {data.map((c) => (
+              <CategoryLink
+                as={Link}
+                key={c.id}
+                to={`/category/${c.id}?categoryName=${c.name}`}
+              >
+                {c.preferred_name ?? c.name}
+              </CategoryLink>
+            ))}
+          </CategoriesSectionItemsContainer>
+        </CategoriesSection>
       )}
     </section>
   );
 };
 
 const CategoriesHeader = styled.header`
+  h1 {
+    font-size: ${({ theme }) => theme.typography.h2.fontSize};
+    text-align: center;
+    margin-bottom: ${({ theme }) => theme.spacings(1)};
+    font-weight: normal;
+  }
   margin-bottom: ${({ theme }) => theme.spacings(5)};
 `;
 
-const CategoriesBody = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+const CategoriesSection = styled.section`
+  margin-bottom: ${({ theme }) => theme.spacings(8)};
+  h2 {
+    margin-bottom: ${({ theme }) => theme.spacings(4)};
+  }
+`;
+
+const CategoriesSectionItemsContainer = styled.section`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: ${({ theme }) => theme.spacings(4)};
 `;
 
 const CategoryLink = styled(Button)`
-  width: 100%;
   max-width: 360px;
-  margin-bottom: ${({ theme }) => theme.spacings(2)};
+  width: 100%;
+  height: 88px;
 `;

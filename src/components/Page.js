@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { Navigation } from "components/Navigation";
+import { Heading, Heading2 } from "components/Text";
 import { Icon } from "components/Icon";
 
 export const PageContainer = styled.section`
@@ -55,6 +56,10 @@ export const PageLayout = ({ children }) => {
     <PageContainer>
       <Navigation>
         <div className="nav-content">
+          <Link className="title" to="/">
+            <Heading>{t("title")}</Heading>
+            <Heading2>{t("subtitle")}</Heading2>
+          </Link>
           <button
             className="fixed"
             type="button"
@@ -62,10 +67,6 @@ export const PageLayout = ({ children }) => {
           >
             <Icon icon="menu" />
           </button>
-          <Link className="title" to="/">
-            {t("title")}
-          </Link>
-          <div className="fixed" />
         </div>
         <div className={`menu-container ${isMenuOpen ? "in" : ""}`}>
           <h4>Languages</h4>

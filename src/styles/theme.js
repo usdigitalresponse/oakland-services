@@ -20,6 +20,9 @@ export const colors = {
   red: "#C91919",
   orange: "#E17617",
   green: "#0A9143",
+  // Semantic colors
+  primary: "#005EA2",
+  secondary: "#1f4d7d",
   highlight: "#C1FED2",
 };
 
@@ -44,32 +47,28 @@ export const lightTheme = {
   breakpoints,
   typography: {
     h1: {
-      fontSize: "2.5rem",
+      fontSize: "28px",
       fontWeight: 700,
     },
     h2: {
-      fontSize: "2rem",
+      fontSize: "24px",
       fontWeight: 700,
     },
     h3: {
-      fontSize: "1.75rem",
+      fontSize: "20px",
       fontWeight: 700,
     },
     h4: {
-      fontSize: "1.5rem",
+      fontSize: "18px",
       fontWeight: 700,
     },
     h5: {
-      fontSize: "1.25rem",
+      fontSize: "16px",
       fontWeight: 700,
     },
-    h6: {
-      fontSize: "1rem",
-      fontWeight: 700,
-    },
-    post: {
-      fontSize: "1.2rem",
-      lineHeight: "32px",
+    text: {
+      fontSize: "16px",
+      lineHeight: "20px",
     },
   },
   spacings: memoize(calculateSpacing),
@@ -83,7 +82,7 @@ export const lightTheme = {
         color: colors.white,
         background: colors.primary,
         hover: {
-          background: colors.secondary,
+          background: colors.blue,
         },
         disabled: {
           background: colors.grayMedLight,
