@@ -37,19 +37,19 @@ export const Navigation = styled.nav`
     left: 0;
     right: 0;
     top: 0;
-    padding-top: 80px;
-    padding-bottom: 12px;
-    text-align: center;
+    padding: ${({ theme }) => `80px ${theme.spacings(4)} 12px`};
     background: #fff;
     display: flex;
     flex-direction: column;
-    align-items: center;
     transform: translateY(-100%);
-    transition: 0.3s ease;
     z-index: 1;
 
     &.in {
       transform: translateY(0);
+    }
+
+    button {
+      text-align: left;
     }
   }
 

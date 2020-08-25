@@ -68,4 +68,8 @@ export const GlobalStyle = createGlobalStyle`
     border: 0;
     white-space: nowrap;
   }
+
+  [hidden] {
+    display: none !important;
+  }
 `;

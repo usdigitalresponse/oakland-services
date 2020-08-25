@@ -68,7 +68,10 @@ export const PageLayout = ({ children }) => {
             <Icon icon="menu" />
           </button>
         </div>
-        <div className={`menu-container ${isMenuOpen ? "in" : ""}`}>
+        <div
+          className={`menu-container ${isMenuOpen ? "in" : ""}`}
+          hidden={!isMenuOpen}
+        >
           <h4>Languages</h4>
           <button type="button" onClick={() => changeLanguage("en")}>
             English
