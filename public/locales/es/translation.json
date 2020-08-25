@@ -10,9 +10,7 @@
   "resources": {
     "resultTitle": "Relevant Resources:",
     "resultsDescription1": "NOTE:",
-    "resultsDescription2": "Not all resources are available to everyone. Please check",
-    "resultsDescription3": "eligibility",
-    "resultsDescription4": "info to see if you can access this resource."
+    "resultsDescription2": "Not all resources are available to everyone. Please check eligibility info to see if you can access this resource."
   },
   "resource": {
     "last_updated": "Última actualización",

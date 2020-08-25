@@ -20,10 +20,10 @@ export const CategoriesPage = () => {
       <CategoriesSection>
         <Heading2>{t("categories.speakTitle")}</Heading2>
         <CategoriesSectionItemsContainer>
-          <CategoryLink as="a" href="tel:+1-211">
+          <CategoryLink as="a" href="tel:+1-211" size="small">
             Call 2-1-1
           </CategoryLink>
-          <CategoryLink as="a" href="sms:898211">
+          <CategoryLink as="a" href="sms:898211" size="small">
             Text 898211
           </CategoryLink>
         </CategoriesSectionItemsContainer>
@@ -76,5 +76,5 @@ const CategoriesSectionItemsContainer = styled.section`
 const CategoryLink = styled(Button)`
   max-width: 360px;
   width: 100%;
-  height: 88px;
+  height: ${({ size }) => (size === "small" ? "72px" : "136px")};
 `;
