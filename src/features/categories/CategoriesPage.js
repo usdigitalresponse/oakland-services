@@ -74,6 +74,8 @@ const CategoriesSectionItemsContainer = styled.section`
 `;
 
 const CategoryLink = styled(Button)`
+  justify-content: center;
+  text-align: center;
   max-width: 360px;
   width: 100%;
   height: ${({ size }) => (size === "small" ? "72px" : "136px")};
