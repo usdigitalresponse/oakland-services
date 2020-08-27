@@ -17,7 +17,11 @@ i18next.use(i18nextMiddleware.LanguageDetector).init({
 
 const app = express();
 
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+  })
+);
 app.use(i18nextMiddleware.handle(i18next));
 app.use(express.static(CLIENT_PATH));
 
