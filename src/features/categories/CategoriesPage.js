@@ -55,7 +55,6 @@ const CategoriesHeader = styled.header`
     font-size: ${({ theme }) => theme.typography.h2.fontSize};
     text-align: center;
     margin-bottom: ${({ theme }) => theme.spacings(1)};
-    font-weight: normal;
   }
   margin-bottom: ${({ theme }) => theme.spacings(5)};
 `;
