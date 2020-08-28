@@ -1,4 +1,4 @@
-const resourcesSeed = require("../data/formatted/resources");
+const resourcesSeed = require("../data/v3/formatted/resources");
 
 exports.seed = function (knex) {
   return knex("resources")

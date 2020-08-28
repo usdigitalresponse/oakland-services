@@ -1,4 +1,4 @@
-const categoriesSeed = require("../data/formatted/categories");
+const categoriesSeed = require("../data/v3/formatted/categories");
 
 exports.seed = function (knex) {
   return knex("categories")
