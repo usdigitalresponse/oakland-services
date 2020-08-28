@@ -1,5 +1,5 @@
-const neighborhoodsSeed = require("../data/formatted/neighborhoods");
-const subneighborhoodsSeed = require("../data/formatted/subneighborhoods");
+const neighborhoodsSeed = require("../data/v3/formatted/neighborhoods");
+const subneighborhoodsSeed = require("../data/v3/formatted/subneighborhoods");
 
 exports.seed = function (knex) {
   return knex("neighborhoods")
