@@ -3,7 +3,7 @@ import styled from "styled-components";
 import useSWR from "swr";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { Heading, Heading2, Text } from "components/Text";
+import { Heading, Heading2, Heading3, Text } from "components/Text";
 import { Button } from "components/Button";
 import { ListLoader } from "components/Loader";
 
@@ -32,7 +32,7 @@ export const CategoriesPage = () => {
         <ListLoader />
       ) : (
         <CategoriesSection>
-          <Heading2>{t("categories.categoriesTitle")}</Heading2>
+          <Heading3>{t("categories.categoriesTitle")}</Heading3>
           <CategoriesSectionItemsContainer>
             {data.map((c) => (
               <CategoryLink
@@ -44,8 +44,19 @@ export const CategoriesPage = () => {
               </CategoryLink>
             ))}
           </CategoriesSectionItemsContainer>
+          <CategoryLink as="a" href="mailto:im.kaiyu@gmail.com" size="small">
+            {t("categories.otherButton")}
+          </CategoryLink>
         </CategoriesSection>
       )}
+      <CategoriesSection>
+        <Heading2>{t("categories.aboutTitle")}</Heading2>
+        <Text>{t("categories.aboutContent")}</Text>
+      </CategoriesSection>
+      <CategoriesSection>
+        <Heading2>{t("categories.byTitle")}</Heading2>
+        <Text>{t("categories.byContent")}</Text>
+      </CategoriesSection>
     </section>
   );
 };
@@ -61,7 +72,8 @@ const CategoriesHeader = styled.header`
 
 const CategoriesSection = styled.section`
   margin-bottom: ${({ theme }) => theme.spacings(8)};
-  h2 {
+  h2,
+  h3 {
     margin-bottom: ${({ theme }) => theme.spacings(4)};
   }
 `;
@@ -70,6 +82,7 @@ const CategoriesSectionItemsContainer = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: ${({ theme }) => theme.spacings(4)};
+  margin-bottom: ${({ theme }) => theme.spacings(4)};
 `;
 
 const CategoryLink = styled(Button)`

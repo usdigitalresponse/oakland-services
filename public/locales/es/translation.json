@@ -5,7 +5,12 @@
     "title": "Welcome!",
     "description": "Por cierto, no necesitamos ninguna información de usted para comenzar, este proceso es completamente anónimo.",
     "speakTitle": "Speak to Someone",
-    "categoriesTitle": "Resource Categories"
+    "categoriesTitle": "Resource Categories",
+    "otherButton": "Looking for something else?",
+    "aboutTitle": "About This Site",
+    "aboutContent": "[TEXT NEEDED - Brief (1-2 sentence) description of purpose of this site]",
+    "byTitle": "Brought To You By:",
+    "byContent": "[TEXT NEEDED - Brief (1-2 sentence) description of responsible parties behind this site]"
   },
   "resources": {
     "resultTitle": "Relevant Resources:",

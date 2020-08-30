@@ -27,3 +27,9 @@ export const Heading4 = styled.h4`
   font-weight: ${({ theme }) => theme.typography.h4.fontWeight};
   margin: 0;
 `;
+
+export const Heading5 = styled.h5`
+  font-size: ${({ theme }) => theme.typography.h5.fontSize};
+  font-weight: ${({ theme }) => theme.typography.h5.fontWeight};
+  margin: 0;
+`;

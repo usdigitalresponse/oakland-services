@@ -3,9 +3,8 @@ import styled from "styled-components";
 import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import useSWR from "swr";
-import { BackButton } from "components/Button";
 import { ListLoader } from "components/Loader";
-import { Header } from "./components/Header";
+import { Heading, Heading4, Heading5, Text } from "components/Text";
 
 export const ResourcePage = () => {
   const { resourceId } = useParams();
@@ -14,81 +13,87 @@ export const ResourcePage = () => {
 
   return (
     <section>
-      <Header>
-        <BackButton withIcon />
-        {!!data && data.name}
-      </Header>
+      <Heading>{!!data && data.name}</Heading>
       {!data ? (
         <ListLoader />
       ) : (
         <Resource>
-          <div className="resource-header">
-            {!!data.updated_at && (
-              <p>
-                <strong>{t("resource.last_updated")}:</strong>{" "}
-                {new Date(data.updated_at).toDateString()}
-              </p>
-            )}
-            {!!data.subcategories && (
-              <p>
-                <strong>{t("resource.categories")}:</strong>{" "}
-                {data.subcategories.join(", ")}
-              </p>
-            )}
-            {!!data.organization && (
-              <p>
-                <strong>{t("resource.provider")}:</strong> {data.organization}
-              </p>
-            )}
-            {!!data.website && (
-              <p>
-                <strong>{t("resource.website")}:</strong>{" "}
-                <a href={data.website}>{data.website}</a>
-              </p>
-            )}
-            {!!data.address && (
-              <p>
-                <strong>{t("resource.address")}:</strong> {data.address}
-              </p>
-            )}
-            {!!data.phone_number && (
-              <p>
-                <strong>{t("resource.phone_number")}:</strong>{" "}
-                <a href={`tel:${data.phone_number}`}>{data.phone_number}</a>
-              </p>
-            )}
-            {!!data.email && (
-              <p>
-                <strong>{t("resource.email")}:</strong>{" "}
-                <a href={`mailto:${data.email}`}>{data.email}</a>
-              </p>
-            )}
-          </div>
-          <div className="resource-description">
-            <h4>{t("resource.description")}</h4>
-            <p dangerouslySetInnerHTML={{ __html: data.description }} />
-          </div>
+          <Text
+            className="resource-description"
+            dangerouslySetInnerHTML={{ __html: data.description }}
+          />
           <div className="resource-program-information">
-            <h4>{t("resource.program_information")}</h4>
+            <Heading4>{t("resource.programInformation")}</Heading4>
             {!!data.application && (
-              <p>
-                <strong>{t("resource.application")}:</strong> {data.application}
-              </p>
+              <div>
+                <Heading5>{t("resource.application")}</Heading5>
+                <Text>{data.application}</Text>
+              </div>
             )}
             {!!data.eligibility && (
-              <p>
-                <strong>{t("resource.eligibility")}:</strong> {data.eligibility}
-              </p>
+              <div>
+                <Heading5>{t("resource.eligibility")}</Heading5>
+                <Text>{data.eligibility}</Text>
+              </div>
             )}
             {!!data.fee && (
-              <p>
-                <strong>{t("resource.fee")}:</strong> {data.fee}
-              </p>
+              <div>
+                <Heading5>{t("resource.fee")}</Heading5>
+                <Text>{data.fee}</Text>
+              </div>
             )}
             {!!data.languages && (
-              <p>
-                <strong>{t("resource.languages")}:</strong> {data.languages}
-              </p>
+              <div>
+                <Heading5>{t("resource.languages")}</Heading5>
+                <Text>{data.languages}</Text>
+              </div>
+            )}
+          </div>
+          <div className="resource-provider-information">
+            <Heading4>{t("resource.providerInformation")}</Heading4>
+            {!!data.organization && (
+              <div>
+                <Heading5>{t("resource.provider")}</Heading5>
+                <Text>{data.organization}</Text>
+              </div>
+            )}
+            {!!data.website && (
+              <div>
+                <Heading5>{t("resource.website")}</Heading5>
+                <Text>
+                  <a href={data.website}>{data.website}</a>
+                </Text>
+              </div>
+            )}
+            {!!data.address && (
+              <div>
+                <Heading5>{t("resource.address")}</Heading5>
+                <Text>{data.address}</Text>
+              </div>
+            )}
+            {!!data.phone_number && (
+              <div>
+                <Heading5>{t("resource.phoneNumber")}</Heading5>
+                <Text>
+                  <a href={`tel:${data.phone_number}`}>{data.phone_number}</a>
+                </Text>
+              </div>
+            )}
+            {!!data.email && (
+              <div>
+                <Heading5>{t("resource.email")}</Heading5>
+                <Text>
+                  <a href={`mailto:${data.email}`}>{data.email}</a>
+                </Text>
+              </div>
+            )}
+          </div>
+          <div className="resource-updated">
+            {!!data.updated_at && (
+              <Text>
+                {t("resource.lastUpdated")}:{" "}
+                {new Date(data.updated_at).toDateString()}
+              </Text>
             )}
           </div>
         </Resource>
@@ -98,14 +103,24 @@ export const ResourcePage = () => {
 };
 
 const Resource = styled.section`
-  .resource-header,
-  .resource-description,
+  .resource-description {
+    margin: ${({ theme }) => `${theme.spacings(5)} 0`};
+  }
+  .resource-provider-information,
   .resource-program-information {
-    margin-bottom: ${({ theme }) => theme.spacings(8)};
+    margin-bottom: ${({ theme }) => theme.spacings(5)};
+  }
+  .resource-updated {
+    text-align: center;
+    font-style: italic;
+    margin: ${({ theme }) => `${theme.spacings(5)} 0`};
+  }
+  h4 {
+    text-decoration: underline;
+    margin-bottom: ${({ theme }) => theme.spacings(2)};
   }
   p {
     overflow-wrap: anywhere;
-    line-height: 1.6;
   }
   a {
     color: ${({ theme }) => theme.colors.primary};

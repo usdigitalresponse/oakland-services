@@ -77,6 +77,10 @@ export const lightTheme = {
     text: colors.black,
     background: colors.white,
     border: colors.grayLight,
+    navigation: {
+      text: colors.white,
+      background: colors.black,
+    },
     button: {
       primary: {
         color: colors.white,

@@ -5,7 +5,12 @@
     "title": "Welcome!",
     "description": "Are you looking for access to resources in Alameda County? Let’s get you what you need FAST.",
     "speakTitle": "Speak to Someone",
-    "categoriesTitle": "Resource Categories"
+    "categoriesTitle": "Resource Categories",
+    "otherButton": "Looking for something else?",
+    "aboutTitle": "About This Site",
+    "aboutContent": "[TEXT NEEDED - Brief (1-2 sentence) description of purpose of this site]",
+    "byTitle": "Brought To You By:",
+    "byContent": "[TEXT NEEDED - Brief (1-2 sentence) description of responsible parties behind this site]"
   },
   "resources": {
     "resultTitle": "Relevant Resources:",
@@ -13,18 +18,19 @@
     "resultsDescription2": "Not all resources are available to everyone. Please check eligibility info to see if you can access this resource."
   },
   "resource": {
-    "last_updated": "Last updated",
+    "description": "Description",
+    "programInformation": "Program Information",
+    "application": "Application Process",
+    "eligibility": "Eligibility Description",
+    "fee": "Program Fee",
+    "languages": "Languages Offered",
+    "providerInformation": "Provider Information",
     "categories": "Categories",
     "provider": "Provider",
     "website": "Website",
     "address": "Address",
-    "phone_number": "Phone number",
+    "phoneNumber": "Phone number",
     "email": "Email",
-    "description": "Description",
-    "program_information": "Program Information",
-    "application": "Application Process",
-    "eligibility": "Eligibility Description",
-    "fee": "Program Fee",
-    "languages": "Languages Offered"
+    "lastUpdated": "Last updated"
   }
 }
