@@ -54,7 +54,7 @@ export const Navigation = styled.nav`
     top: 0;
     padding-top: 80px;
     padding-bottom: 12px;
-    background: #fff;
+    background: ${({ theme }) => theme.ui.navigation.background};
     transform: translateY(-100%);
     z-index: 1;
 
