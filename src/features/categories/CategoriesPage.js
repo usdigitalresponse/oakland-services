@@ -38,7 +38,7 @@ export const CategoriesPage = () => {
               <CategoryLink
                 as={Link}
                 key={c.id}
-                to={`/category/${c.id}?categoryName=${c.name}`}
+                to={`/category/${c.id}/subcategories?categoryName=${c.name}`}
               >
                 {c.preferred_name ?? c.name}
               </CategoryLink>
@@ -61,7 +61,7 @@ export const CategoriesPage = () => {
   );
 };
 
-const CategoriesHeader = styled.header`
+export const CategoriesHeader = styled.header`
   h1 {
     font-size: ${({ theme }) => theme.typography.h2.fontSize};
     text-align: center;
@@ -70,7 +70,7 @@ const CategoriesHeader = styled.header`
   margin-bottom: ${({ theme }) => theme.spacings(5)};
 `;
 
-const CategoriesSection = styled.section`
+export const CategoriesSection = styled.section`
   margin-bottom: ${({ theme }) => theme.spacings(8)};
   h2,
   h3 {
@@ -78,17 +78,19 @@ const CategoriesSection = styled.section`
   }
 `;
 
-const CategoriesSectionItemsContainer = styled.section`
+export const CategoriesSectionItemsContainer = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: ${({ theme }) => theme.spacings(4)};
   margin-bottom: ${({ theme }) => theme.spacings(4)};
 `;
 
-const CategoryLink = styled(Button)`
+export const CategoryLink = styled(Button)`
+  display: flex;
   justify-content: center;
   text-align: center;
   max-width: 360px;
   width: 100%;
+  margin: auto;
   height: ${({ size }) => (size === "small" ? "72px" : "136px")};
 `;

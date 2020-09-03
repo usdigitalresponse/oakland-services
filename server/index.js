@@ -70,6 +70,27 @@ app.get("/api/categories", async (req, res) => {
     .json(translateInput(categories, req.lang, ["name", "preferred_name"]));
 });
 
+app.get("/api/categories/:category_id/subcategories", async (req, res) => {
+  const categoryId = req.params.category_id;
+  const categories = await database("categories")
+    .select(
+      "categories.id",
+      database.raw(
+        "ARRAY_AGG(category_details.name ORDER BY category_details.lang) as name"
+      ),
+      database.raw(
+        "ARRAY_AGG(category_details.preferred_name ORDER BY category_details.lang) as preferred_name"
+      )
+    )
+    .join("category_details", "categories.id", "category_details.category_id")
+    .where({ "categories.parent_id": categoryId })
+    .groupBy("categories.id");
+
+  res
+    .status(200)
+    .json(translateInput(categories, req.lang, ["name", "preferred_name"]));
+});
+
 app.get("/api/categories/:category_id/resources", async (req, res) => {
   const categoryId = req.params.category_id;
 
@@ -111,7 +132,7 @@ app.get("/api/categories/:category_id/resources", async (req, res) => {
       "organization_details.organization_id",
       "organizations.id"
     )
-    .where({ "categories.parent_id": categoryId })
+    .where({ "categories.id": categoryId })
     .modify((queryBuilder) => {
       if (!req.query.neighborhoods) {
         return;

@@ -5,6 +5,7 @@ import { PageLayout } from "components/Page";
 import { Spinner } from "components/Spinner";
 
 import { CategoriesPage } from "./categories/CategoriesPage";
+import { SubcategoriesPage } from "./categories/SubcategoriesPage";
 import { ResourceListPage } from "./resources/ResourceListPage";
 import { ResourcePage } from "./resources/ResourcePage";
 import { AboutPage } from "./about/AboutPage";
@@ -28,6 +29,11 @@ export const Routes = () => {
         <Route exact path="/">
           <PageLayout>
             <CategoriesPage />
+          </PageLayout>
+        </Route>
+        <Route exact path="/category/:categoryId/subcategories">
+          <PageLayout>
+            <SubcategoriesPage />
           </PageLayout>
         </Route>
         <Route exact path="/category/:categoryId">
