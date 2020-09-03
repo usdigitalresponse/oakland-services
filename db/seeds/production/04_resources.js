@@ -11,6 +11,7 @@ exports.seed = function (knex) {
           city_id: resource.city_id,
           neighborhood_id: resource.neighborhood_id,
           scraped_at: resource.scraped_at,
+          data: resource.data,
         };
       });
       return knex("resources").insert(resources);

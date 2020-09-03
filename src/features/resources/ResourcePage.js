@@ -96,6 +96,11 @@ export const ResourcePage = () => {
               </Text>
             )}
           </div>
+          <div>
+            {!!data.data && (
+              <pre>{JSON.stringify(data, null, 2) }</pre>
+            )}
+          </div>
         </Resource>
       )}
     </section>

@@ -181,6 +181,7 @@ app.get("/api/resources/:resource_id", async (req, res) => {
     .select(
       "resources.id",
       "resources.scraped_at",
+      "resources.data",
 
       database.raw(
         "ARRAY_AGG(resource_details.name ORDER BY resource_details.lang) as name"

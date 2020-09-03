@@ -262,27 +262,6 @@ async function enhanceResources() {
       const resourceResult = row;
       const currentResource = enhancedResources[currentResourceIndex] ? enhancedResources[currentResourceIndex] : row;
 
-      const organizationId = organizations.findIndex(
-        (o) =>
-          parseInt(o.name) === parseInt(resourceResult.organization_id)
-      );
-
-      const cityId = cities.findIndex((c) => c.name === resourceResult.city);
-
-      // currentResource.city_id = cityId === -1 ? null : cityId + 1;
-      // currentResource.organization_id =
-        // organizationId === -1 ? null : organizationId + 1;
-      // currentResource.airtable_resource_id = resourceResult.id;
-      // currentResource.name = resourceResult.name;
-      // currentResource.address = resourceResult.address;
-      // currentResource.postal_code =
-        // resourceResult["physical_address__0__postal_code"];
-      // currentResource.latitude =
-        // resourceResult["physical_address__0__latitude"];
-      // currentResource.longitude =
-        // resourceResult["physical_address__0__longitude"];
-      // currentResource.phone_number = resourceResult["phone__0__number"];
-      // currentResource.scraped_at = resourceResult.last_scraped;
       currentResource.preferred_name = resourceResult.alternate_name;
       currentResource.description = sanitizeText(resourceResult.description);
       currentResource.email = resourceResult.email;
@@ -299,6 +278,7 @@ async function enhanceResources() {
         resourceResult["resource_info__schedule_text"]
       );
       currentResource.website = resourceResult["resource_info__url"];
+      currentResource.data = row;
 
       enhancedResources.push(currentResource);
     }
