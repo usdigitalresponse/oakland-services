@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import useSWR from "swr";
+import JSONFormatter from "json-formatter-js";
 import { ListLoader } from "components/Loader";
 import { Heading, Heading4, Heading5, Text } from "components/Text";
 
@@ -10,6 +11,17 @@ export const ResourcePage = () => {
   const { resourceId } = useParams();
   const { t } = useTranslation();
   const { data } = useSWR(`/api/resources/${resourceId}`);
+  const dataEl = useRef(null);
+
+  useEffect(() => {
+    if (data && dataEl) {
+      const formatter = new JSONFormatter(data, Infinity, {
+        animateOpen: false,
+        animateClose: false,
+      });
+      dataEl.current.appendChild(formatter.render());
+    }
+  }, [data, dataEl]);
 
   return (
     <section>
@@ -96,11 +108,7 @@ export const ResourcePage = () => {
               </Text>
             )}
           </div>
-          <div>
-            {!!data.data && (
-              <pre>{JSON.stringify(data, null, 2) }</pre>
-            )}
-          </div>
+          <pre ref={dataEl} />
         </Resource>
       )}
     </section>
@@ -129,5 +137,8 @@ const Resource = styled.section`
   }
   a {
     color: ${({ theme }) => theme.colors.primary};
+  }
+  pre {
+    margin-bottom: 20px;
   }
 `;
