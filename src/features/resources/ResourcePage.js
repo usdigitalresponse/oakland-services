@@ -7,6 +7,16 @@ import JSONFormatter from "json-formatter-js";
 import { ListLoader } from "components/Loader";
 import { Heading, Heading4, Heading5, Text } from "components/Text";
 
+const sortData = (d) => {
+  const orderedData = {};
+  Object.keys(d)
+    .sort()
+    .forEach((key) => {
+      orderedData[key] = d[key];
+    });
+  return orderedData;
+};
+
 export const ResourcePage = () => {
   const { resourceId } = useParams();
   const { t } = useTranslation();
@@ -15,10 +25,17 @@ export const ResourcePage = () => {
 
   useEffect(() => {
     if (data && dataEl) {
-      const formatter = new JSONFormatter(data, Infinity, {
-        animateOpen: false,
-        animateClose: false,
-      });
+      const formatter = new JSONFormatter(
+        {
+          ...sortData(data),
+          data: sortData(data.data),
+        },
+        Infinity,
+        {
+          animateOpen: false,
+          animateClose: false,
+        }
+      );
       dataEl.current.appendChild(formatter.render());
     }
   }, [data, dataEl]);
