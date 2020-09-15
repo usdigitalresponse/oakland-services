@@ -3,7 +3,8 @@ import styled from "styled-components";
 import useSWR from "swr";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { Heading, Heading2, Heading3, Text } from "components/Text";
+import { Heading, Heading2, Text } from "components/Text";
+import { Container } from "components/Page";
 import { Button } from "components/Button";
 import { ListLoader } from "components/Loader";
 
@@ -14,25 +15,29 @@ export const CategoriesPage = () => {
   return (
     <section>
       <CategoriesHeader>
-        <Heading>{t("categories.title")}</Heading>
-        <Text>{t("categories.description")}</Text>
+        <Container>
+          <Heading>{t("categories.title")}</Heading>
+          <Text>{t("categories.description")}</Text>
+        </Container>
       </CategoriesHeader>
       <CategoriesSection>
         <Heading2>{t("categories.speakTitle")}</Heading2>
         <CategoriesSectionItemsContainer>
-          <CategoryLink as="a" href="tel:+1-211" size="small">
+          <CallButton as="a" href="tel:+1-211" size="small" bgColor="green">
+            <img src="/assets/call-icon.svg" alt="Call 2-1-1" />
             Call 2-1-1
-          </CategoryLink>
-          <CategoryLink as="a" href="sms:898211" size="small">
+          </CallButton>
+          <CallButton as="a" href="sms:898211" size="small" bgColor="teal">
+            <img src="/assets/text-icon.svg" alt="Text 898211" />
             Text 898211
-          </CategoryLink>
+          </CallButton>
         </CategoriesSectionItemsContainer>
       </CategoriesSection>
       {!data ? (
         <ListLoader />
       ) : (
         <CategoriesSection>
-          <Heading3>{t("categories.categoriesTitle")}</Heading3>
+          <Heading2>{t("categories.categoriesTitle")}</Heading2>
           <CategoriesSectionItemsContainer>
             {data.map((c) => (
               <CategoryLink
@@ -40,15 +45,14 @@ export const CategoriesPage = () => {
                 key={c.id}
                 to={`/category/${c.id}/subcategories?categoryName=${c.name}`}
               >
+                <img src={`/assets/category-icons/${c.id}`} />
                 {c.preferred_name ?? c.name}
               </CategoryLink>
             ))}
           </CategoriesSectionItemsContainer>
-          <CategoryLink as="a" href="mailto:im.kaiyu@gmail.com" size="small">
-            {t("categories.otherButton")}
-          </CategoryLink>
         </CategoriesSection>
       )}
+      <FeedbackSection t={t} />
       <CategoriesSection>
         <Heading2>{t("categories.aboutTitle")}</Heading2>
         <Text>{t("categories.aboutContent")}</Text>
@@ -56,21 +60,41 @@ export const CategoriesPage = () => {
       <CategoriesSection>
         <Heading2>{t("categories.byTitle")}</Heading2>
         <Text>{t("categories.byContent")}</Text>
+        <LogoContainer>
+          <img src="/assets/logos/oakland.svg" alt="City of Oakland" />
+          <img src="/assets/logos/alameda.svg" alt="County of Alemeda" />
+          <img src="/assets/logos/eden.svg" alt="Eden I&R" />
+          <img src="/assets/logos/benetech.svg" alt="Benetech" />
+          <img src="/assets/logos/usdr.svg" alt="USDR" />
+        </LogoContainer>
       </CategoriesSection>
     </section>
   );
 };
 
-export const CategoriesHeader = styled.header`
+export const FeedbackSection = ({ t }) => {
+  return (
+    <CategoriesSection>
+      <Heading2>{t("categories.commentsTitle")}</Heading2>
+      <Text>{t("categories.commentsContent")}</Text>
+      <MessageButton as="a" href="mailto: oakland-team@usdigitalresponse.org">
+        {t("categories.commentsButton")}
+      </MessageButton>
+    </CategoriesSection>
+  );
+};
+
+export const CategoriesHeader = styled.section`
   h1 {
-    font-size: ${({ theme }) => theme.typography.h2.fontSize};
-    text-align: center;
-    margin-bottom: ${({ theme }) => theme.spacings(1)};
+    margin-bottom: ${({ theme }) => theme.spacings(2)};
   }
-  margin-bottom: ${({ theme }) => theme.spacings(5)};
+  background: ${({ theme }) => theme.colors.grayLightest};
+  padding-top: ${({ theme }) => theme.spacings(3)};
+  padding-bottom: ${({ theme }) => theme.spacings(3)};
+  margin-bottom: ${({ theme }) => theme.spacings(6)};
 `;
 
-export const CategoriesSection = styled.section`
+export const CategoriesSection = styled(Container)`
   margin-bottom: ${({ theme }) => theme.spacings(8)};
   h2,
   h3 {
@@ -87,10 +111,53 @@ export const CategoriesSectionItemsContainer = styled.section`
 
 export const CategoryLink = styled(Button)`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   text-align: center;
   max-width: 360px;
   width: 100%;
   margin: auto;
-  height: ${({ size }) => (size === "small" ? "72px" : "136px")};
+  height: 136px;
+  font-size: 16px;
+`;
+
+export const CallButton = styled(Button)`
+  display: flex;
+  max-width: 360px;
+  width: 100%;
+  margin: auto;
+  height: 72px;
+  font-size: 16px;
+  background-color: ${({ theme, bgColor }) =>
+    theme.colors[bgColor] || theme.ui.button.primary.background};
+  &:hover {
+    background-color: ${({ theme, bgColor }) =>
+      theme.colors[`${bgColor}Light`] ||
+      theme.ui.button.primary.hover.background};
+  }
+  img {
+    margin-right: ${({ theme }) => theme.spacings(4)};
+  }
+  ${({ theme }) => theme.breakpoints.sm`
+    padding: ${({ theme }) => theme.spacings(3)};
+  `}
+`;
+
+export const MessageButton = styled(Button)`
+  background-color: ${({ theme }) => theme.colors.orange};
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.orangeLight};
+  }
+`;
+
+export const LogoContainer = styled.section`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: ${({ theme }) => theme.spacings(3)};
+  margin-top: ${({ theme }) => theme.spacings(10)};
+  img {
+    height: 100px;
+    width: 150px;
+    justify-self: center;
+  }
 `;

@@ -4,13 +4,15 @@ import queryString from "query-string";
 import { useParams, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { Heading, Heading3, Text } from "components/Text";
+import { Heading, Heading2, Text } from "components/Text";
+import { Container } from "components/Page";
 import { ListLoader } from "components/Loader";
 import {
   CategoriesHeader,
   CategoriesSection,
   CategoryLink,
   CategoriesSectionItemsContainer,
+  FeedbackSection,
 } from "./CategoriesPage";
 
 export const SubcategoriesPage = () => {
@@ -23,14 +25,19 @@ export const SubcategoriesPage = () => {
   return (
     <section>
       <CategoriesHeader>
-        <Heading>{categoryName}</Heading>
-        <Text>{t("categories.description")}</Text>
+        <Container>
+          <Heading>{categoryName}</Heading>
+          <Text>
+            {t("subcategories.description")} {categoryName}{" "}
+            {t("subcategories.description2")}
+          </Text>
+        </Container>
       </CategoriesHeader>
       {!data ? (
         <ListLoader />
       ) : (
         <CategoriesSection>
-          <Heading3>{t("categories.categoriesTitle")}</Heading3>
+          <Heading2>{t("subcategories.categoriesTitle")}</Heading2>
           <CategoriesSectionItemsContainer>
             {data.map((c) => (
               <CategoryLink
@@ -38,12 +45,14 @@ export const SubcategoriesPage = () => {
                 key={c.id}
                 to={`/category/${c.id}?categoryName=${c.name}`}
               >
+                <img src={`/assets/category-icons/${c.id}`} />
                 {c.preferred_name ?? c.name}
               </CategoryLink>
             ))}
           </CategoriesSectionItemsContainer>
         </CategoriesSection>
       )}
+      <FeedbackSection t={t} />
     </section>
   );
 };

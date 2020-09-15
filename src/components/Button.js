@@ -33,7 +33,7 @@ export const Button = styled.button`
   font-size: 14px;
   line-height: 18px;
   padding: ${({ theme }) => `${theme.spacings(3)} ${theme.spacings(5)}`};
-  border-radius: 4px;
+  border-radius: 8px;
   transition: 0.1s ease;
   &:active {
     transform: scale(0.99);

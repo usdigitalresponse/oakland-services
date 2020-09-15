@@ -5,12 +5,19 @@
     "title": "Welcome!",
     "description": "Are you looking for access to resources in Alameda County? Let’s get you what you need FAST.",
     "speakTitle": "Speak to Someone",
-    "categoriesTitle": "Resource Categories",
-    "otherButton": "Looking for something else?",
+    "categoriesTitle": "Find A Resource",
+    "commentsTitle": "Comments / Feedback",
+    "commentsContent": "Do you have a question or comment about this site? Please let us know.",
+    "commentsButton": "Send Us A Message",
     "aboutTitle": "About This Site",
-    "aboutContent": "[TEXT NEEDED - Brief (1-2 sentence) description of purpose of this site]",
+    "aboutContent": "The purpose of this website is to help people within Alameda County connect to resources that are available to them.",
     "byTitle": "Brought To You By:",
-    "byContent": "[TEXT NEEDED - Brief (1-2 sentence) description of responsible parties behind this site]"
+    "byContent": "This site is the result of a collaboration between representatives of the City of Oakland, Alameda County, Eden I&R, Benetech, and U.S. Digital Response."
+  },
+  "subcategories": {
+    "description": "Please select from the following categories of",
+    "description2": "resources.",
+    "categoriesTitle": "Categories"
   },
   "resources": {
     "resultTitle": "Relevant Resources:",

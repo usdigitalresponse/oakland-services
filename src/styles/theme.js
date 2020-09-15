@@ -18,11 +18,15 @@ export const colors = {
   blue: "#1A75E0",
   purple: "#681AB0",
   red: "#C91919",
-  orange: "#E17617",
+  teal: "#28A0CB",
+  tealLight: "#42BAE5",
+  orange: "#E26A08",
+  orangeLight: "#FC8422",
   green: "#0A9143",
+  greenLight: "#24AB5D",
   // Semantic colors
   primary: "#005EA2",
-  secondary: "#1f4d7d",
+  secondary: "#1A4480",
   highlight: "#C1FED2",
 };
 
@@ -79,7 +83,7 @@ export const lightTheme = {
     border: colors.grayLight,
     navigation: {
       text: colors.white,
-      background: colors.black,
+      background: colors.secondary,
     },
     button: {
       primary: {

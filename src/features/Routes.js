@@ -1,16 +1,13 @@
 import React, { Suspense } from "react";
 import { Switch, Route } from "react-router-dom";
 import styled from "styled-components";
-import { PageLayout } from "components/Page";
+import { PageLayout, Container } from "components/Page";
 import { Spinner } from "components/Spinner";
 
 import { CategoriesPage } from "./categories/CategoriesPage";
 import { SubcategoriesPage } from "./categories/SubcategoriesPage";
 import { ResourceListPage } from "./resources/ResourceListPage";
 import { ResourcePage } from "./resources/ResourcePage";
-import { AboutPage } from "./about/AboutPage";
-import { PrivacyPage } from "./about/PrivacyPage";
-import { TermsPage } from "./about/TermsPage";
 import { Error } from "./misc/Error";
 
 import { useTracking } from "utils/useTracking";
@@ -38,27 +35,16 @@ export const Routes = () => {
         </Route>
         <Route exact path="/category/:categoryId">
           <PageLayout>
-            <ResourceListPage />
+            <Container>
+              <ResourceListPage />
+            </Container>
           </PageLayout>
         </Route>
         <Route exact path="/resource/:resourceId">
           <PageLayout>
-            <ResourcePage />
-          </PageLayout>
-        </Route>
-        <Route path="/about">
-          <PageLayout>
-            <AboutPage />
-          </PageLayout>
-        </Route>
-        <Route path="/privacy">
-          <PageLayout>
-            <PrivacyPage />
-          </PageLayout>
-        </Route>
-        <Route path="/terms">
-          <PageLayout>
-            <TermsPage />
+            <Container>
+              <ResourcePage />
+            </Container>
           </PageLayout>
         </Route>
         <Route>

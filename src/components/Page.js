@@ -14,7 +14,6 @@ export const Page = styled.section`
 export const Navigation = styled.nav`
   color: ${({ theme }) => theme.ui.navigation.text};
   background: ${({ theme }) => theme.ui.navigation.background};
-  margin-bottom: ${({ theme }) => theme.spacings(4)};
 
   .nav-content {
     display: flex;
@@ -148,7 +147,7 @@ export const PageLayout = ({ children }) => {
           <div className="menu-backdrop" onClick={() => setIsMenuOpen(false)} />
         )}
       </Navigation>
-      <Container>{children}</Container>
+      {children}
       <PageFooter>
         <Container>
           <Text>
