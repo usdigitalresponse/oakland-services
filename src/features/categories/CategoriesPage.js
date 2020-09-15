@@ -7,6 +7,7 @@ import { Heading, Heading2, Text } from "components/Text";
 import { Container } from "components/Page";
 import { Button } from "components/Button";
 import { ListLoader } from "components/Loader";
+import { Feedback } from "components/Feedback";
 
 export const CategoriesPage = () => {
   const { t } = useTranslation();
@@ -52,7 +53,7 @@ export const CategoriesPage = () => {
           </CategoriesSectionItemsContainer>
         </CategoriesSection>
       )}
-      <FeedbackSection t={t} />
+      <Feedback />
       <CategoriesSection>
         <Heading2>{t("categories.aboutTitle")}</Heading2>
         <Text>{t("categories.aboutContent")}</Text>
@@ -72,18 +73,6 @@ export const CategoriesPage = () => {
   );
 };
 
-export const FeedbackSection = ({ t }) => {
-  return (
-    <CategoriesSection>
-      <Heading2>{t("categories.commentsTitle")}</Heading2>
-      <Text>{t("categories.commentsContent")}</Text>
-      <MessageButton as="a" href="mailto: oakland-team@usdigitalresponse.org">
-        {t("categories.commentsButton")}
-      </MessageButton>
-    </CategoriesSection>
-  );
-};
-
 export const CategoriesHeader = styled.section`
   h1 {
     margin-bottom: ${({ theme }) => theme.spacings(2)};
@@ -96,8 +85,7 @@ export const CategoriesHeader = styled.section`
 
 export const CategoriesSection = styled(Container)`
   margin-bottom: ${({ theme }) => theme.spacings(8)};
-  h2,
-  h3 {
+  h2 {
     margin-bottom: ${({ theme }) => theme.spacings(4)};
   }
 `;
@@ -141,13 +129,6 @@ export const CallButton = styled(Button)`
   ${({ theme }) => theme.breakpoints.sm`
     padding: ${({ theme }) => theme.spacings(3)};
   `}
-`;
-
-export const MessageButton = styled(Button)`
-  background-color: ${({ theme }) => theme.colors.orange};
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.orangeLight};
-  }
 `;
 
 export const LogoContainer = styled.section`

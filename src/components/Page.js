@@ -42,7 +42,7 @@ export const Navigation = styled.nav`
   button {
     padding: ${({ theme }) => theme.spacings(3)};
     &:hover {
-      color: ${({ theme }) => theme.colors.primary};
+      color: ${({ theme }) => theme.colors.grayMedLight};
     }
   }
 

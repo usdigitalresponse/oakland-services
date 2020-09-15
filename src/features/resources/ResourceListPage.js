@@ -9,6 +9,7 @@ import { Heading, Heading2, Heading3, Text } from "components/Text";
 import { Button } from "components/Button";
 import { Modal } from "components/Modal";
 import { ListLoader } from "components/Loader";
+import { Container } from "components/Page";
 import { ResourceFilterForm } from "./ResourceFilterForm";
 import { truncateString } from "utils";
 
@@ -28,34 +29,40 @@ export const ResourceListPage = () => {
 
   return (
     <section>
-      <Heading>{categoryName}</Heading>
+      <HeaderContainer>
+        <Container>
+          <Heading>{categoryName}</Heading>
+        </Container>
+      </HeaderContainer>
       <FilterContainer>
         <Button fullWidth onClick={() => setIsFilterModalOpen(true)}>
           Select Filters
         </Button>
       </FilterContainer>
-      <ResourceListHeaderContainer>
+      <SubheaderContainer>
         <Heading2>{t("resources.resultTitle")}</Heading2>
         <Text>
           <strong>{t("resources.resultsDescription1")}</strong>{" "}
           {t("resources.resultsDescription2")}
         </Text>
-      </ResourceListHeaderContainer>
-      {!data ? (
-        <ListLoader />
-      ) : (
-        data.map((s) => (
-          <Resource key={s.id} to={`/resource/${s.id}`}>
-            <Heading3>{s.name}</Heading3>
-            <Text
-              className="description"
-              dangerouslySetInnerHTML={{
-                __html: truncateString(s.description),
-              }}
-            />
-          </Resource>
-        ))
-      )}
+      </SubheaderContainer>
+      <Container>
+        {!data ? (
+          <ListLoader />
+        ) : (
+          data.map((s) => (
+            <Resource key={s.id} to={`/resource/${s.id}`}>
+              <Heading3>{s.name}</Heading3>
+              <Text
+                className="description"
+                dangerouslySetInnerHTML={{
+                  __html: truncateString(s.description),
+                }}
+              />
+            </Resource>
+          ))
+        )}
+      </Container>
       <Modal
         open={isFilterModalOpen}
         onRequestClose={() => setIsFilterModalOpen(false)}
@@ -72,7 +79,17 @@ export const ResourceListPage = () => {
   );
 };
 
-const FilterContainer = styled.section`
+export const HeaderContainer = styled.section`
+  h1 {
+    margin-bottom: ${({ theme }) => theme.spacings(2)};
+  }
+  background: ${({ theme }) => theme.colors.grayLightest};
+  padding-top: ${({ theme }) => theme.spacings(3)};
+  padding-bottom: ${({ theme }) => theme.spacings(3)};
+  margin-bottom: ${({ theme }) => theme.spacings(6)};
+`;
+
+const FilterContainer = styled(Container)`
   margin-top: ${({ theme }) => theme.spacings(4)};
   margin-bottom: ${({ theme }) => theme.spacings(6)};
   button {
@@ -80,7 +97,7 @@ const FilterContainer = styled.section`
   }
 `;
 
-const ResourceListHeaderContainer = styled.section`
+const SubheaderContainer = styled(Container)`
   margin-bottom: ${({ theme }) => theme.spacings(8)};
   h2 {
     border-bottom: 1px solid;

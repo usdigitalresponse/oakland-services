@@ -37,9 +37,7 @@ export const Routes = () => {
         </Route>
         <Route exact path="/category/:categoryId">
           <PageLayout>
-            <Container>
-              <ResourceListPage />
-            </Container>
+            <ResourceListPage />
           </PageLayout>
         </Route>
         <Route exact path="/resource/:resourceId">

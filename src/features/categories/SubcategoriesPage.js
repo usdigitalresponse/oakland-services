@@ -7,12 +7,12 @@ import { Link } from "react-router-dom";
 import { Heading, Heading2, Text } from "components/Text";
 import { Container } from "components/Page";
 import { ListLoader } from "components/Loader";
+import { Feedback } from "components/Feedback";
 import {
   CategoriesHeader,
   CategoriesSection,
   CategoryLink,
   CategoriesSectionItemsContainer,
-  FeedbackSection,
 } from "./CategoriesPage";
 
 export const SubcategoriesPage = () => {
@@ -52,7 +52,7 @@ export const SubcategoriesPage = () => {
           </CategoriesSectionItemsContainer>
         </CategoriesSection>
       )}
-      <FeedbackSection t={t} />
+      <Feedback />
     </section>
   );
 };
