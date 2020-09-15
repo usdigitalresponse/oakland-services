@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import styled from "styled-components";
 import { PageLayout, Container } from "components/Page";
 import { Spinner } from "components/Spinner";
+import { ScrollToTop } from "components/ScrollToTop";
 
 import { CategoriesPage } from "./categories/CategoriesPage";
 import { SubcategoriesPage } from "./categories/SubcategoriesPage";
@@ -22,6 +23,7 @@ export const Routes = () => {
         </SpinnerContainer>
       }
     >
+      <ScrollToTop />
       <Switch>
         <Route exact path="/">
           <PageLayout>

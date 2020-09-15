@@ -19,13 +19,11 @@ export const GlobalStyle = createGlobalStyle`
     text-rendering: optimizeLegibility;
     font-family: 'HelveticaNow', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif,
       'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-    letter-spacing: -0.2px;
   }
 
   a {
     color: inherit;
     text-decoration: none;
-    transition: 0.2s ease;
   }
 
   /* Remove button styling */
