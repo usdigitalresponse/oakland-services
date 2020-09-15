@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import useSWR from "swr";
-import queryString from "query-string";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Heading, Heading2, Heading3, Text } from "components/Text";
@@ -10,14 +9,14 @@ import { Button } from "components/Button";
 import { Modal } from "components/Modal";
 import { ListLoader } from "components/Loader";
 import { Container } from "components/Page";
+import { truncateString } from "utils/stringUtil";
+import { useQueryParams, queryString } from "utils/useQueryParams";
 import { ResourceFilterForm } from "./ResourceFilterForm";
-import { truncateString } from "utils";
 
 export const ResourceListPage = () => {
-  const location = useLocation();
   const { t } = useTranslation();
   const { categoryId } = useParams();
-  const { categoryName } = queryString.parse(location.search);
+  const { categoryName } = useQueryParams();
   const [filters, setFilters] = useState({
     order: 1,
     neighborhoods: [],

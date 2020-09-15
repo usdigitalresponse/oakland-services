@@ -1,13 +1,13 @@
 import React from "react";
 import useSWR from "swr";
-import queryString from "query-string";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { Heading, Heading2, Text } from "components/Text";
 import { Container } from "components/Page";
 import { ListLoader } from "components/Loader";
 import { Feedback } from "components/Feedback";
+import { useQueryParams } from "utils/useQueryParams";
 import {
   CategoriesHeader,
   CategoriesSection,
@@ -16,11 +16,10 @@ import {
 } from "./CategoriesPage";
 
 export const SubcategoriesPage = () => {
-  const location = useLocation();
   const { categoryId } = useParams();
   const { t } = useTranslation();
   const { data } = useSWR(`/api/categories/${categoryId}/subcategories`);
-  const { categoryName } = queryString.parse(location.search);
+  const { categoryName } = useQueryParams();
 
   return (
     <section>

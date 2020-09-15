@@ -3,9 +3,12 @@ import styled from "styled-components";
 import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import useSWR from "swr";
-import JSONFormatter from "json-formatter-js";
 import { ListLoader } from "components/Loader";
 import { Heading, Heading4, Heading5, Text } from "components/Text";
+import { useQueryParams } from "utils/useQueryParams";
+
+// Remove later
+import JSONFormatter from "json-formatter-js";
 
 const sortData = (d) => {
   const orderedData = {};
@@ -19,12 +22,13 @@ const sortData = (d) => {
 
 export const ResourcePage = () => {
   const { resourceId } = useParams();
+  const { debug } = useQueryParams();
   const { t } = useTranslation();
   const { data } = useSWR(`/api/resources/${resourceId}`);
   const dataEl = useRef(null);
 
   useEffect(() => {
-    if (data && dataEl) {
+    if (data && dataEl && debug) {
       const formatter = new JSONFormatter(
         {
           ...sortData(data),
@@ -38,11 +42,13 @@ export const ResourcePage = () => {
       );
       dataEl.current.appendChild(formatter.render());
     }
-  }, [data, dataEl]);
+  }, [data, dataEl, debug]);
 
   return (
     <section>
-      <Heading>{!!data && data.name}</Heading>
+      <HeaderContainer>
+        <Heading>{!!data && data.name}</Heading>
+      </HeaderContainer>
       {!data ? (
         <ListLoader />
       ) : (
@@ -125,16 +131,20 @@ export const ResourcePage = () => {
               </Text>
             )}
           </div>
-          <pre ref={dataEl} />
+          {!!debug && <pre ref={dataEl} />}
         </Resource>
       )}
     </section>
   );
 };
 
+export const HeaderContainer = styled.section`
+  margin: ${({ theme }) => `${theme.spacings(4)} 0`};
+`;
+
 const Resource = styled.section`
   .resource-description {
-    margin: ${({ theme }) => `${theme.spacings(5)} 0`};
+    margin: ${({ theme }) => `0 0 ${theme.spacings(5)}`};
   }
   .resource-provider-information,
   .resource-program-information {
