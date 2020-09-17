@@ -58,7 +58,7 @@ app.get("/api/categories/:category_id/subcategories", async (req, res) => {
 
 app.get("/api/categories/:category_id/resources", async (req, res) => {
   const categoryId = req.params.category_id;
-  const resources = await ResourceContext.getResources(categoryId, req.query.neighborhoods, req.query.order);
+  const resources = await ResourceContext.getResources(categoryId, req.query, req.query.order);
 
   res
     .status(200)
@@ -120,6 +120,42 @@ app.get("/api/neighborhoods", async (req, res) => {
     .groupBy("neighborhoods.id");
 
   res.status(200).json(translateInput(neighborhoods, req.lang, ["name"]));
+});
+
+app.get("/api/organizations", async (req, res) => {
+  const organizations = await database("organizations")
+    .select(
+      "organizations.id",
+      database.raw(
+        "ARRAY_AGG(organization_details.name ORDER BY organization_details.lang) as name"
+      )
+    )
+    .join(
+      "organization_details",
+      "organizations.id",
+      "organization_details.organization_id"
+    )
+    .groupBy("organizations.id");
+
+  res.status(200).json(translateInput(organizations, req.lang, ["name"]));
+});
+
+app.get("/api/cities", async (req, res) => {
+  const cities = await database("cities")
+    .select(
+      "cities.id",
+      database.raw(
+        "ARRAY_AGG(city_details.name ORDER BY city_details.lang) as name"
+      )
+    )
+    .join(
+      "city_details",
+      "cities.id",
+      "city_details.city_id"
+    )
+    .groupBy("cities.id");
+
+  res.status(200).json(translateInput(cities, req.lang, ["name"]));
 });
 
 app.get("*", (_req, res) => {

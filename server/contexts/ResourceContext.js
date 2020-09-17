@@ -1,7 +1,7 @@
 const database = require("../db");
 
 const ResourceContext = {
-  getResources: async (categoryId, neighborhoods, order) => {
+  getResources: async (categoryId, params, order) => {
     return await database("resources")
       .select(
         "resources.id",
@@ -42,18 +42,48 @@ const ResourceContext = {
       )
       .where({ "categories.id": categoryId })
       .modify((queryBuilder) => {
-        if (!neighborhoods) {
+        if (!params.neighborhoods) {
           return;
         }
-        if (Array.isArray(neighborhoods)) {
+        if (Array.isArray(params.neighborhoods)) {
           return queryBuilder.whereIn(
             "resources.neighborhood_id",
-            neighborhoods.map((n) => parseInt(n))
+            params.neighborhoods.map((n) => parseInt(n))
           );
         }
         return queryBuilder.where(
           "resources.neighborhood_id",
-          parseInt(neighborhoods)
+          parseInt(params.neighborhoods)
+        );
+      })
+      .modify((queryBuilder) => {
+        if (!params.cities) {
+          return;
+        }
+        if (Array.isArray(params.cities)) {
+          return queryBuilder.whereIn(
+            "resources.city_id",
+            params.cities.map((n) => parseInt(n))
+          );
+        }
+        return queryBuilder.where(
+          "resources.city_id",
+          parseInt(params.cities)
+        );
+      })
+      .modify((queryBuilder) => {
+        if (!params.organizations) {
+          return;
+        }
+        if (Array.isArray(params.organizations)) {
+          return queryBuilder.whereIn(
+            "resources.organization_id",
+            params.organizations.map((n) => parseInt(n))
+          );
+        }
+        return queryBuilder.where(
+          "resources.organization_id",
+          parseInt(params.organizations)
         );
       })
       .modify((queryBuilder) => {
