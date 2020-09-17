@@ -21,6 +21,7 @@ export const ResourceListPage = () => {
     order: 1,
     language: "english",
     neighborhoods: [],
+    cities: [],
   });
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   const { data } = useSWR(

@@ -7,20 +7,20 @@ import { Button } from "components/Button";
 import { Heading } from "components/Text";
 
 export const ResourceFilterForm = ({ onComplete, filters, setFilters }) => {
-  const { data } = useSWR("/api/neighborhoods");
+  const { data } = useSWR("/api/cities");
 
   const onChangeNeighborhood = (neighborhood, checked) => {
     if (checked) {
       setFilters({
         ...filters,
-        neighborhoods: filters.neighborhoods.filter(
+        cities: filters.neighborhoods.filter(
           (n) => n !== neighborhood.id
         ),
       });
     } else {
       setFilters({
         ...filters,
-        neighborhoods: [...filters.neighborhoods, neighborhood.id],
+        cities: [...filters.neighborhoods, neighborhood.id],
       });
     }
   };
@@ -33,15 +33,15 @@ export const ResourceFilterForm = ({ onComplete, filters, setFilters }) => {
   };
 
   const onToggleNeighborhoodSelectAll = () => {
-    if (filters.neighborhoods.length) {
+    if (filters.cities.length) {
       setFilters({
         ...filters,
-        neighborhoods: [],
+        cities: [],
       });
     } else {
       setFilters({
         ...filters,
-        neighborhoods: [...data.map((n) => n.id)],
+        cities: [...data.map((n) => n.id)],
       });
     }
   };
@@ -82,7 +82,7 @@ export const ResourceFilterForm = ({ onComplete, filters, setFilters }) => {
       </div>
       <div className="filter-group">
         <h4 className="filter-title">
-          Neighborhoods{" "}
+          Cities{" "}
           <Button variant="link" onClick={onToggleNeighborhoodSelectAll}>
             {filters.neighborhoods.length ? "Select none" : "Select all"}
           </Button>
