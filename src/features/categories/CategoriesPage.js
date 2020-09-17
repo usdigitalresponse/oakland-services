@@ -124,7 +124,7 @@ export const CallButton = styled(Button)`
     theme.colors[bgColor] || theme.ui.button.primary.background};
   &:hover {
     background-color: ${({ theme, bgColor }) =>
-      theme.colors[`${bgColor}Light`] ||
+      theme.colors[`${bgColor}Dark`] ||
       theme.ui.button.primary.hover.background};
   }
   img {

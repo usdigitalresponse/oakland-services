@@ -32,7 +32,7 @@ const MessageButton = styled(Button)`
   margin-top: ${({ theme }) => theme.spacings(6)};
   margin-bottom: ${({ theme }) => theme.spacings(8)};
   &:hover {
-    background-color: ${({ theme }) => theme.colors.orangeLight};
+    background-color: ${({ theme }) => theme.colors.orangeDark};
   }
   img {
     margin-right: ${({ theme }) => theme.spacings(4)};

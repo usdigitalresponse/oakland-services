@@ -22,7 +22,9 @@
   "resources": {
     "resultTitle": "Relevant Resources:",
     "resultsDescription1": "NOTE:",
-    "resultsDescription2": "Not all resources are available to everyone. Please check eligibility info to see if you can access this resource."
+    "resultsDescription2": "Not all resources are available to everyone.",
+    "resultsDescription3": "Please check eligibility information",
+    "resultsDescription4": "for potential restrictions on who can access this resource."
   },
   "resource": {
     "description": "Description",

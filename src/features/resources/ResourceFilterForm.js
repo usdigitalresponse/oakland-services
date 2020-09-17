@@ -4,6 +4,7 @@ import useSWR from "swr";
 import { Checkbox } from "components/Checkbox";
 import { RadioSwitch } from "components/Radio";
 import { Button } from "components/Button";
+import { Heading } from "components/Text";
 
 export const ResourceFilterForm = ({ onComplete, filters, setFilters }) => {
   const { data } = useSWR("/api/neighborhoods");
@@ -47,6 +48,13 @@ export const ResourceFilterForm = ({ onComplete, filters, setFilters }) => {
 
   return (
     <FilterBody>
+      <Heading>Filters</Heading>
+      <div className="filter-group">
+        <h4 className="filter-title">Languages Offered</h4>
+        <select name="" id="">
+          <option>English</option>
+        </select>
+      </div>
       <div className="filter-group">
         <h4 className="filter-title">Sort By</h4>
         <RadioSwitch
@@ -95,6 +103,14 @@ export const ResourceFilterForm = ({ onComplete, filters, setFilters }) => {
 
 const FilterBody = styled.section`
   padding: ${({ theme }) => `${theme.spacings(5)} ${theme.spacings(5)}`};
+
+  h1 {
+    margin-bottom: ${({ theme }) => theme.spacings(5)};
+  }
+
+  select {
+    width: 100%;
+  }
 
   .filter-group {
     margin-bottom: ${({ theme }) => theme.spacings(5)};

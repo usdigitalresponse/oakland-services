@@ -34,15 +34,20 @@ export const ResourceListPage = () => {
         </Container>
       </HeaderContainer>
       <FilterContainer>
-        <Button fullWidth onClick={() => setIsFilterModalOpen(true)}>
-          Select Filters
+        <Button variant="link" onClick={() => setIsFilterModalOpen(true)}>
+          <img src="/assets/filter-icon.svg" alt="Filters" />
+          Filters
         </Button>
       </FilterContainer>
       <SubheaderContainer>
         <Heading2>{t("resources.resultTitle")}</Heading2>
         <Text>
           <strong>{t("resources.resultsDescription1")}</strong>{" "}
-          {t("resources.resultsDescription2")}
+          {t("resources.resultsDescription2")}{" "}
+          <strong className="highlight">
+            {t("resources.resultsDescription3")}
+          </strong>{" "}
+          {t("resources.resultsDescription4")}
         </Text>
       </SubheaderContainer>
       <Container>
@@ -92,7 +97,13 @@ const FilterContainer = styled(Container)`
   margin-top: ${({ theme }) => theme.spacings(4)};
   margin-bottom: ${({ theme }) => theme.spacings(6)};
   button {
-    justify-content: center;
+    background: ${({ theme }) => theme.colors.grayLightest};
+    border: 1px solid ${({ theme }) => theme.colors.grayMed};
+    border-radius: 30px;
+    padding: ${({ theme }) => `${theme.spacings(2)} ${theme.spacings(9)} `};
+    img {
+      margin-right: ${({ theme }) => theme.spacings(4)};
+    }
   }
 `;
 
@@ -101,6 +112,9 @@ const SubheaderContainer = styled(Container)`
   h2 {
     border-bottom: 1px solid;
     margin-bottom: ${({ theme }) => theme.spacings(2)};
+  }
+  .highlight {
+    background: ${({ theme }) => theme.colors.secondaryLighter};
   }
 `;
 

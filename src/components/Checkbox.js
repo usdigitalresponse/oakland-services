@@ -24,7 +24,7 @@ const CheckboxContainer = styled.div`
     border-radius: 4px;
 
     &:hover:before {
-      border-color: ${({ theme }) => theme.colors.secondary};
+      border-color: ${({ theme }) => theme.colors.primaryDark};
     }
   }
 

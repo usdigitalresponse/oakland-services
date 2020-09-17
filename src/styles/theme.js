@@ -15,19 +15,33 @@ export const colors = {
   grayLight: "#E0E0E0",
   grayLightest: "#F2F2F2",
   white: "#FFFFFF",
-  blue: "#1A75E0",
-  purple: "#681AB0",
-  red: "#C91919",
   teal: "#28A0CB",
-  tealLight: "#42BAE5",
+  tealDark: "#2188ac",
   orange: "#E26A08",
-  orangeLight: "#FC8422",
+  orangeDark: "#C05A06",
   green: "#0A9143",
-  greenLight: "#24AB5D",
+  greenDark: "#087b38",
   // Semantic colors
+  primaryDarker: "#162E51",
+  primaryDark: "#1A4480",
   primary: "#005EA2",
-  secondary: "#1A4480",
-  highlight: "#C1FED2",
+  primaryLight: "#73B3E7",
+  primaryLighter: "#D9E8F6",
+  secondaryDarker: "#8B0A03",
+  secondaryDark: "#B50909",
+  secondary: "#D83933",
+  secondaryLight: "#F2938C",
+  secondaryLighter: "#F8DFE2",
+  accentCoolDarker: "#07648D",
+  accentCoolDark: "#28A0CB",
+  accentCool: "#00BDE3",
+  accentCoolLight: "#97D4EA",
+  accentCoolLighter: "#E1F3F8",
+  accentWarmDarker: "#775540",
+  accentWarmDark: "#C05600",
+  accentWarm: "#FA9441",
+  accentWarmLight: "#FFBC78",
+  accentWarmLighter: "#F2E4D4",
 };
 
 const breakpointsMap = {
@@ -83,14 +97,14 @@ export const lightTheme = {
     border: colors.grayLight,
     navigation: {
       text: colors.white,
-      background: colors.secondary,
+      background: colors.primaryDark,
     },
     button: {
       primary: {
         color: colors.white,
         background: colors.primary,
         hover: {
-          background: colors.blue,
+          background: colors.primaryDark,
         },
         disabled: {
           background: colors.grayMedLight,
