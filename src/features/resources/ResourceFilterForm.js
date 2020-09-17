@@ -13,9 +13,7 @@ export const ResourceFilterForm = ({ onComplete, filters, setFilters }) => {
     if (checked) {
       setFilters({
         ...filters,
-        cities: filters.neighborhoods.filter(
-          (n) => n !== neighborhood.id
-        ),
+        cities: filters.neighborhoods.filter((n) => n !== neighborhood.id),
       });
     } else {
       setFilters({

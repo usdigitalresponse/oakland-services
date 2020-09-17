@@ -47,6 +47,6 @@ const CategoryContext = {
       .where({ "categories.parent_id": categoryId })
       .groupBy("categories.id");
   },
-}
+};
 
 module.exports = CategoryContext;

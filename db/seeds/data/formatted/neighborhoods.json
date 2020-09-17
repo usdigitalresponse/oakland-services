@@ -1,1 +1,11 @@
-[{"name":"Chinatown and Central"},{"name":"West Oakland"},{"name":"North Oakland"},{"name":"Northwest Hills"},{"name":"Lower Hills"},{"name":"San Antonio"},{"name":"Fruitvale"},{"name":"Central East Oakland"},{"name":"Elmhurst"}]
+[
+  { "name": "Chinatown and Central" },
+  { "name": "West Oakland" },
+  { "name": "North Oakland" },
+  { "name": "Northwest Hills" },
+  { "name": "Lower Hills" },
+  { "name": "San Antonio" },
+  { "name": "Fruitvale" },
+  { "name": "Central East Oakland" },
+  { "name": "Elmhurst" }
+]

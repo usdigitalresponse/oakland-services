@@ -260,7 +260,9 @@ async function enhanceResources() {
 
     if (currentResourceIndex !== -1) {
       const resourceResult = row;
-      const currentResource = enhancedResources[currentResourceIndex] ? enhancedResources[currentResourceIndex] : row;
+      const currentResource = enhancedResources[currentResourceIndex]
+        ? enhancedResources[currentResourceIndex]
+        : row;
 
       currentResource.preferred_name = resourceResult.alternate_name;
       currentResource.description = sanitizeText(resourceResult.description);

@@ -66,10 +66,7 @@ const ResourceContext = {
             params.cities.map((n) => parseInt(n))
           );
         }
-        return queryBuilder.where(
-          "resources.city_id",
-          parseInt(params.cities)
-        );
+        return queryBuilder.where("resources.city_id", parseInt(params.cities));
       })
       .modify((queryBuilder) => {
         if (!params.organizations) {
@@ -191,6 +188,6 @@ const ResourceContext = {
       )
       .first();
   },
-}
+};
 
 module.exports = ResourceContext;
