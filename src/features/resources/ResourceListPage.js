@@ -19,6 +19,7 @@ export const ResourceListPage = () => {
   const { categoryName } = useQueryParams();
   const [filters, setFilters] = useState({
     order: 1,
+    language: "english",
     neighborhoods: [],
   });
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);

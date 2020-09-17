@@ -66,7 +66,7 @@ export const ResourcePage = () => {
               </div>
             )}
             {!!data.eligibility && (
-              <div>
+              <div className="resource-highlight">
                 <Heading5>{t("resource.eligibility")}</Heading5>
                 <Text>{data.eligibility}</Text>
               </div>
@@ -150,6 +150,12 @@ const Resource = styled.section`
   .resource-program-information {
     margin-bottom: ${({ theme }) => theme.spacings(5)};
   }
+  .resource-highlight {
+    background: ${({ theme }) => theme.colors.secondaryLighter};
+    border-radius: 4px;
+    padding: ${({ theme }) => theme.spacings(1)};
+    margin: ${({ theme }) => theme.spacings(-1)};
+  }
   .resource-updated {
     text-align: center;
     font-style: italic;
@@ -157,7 +163,7 @@ const Resource = styled.section`
   }
   h4 {
     text-decoration: underline;
-    margin-bottom: ${({ theme }) => theme.spacings(2)};
+    margin-bottom: ${({ theme }) => theme.spacings(3)};
   }
   p {
     overflow-wrap: anywhere;

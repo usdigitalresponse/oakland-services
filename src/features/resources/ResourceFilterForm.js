@@ -46,13 +46,21 @@ export const ResourceFilterForm = ({ onComplete, filters, setFilters }) => {
     }
   };
 
+  const onChangeLanguage = (e) => {
+    setFilters({
+      ...filters,
+      language: e.target.value,
+    });
+  };
+
   return (
     <FilterBody>
       <Heading>Filters</Heading>
       <div className="filter-group">
         <h4 className="filter-title">Languages Offered</h4>
-        <select name="" id="">
-          <option>English</option>
+        <select value={filters.language} onChange={onChangeLanguage}>
+          <option value="english">English</option>
+          <option value="spanish">Español</option>
         </select>
       </div>
       <div className="filter-group">
