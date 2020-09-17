@@ -10,3 +10,14 @@ export const ListLoader = () => (
     <rect x="0" y="200" width="100%" height="40" rx="4" ry="4" />
   </ContentLoader>
 );
+
+export const BlockLoader = () => (
+  <ContentLoader height={300} width="100%" speed={3}>
+    <rect x="0" y="0" width="48%" height="150" rx="8" ry="8" />
+    <rect x="52%" y="0" width="48%" height="150" rx="8" ry="8" />
+    <rect x="0" y="170" width="48%" height="150" rx="8" ry="8" />
+    <rect x="52%" y="170" width="48%" height="150" rx="8" ry="8" />
+    <rect x="0" y="340" width="48%" height="150" rx="8" ry="8" />
+    <rect x="52%" y="340" width="48%" height="150" rx="8" ry="8" />
+  </ContentLoader>
+);

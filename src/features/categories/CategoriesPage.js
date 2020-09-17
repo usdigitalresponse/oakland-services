@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { Heading, Heading2, Text } from "components/Text";
 import { Container } from "components/Page";
 import { Button } from "components/Button";
-import { ListLoader } from "components/Loader";
+import { BlockLoader } from "components/Loader";
 import { Feedback } from "components/Feedback";
 
 export const CategoriesPage = () => {
@@ -34,11 +34,11 @@ export const CategoriesPage = () => {
           </CallButton>
         </CategoriesSectionItemsContainer>
       </CategoriesSection>
-      {!data ? (
-        <ListLoader />
-      ) : (
-        <CategoriesSection>
-          <Heading2>{t("categories.categoriesTitle")}</Heading2>
+      <CategoriesSection>
+        <Heading2>{t("categories.categoriesTitle")}</Heading2>
+        {!data ? (
+          <BlockLoader />
+        ) : (
           <CategoriesSectionItemsContainer>
             {data.map((c) => (
               <CategoryLink
@@ -51,8 +51,8 @@ export const CategoriesPage = () => {
               </CategoryLink>
             ))}
           </CategoriesSectionItemsContainer>
-        </CategoriesSection>
-      )}
+        )}
+      </CategoriesSection>
       <Feedback />
       <CategoriesSection>
         <Heading2>{t("categories.aboutTitle")}</Heading2>

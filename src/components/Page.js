@@ -81,6 +81,7 @@ export const Navigation = styled.nav`
 `;
 
 export const Container = styled.section`
+  width: 100%;
   max-width: ${({ theme }) => theme.ui.maxWidth};
   margin: 0 auto;
   padding: 0 ${({ theme }) => theme.spacings(12)};

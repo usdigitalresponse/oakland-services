@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { Heading, Heading2, Text } from "components/Text";
 import { Container } from "components/Page";
-import { ListLoader } from "components/Loader";
+import { BlockLoader } from "components/Loader";
 import { Feedback } from "components/Feedback";
 import { useQueryParams } from "utils/useQueryParams";
 import {
@@ -32,11 +32,11 @@ export const SubcategoriesPage = () => {
           </Text>
         </Container>
       </CategoriesHeader>
-      {!data ? (
-        <ListLoader />
-      ) : (
-        <CategoriesSection>
-          <Heading2>{t("subcategories.categoriesTitle")}</Heading2>
+      <CategoriesSection>
+        <Heading2>{t("subcategories.categoriesTitle")}</Heading2>
+        {!data ? (
+          <BlockLoader />
+        ) : (
           <CategoriesSectionItemsContainer>
             {data.map((c) => (
               <CategoryLink
@@ -49,8 +49,8 @@ export const SubcategoriesPage = () => {
               </CategoryLink>
             ))}
           </CategoriesSectionItemsContainer>
-        </CategoriesSection>
-      )}
+        )}
+      </CategoriesSection>
       <Feedback />
     </section>
   );
