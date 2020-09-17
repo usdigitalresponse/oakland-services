@@ -1,4 +1,4 @@
-const organizationsSeed = require("../data/v3/formatted/organizations");
+const organizationsSeed = require("../data/formatted/organizations");
 
 exports.seed = function (knex) {
   return knex("organizations")
