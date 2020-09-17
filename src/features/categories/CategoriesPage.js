@@ -46,7 +46,7 @@ export const CategoriesPage = () => {
                 key={c.id}
                 to={`/category/${c.id}/subcategories?categoryName=${c.name}`}
               >
-                <img src={`/assets/category-icons/${c.id}`} />
+                <img src={`/assets/category-icons/${c.id}.svg`} />
                 {c.preferred_name ?? c.name}
               </CategoryLink>
             ))}
@@ -105,8 +105,12 @@ export const CategoryLink = styled(Button)`
   max-width: 360px;
   width: 100%;
   margin: auto;
-  height: 136px;
+  height: 164px;
   font-size: 16px;
+  img {
+    height: 85px;
+    margin-bottom: ${({ theme }) => theme.spacings(6)};
+  }
 `;
 
 export const CallButton = styled(Button)`

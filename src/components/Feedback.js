@@ -11,17 +11,31 @@ export const Feedback = () => {
     <FeedbackContainer>
       <Heading2>{t("categories.commentsTitle")}</Heading2>
       <Text>{t("categories.commentsContent")}</Text>
-      <MessageButton as="a" href="mailto: oakland-team@usdigitalresponse.org">
-        {t("categories.commentsButton")}
-      </MessageButton>
+      <MessageButtonContainer>
+        <MessageButton as="a" href="mailto: oakland-team@usdigitalresponse.org">
+          <img src="/assets/mail-icon.svg" alt="Mail" />
+          {t("categories.commentsButton")}
+        </MessageButton>
+      </MessageButtonContainer>
     </FeedbackContainer>
   );
 };
 
+const MessageButtonContainer = styled.section`
+  display: flex;
+  justify-content: center;
+`;
+
 const MessageButton = styled(Button)`
   background-color: ${({ theme }) => theme.colors.orange};
+  font-size: 16px;
+  margin-top: ${({ theme }) => theme.spacings(6)};
+  margin-bottom: ${({ theme }) => theme.spacings(8)};
   &:hover {
     background-color: ${({ theme }) => theme.colors.orangeLight};
+  }
+  img {
+    margin-right: ${({ theme }) => theme.spacings(4)};
   }
 `;
 
