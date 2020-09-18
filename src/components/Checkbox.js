@@ -47,6 +47,7 @@ const CheckboxContainer = styled.div`
     opacity: 0;
     transform: scale(0);
     transition: all 0.2s;
+    pointer-events: none;
   }
 
   /* states */
