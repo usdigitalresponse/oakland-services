@@ -11,6 +11,7 @@ const ModalStyle = createGlobalStyle`
     top: 40px;
     left: 20px;
     right: 20px;
+    bottom: 40px;
     max-width: 600px;
     border-radius: 10px;
     background: white;

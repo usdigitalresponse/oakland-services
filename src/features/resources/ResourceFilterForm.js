@@ -9,16 +9,16 @@ import { Heading } from "components/Text";
 export const ResourceFilterForm = ({ onComplete, filters, setFilters }) => {
   const { data } = useSWR("/api/cities");
 
-  const onChangeNeighborhood = (neighborhood, checked) => {
+  const onChangeCity = (city, checked) => {
     if (checked) {
       setFilters({
         ...filters,
-        cities: filters.neighborhoods.filter((n) => n !== neighborhood.id),
+        cities: filters.cities.filter((n) => n !== city.id),
       });
     } else {
       setFilters({
         ...filters,
-        cities: [...filters.neighborhoods, neighborhood.id],
+        cities: [...filters.cities, city.id],
       });
     }
   };
@@ -82,18 +82,18 @@ export const ResourceFilterForm = ({ onComplete, filters, setFilters }) => {
         <h4 className="filter-title">
           Cities{" "}
           <Button variant="link" onClick={onToggleNeighborhoodSelectAll}>
-            {filters.neighborhoods.length ? "Select none" : "Select all"}
+            {filters.cities.length ? "Select none" : "Select all"}
           </Button>
         </h4>
         {data &&
           data.map((n) => {
-            const checked = filters.neighborhoods.includes(n.id);
+            const checked = filters.cities.includes(n.id);
             return (
               <Checkbox
                 key={n.id}
                 id={`n-${n.id}`}
                 checked={checked}
-                onChange={() => onChangeNeighborhood(n, checked)}
+                onChange={() => onChangeCity(n, checked)}
               >
                 {n.name}
               </Checkbox>
