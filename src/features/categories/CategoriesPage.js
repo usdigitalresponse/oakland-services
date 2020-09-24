@@ -46,7 +46,7 @@ export const CategoriesPage = () => {
                 key={c.id}
                 to={`/category/${c.id}/subcategories?categoryName=${c.name}`}
               >
-                <img src={`/assets/category-icons/${c.id}.svg`} />
+                <img src={`/assets/category-icons/${c.external_id}.svg`} />
                 {c.preferred_name ?? c.name}
               </CategoryLink>
             ))}
