@@ -5,6 +5,7 @@ const CategoryContext = {
     return await database("featured_categories")
       .select(
         "categories.id",
+        "categories.external_id",
         database.raw(
           "ARRAY_AGG(category_details.name ORDER BY category_details.lang) as name"
         ),
