@@ -20,7 +20,7 @@ export const SubcategoriesPage = () => {
   const { t } = useTranslation();
   const { data } = useSWR(`/api/categories/${categoryId}/subcategories`);
   const { categoryName } = useQueryParams();
-
+  console.log(data);
   return (
     <section>
       <CategoriesHeader>
