@@ -5,7 +5,11 @@ exports.seed = function (knex) {
     .del()
     .then(function () {
       const categories = categoriesSeed.map((cat, idx) => {
-        return { id: idx + 1, parent_id: cat.parent_id };
+        return {
+          id: idx + 1,
+          parent_id: cat.parent_id,
+          external_id: cat.external_id,
+        };
       });
       return knex("categories").insert(categories);
     })

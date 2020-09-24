@@ -1,324 +1,428 @@
 [
-  { "name": "Housing", "airtable_cat_id": "3523", "show": false },
+  {
+    "name": "Housing",
+    "airtable_cat_id": "3523",
+    "external_id": 3523,
+    "show": false
+  },
   {
     "name": "Shelter and Homeless Resources",
     "airtable_cat_id": "5320",
+    "external_id": 5320,
     "show": true
   },
-  { "name": "Utility Assistance", "airtable_cat_id": "5321", "show": false },
-  { "name": "Food", "airtable_cat_id": "3493", "show": true },
-  { "name": "Physical Health", "airtable_cat_id": "5322", "show": true },
-  { "name": "Mental Wellness", "airtable_cat_id": "5566", "show": true },
+  {
+    "name": "Utility Assistance",
+    "airtable_cat_id": "5321",
+    "external_id": 5321,
+    "show": false
+  },
+  {
+    "name": "Food",
+    "airtable_cat_id": "3493",
+    "external_id": 3493,
+    "show": true
+  },
+  {
+    "name": "Physical Health",
+    "airtable_cat_id": "5322",
+    "external_id": 5322,
+    "show": true
+  },
+  {
+    "name": "Mental Wellness",
+    "airtable_cat_id": "5566",
+    "external_id": 5566,
+    "show": true
+  },
   {
     "name": "Substance Abuse",
     "airtable_cat_id": "5323",
+    "external_id": 5323,
     "show": true,
     "preferred_name": "Substance Use Disorder"
   },
-  { "name": "Legal Assistance", "airtable_cat_id": "5324", "show": true },
-  { "name": "Employment Assistance", "airtable_cat_id": "5325", "show": false },
+  {
+    "name": "Legal Assistance",
+    "airtable_cat_id": "5324",
+    "external_id": 5324,
+    "show": true
+  },
+  {
+    "name": "Employment Assistance",
+    "airtable_cat_id": "5325",
+    "external_id": 5325,
+    "show": false
+  },
   {
     "name": "Financial Assistance and Public Benefits",
     "airtable_cat_id": "5326",
+    "external_id": 5326,
     "show": true,
     "preferred_name": "Rental Assistance"
   },
   {
     "name": "Military and Veteran Resources",
     "airtable_cat_id": "5328",
+    "external_id": 5328,
     "show": false
   },
-  { "name": "Senior Resources", "airtable_cat_id": "5327", "show": false },
+  {
+    "name": "Senior Resources",
+    "airtable_cat_id": "5327",
+    "external_id": 5327,
+    "show": false
+  },
   {
     "name": "Child and Youth Resources",
     "airtable_cat_id": "5329",
+    "external_id": 5329,
     "show": false
   },
   {
     "name": "Accessibility and Independent Living",
     "airtable_cat_id": "5506",
+    "external_id": 5506,
     "show": false
   },
   {
     "name": "OTHER SPECIALIZED RESOURCE PORTALS",
     "airtable_cat_id": "5330",
+    "external_id": 5330,
     "show": false
   },
-  { "name": "Personal Services", "airtable_cat_id": "50000", "show": true },
+  {
+    "name": "Personal Services",
+    "airtable_cat_id": "50000",
+    "external_id": 50000,
+    "show": true
+  },
   {
     "name": "Alameda County Housing Choices",
     "airtable_cat_id": "3524",
+    "external_id": 3524,
     "show": false,
     "parent_id": 1
   },
   {
     "name": "Housing Resources for People Living with HIV",
     "airtable_cat_id": "5335",
+    "external_id": 5335,
     "show": false,
     "parent_id": 1
   },
   {
     "name": "Low Cost Home Rental Listings",
     "airtable_cat_id": "5543",
+    "external_id": 5543,
     "show": false,
     "parent_id": 1
   },
   {
     "name": "Senior Housing Information and Referral",
     "airtable_cat_id": "5544",
+    "external_id": 5544,
     "show": false,
     "parent_id": 1
   },
   {
     "name": "Housing Issues and Counseling",
     "airtable_cat_id": "5545",
+    "external_id": 5545,
     "show": false,
     "parent_id": 1
   },
   {
     "name": "Residential Housing Options",
     "airtable_cat_id": "5546",
+    "external_id": 5546,
     "show": false,
     "parent_id": 1
   },
   {
     "name": "Extreme Weather Shelters",
     "airtable_cat_id": "5547",
+    "external_id": 5547,
     "show": true,
     "parent_id": 2
   },
   {
     "name": "Domestic Violence Shelters",
     "airtable_cat_id": "5548",
+    "external_id": 5548,
     "show": true,
     "parent_id": 2
   },
   {
     "name": "Homeless Shelter",
     "airtable_cat_id": "5550",
+    "external_id": 5550,
     "show": true,
     "parent_id": 2
   },
   {
     "name": "Transitional Housing/Shelter",
     "airtable_cat_id": "5551",
+    "external_id": 5551,
     "show": true,
     "parent_id": 2
   },
   {
     "name": "Personal/Grooming Supplies",
     "airtable_cat_id": "5552",
+    "external_id": 5552,
     "show": true,
     "parent_id": 16
   },
   {
     "name": "Laundry Facilities",
     "airtable_cat_id": "5553",
+    "external_id": 5553,
     "show": true,
     "parent_id": 16
   },
   {
     "name": "Temporary Mailing Address",
     "airtable_cat_id": "5554",
+    "external_id": 5554,
     "show": true,
     "parent_id": 16
   },
   {
     "name": "Mobile Healthcare",
     "airtable_cat_id": "5555",
+    "external_id": 5555,
     "show": false,
     "parent_id": 2
   },
   {
     "name": "Utility Bill Payment Plans",
     "airtable_cat_id": "5559",
+    "external_id": 5559,
     "show": false,
     "parent_id": 3
   },
   {
     "name": "Discounted Utility Services",
     "airtable_cat_id": "5560",
+    "external_id": 5560,
     "show": false,
     "parent_id": 3
   },
-  { "name": "WIC", "airtable_cat_id": "3521", "show": true, "parent_id": 4 },
+  {
+    "name": "WIC",
+    "airtable_cat_id": "3521",
+    "external_id": 3521,
+    "show": true,
+    "parent_id": 4
+  },
   {
     "name": "Food Stamps/SNAP Applications",
     "airtable_cat_id": "3522",
+    "external_id": 3522,
     "show": true,
     "parent_id": 4
   },
   {
     "name": "Food Pantries",
     "airtable_cat_id": "5556",
+    "external_id": 5556,
     "show": true,
     "parent_id": 4
   },
   {
     "name": "Brown Bag Food Programs",
     "airtable_cat_id": "5557",
+    "external_id": 5557,
     "show": true,
     "parent_id": 4
   },
   {
     "name": "Outpatient Health Facilities",
     "airtable_cat_id": "5567",
+    "external_id": 5567,
     "show": true,
     "parent_id": 5
   },
   {
     "name": "Health Care Discount Enrollment Programs",
     "airtable_cat_id": "5568",
+    "external_id": 5568,
     "show": true,
     "parent_id": 5
   },
   {
     "name": "Medical Care Expense Assistance",
     "airtable_cat_id": "5569",
+    "external_id": 5569,
     "show": true,
     "parent_id": 5
   },
   {
     "name": "Hospitals",
     "airtable_cat_id": "5570",
+    "external_id": 5570,
     "show": true,
     "parent_id": 5
   },
   {
     "name": "Community Clinics",
     "airtable_cat_id": "5571",
+    "external_id": 5571,
     "show": true,
     "parent_id": 5
   },
   {
     "name": "Physician Referral",
     "airtable_cat_id": "5572",
+    "external_id": 5572,
     "show": true,
     "parent_id": 5
   },
   {
     "name": "Domestic Violence Hotlines",
     "airtable_cat_id": "5587",
+    "external_id": 5587,
     "show": true,
     "parent_id": 5
   },
   {
     "name": "Pregnant Women",
     "airtable_cat_id": "5672",
+    "external_id": 5672,
     "show": false,
     "parent_id": 5
   },
   {
     "name": "Resources for People Living with HIV",
     "airtable_cat_id": "6005",
+    "external_id": 6005,
     "show": false,
     "parent_id": 5
   },
   {
     "name": "Crisis Counseling",
     "airtable_cat_id": "5573",
+    "external_id": 5573,
     "show": true,
     "parent_id": 6
   },
   {
     "name": "General Crisis Intervention Hotlines",
     "airtable_cat_id": "5574",
+    "external_id": 5574,
     "show": true,
     "parent_id": 6
   },
   {
     "name": "Suicide Prevention Crisis Intervention Hotlines",
     "airtable_cat_id": "5575",
+    "external_id": 5575,
     "show": true,
     "parent_id": 6
   },
   {
     "name": "Human Trafficking Crisis Intervention Hotlines",
     "airtable_cat_id": "5576",
+    "external_id": 5576,
     "show": true,
     "parent_id": 6
   },
   {
     "name": "Adult Rape Survivors",
     "airtable_cat_id": "5577",
+    "external_id": 5577,
     "show": true,
     "parent_id": 6
   },
   {
     "name": "Mental Health Evaluation",
     "airtable_cat_id": "5578",
+    "external_id": 5578,
     "show": true,
     "parent_id": 6
   },
   {
     "name": "Psychiatric Disorders",
     "airtable_cat_id": "5579",
+    "external_id": 5579,
     "show": true,
     "parent_id": 6
   },
   {
     "name": "Adult Psychiatric Hospitals",
     "airtable_cat_id": "5580",
+    "external_id": 5580,
     "show": true,
     "parent_id": 6
   },
   {
     "name": "Mental Health Evaluation for Children",
     "airtable_cat_id": "5581",
+    "external_id": 5581,
     "show": false,
     "parent_id": 6
   },
   {
     "name": "Geriatric Mental Illness Counseling",
     "airtable_cat_id": "5582",
+    "external_id": 5582,
     "show": false,
     "parent_id": 6
   },
   {
     "name": "Outpatient Behavioral Health Facilities",
     "airtable_cat_id": "5583",
+    "external_id": 5583,
     "show": true,
     "parent_id": 6
   },
   {
     "name": "Mutual Support Groups",
     "airtable_cat_id": "5584",
+    "external_id": 5584,
     "show": true,
     "parent_id": 6
   },
   {
     "name": "Domestic Violence Support Groups",
     "airtable_cat_id": "5585",
+    "external_id": 5585,
     "show": true,
     "parent_id": 6
   },
   {
     "name": "Domestic Violence Hotlines",
     "airtable_cat_id": "5586",
+    "external_id": 5586,
     "show": true,
     "parent_id": 6
   },
   {
     "name": "General Bereavement Support Groups",
     "airtable_cat_id": "5588",
+    "external_id": 5588,
     "show": true,
     "parent_id": 6
   },
   {
     "name": "Smoking/Vaping Quitting Support",
     "airtable_cat_id": "5590",
+    "external_id": 5590,
     "show": true,
     "parent_id": 6
   },
   {
     "name": "LGBTQ Support Groups",
     "airtable_cat_id": "6006",
+    "external_id": 6006,
     "show": true,
     "parent_id": 6
   },
   {
     "name": "Assessment for Substance Abuse",
     "airtable_cat_id": "5561",
+    "external_id": 5561,
     "show": true,
     "preferred_name": "Assessment for Substance Use Disorder",
     "parent_id": 7
@@ -326,18 +430,21 @@
   {
     "name": "Chemical Dependency Treatment Programs",
     "airtable_cat_id": "5562",
+    "external_id": 5562,
     "show": true,
     "parent_id": 7
   },
   {
     "name": "Alcholism Treatment Programs",
     "airtable_cat_id": "5563",
+    "external_id": 5563,
     "show": true,
     "parent_id": 7
   },
   {
     "name": "Substance Abuse Treatment Programs",
     "airtable_cat_id": "5564",
+    "external_id": 5564,
     "show": true,
     "preferred_name": "Substance Use Treatment Programs",
     "parent_id": 7
@@ -345,578 +452,686 @@
   {
     "name": "General Benefits Assistance",
     "airtable_cat_id": "5591",
+    "external_id": 5591,
     "show": true,
     "parent_id": 8
   },
   {
     "name": "Immigrant Benefits Assistance",
     "airtable_cat_id": "5592",
+    "external_id": 5592,
     "show": true,
     "parent_id": 8
   },
   {
     "name": "Pension Benefits Assistance",
     "airtable_cat_id": "5593",
+    "external_id": 5593,
     "show": true,
     "parent_id": 8
   },
   {
     "name": "Protection and Advocacy for Individuals with Disab...",
     "airtable_cat_id": "5594",
+    "external_id": 5594,
     "show": true,
     "parent_id": 8
   },
   {
     "name": "Unemployment Insurance Benefits Assistance",
     "airtable_cat_id": "5595",
+    "external_id": 5595,
     "show": true,
     "parent_id": 8
   },
   {
     "name": "Public/Subsidized Housing Appeals Assistance",
     "airtable_cat_id": "5596",
+    "external_id": 5596,
     "show": true,
     "parent_id": 8
   },
   {
     "name": "Employment Discrimination Assistance",
     "airtable_cat_id": "5597",
+    "external_id": 5597,
     "show": true,
     "parent_id": 8
   },
   {
     "name": "Housing Discrimination Assistance",
     "airtable_cat_id": "5598",
+    "external_id": 5598,
     "show": true,
     "parent_id": 8
   },
   {
     "name": "Family Law",
     "airtable_cat_id": "5599",
+    "external_id": 5599,
     "show": true,
     "parent_id": 8
   },
   {
     "name": "General Legal Aid",
     "airtable_cat_id": "5600",
+    "external_id": 5600,
     "show": true,
     "parent_id": 8
   },
   {
     "name": "Immigration/Naturalization Legal Services",
     "airtable_cat_id": "5601",
+    "external_id": 5601,
     "show": true,
     "parent_id": 8
   },
   {
     "name": "Landlord/Tenant Dispute Resolution",
     "airtable_cat_id": "5602",
+    "external_id": 5602,
     "show": true,
     "parent_id": 8
   },
   {
     "name": "Landlord Rights Information/Counseling",
     "airtable_cat_id": "5603",
+    "external_id": 5603,
     "show": true,
     "parent_id": 8
   },
   {
     "name": "Tenant Rights/Information/Counseling",
     "airtable_cat_id": "5604",
+    "external_id": 5604,
     "show": true,
     "parent_id": 8
   },
   {
     "name": "Lawyer Referral Services",
     "airtable_cat_id": "5605",
+    "external_id": 5605,
     "show": true,
     "parent_id": 8
   },
   {
     "name": "Patient Rights Assistance",
     "airtable_cat_id": "5606",
+    "external_id": 5606,
     "show": true,
     "parent_id": 8
   },
   {
     "name": "Probate Assistance",
     "airtable_cat_id": "5607",
+    "external_id": 5607,
     "show": true,
     "parent_id": 8
   },
   {
     "name": "Comprehensive Job Assistance Centers",
     "airtable_cat_id": "5608",
+    "external_id": 5608,
     "show": false,
     "parent_id": 9
   },
   {
     "name": "Employment Preparation",
     "airtable_cat_id": "5609",
+    "external_id": 5609,
     "show": false,
     "parent_id": 9
   },
   {
     "name": "Job Finding Assistance",
     "airtable_cat_id": "5610",
+    "external_id": 5610,
     "show": false,
     "parent_id": 9
   },
   {
     "name": "Vocational Rehabilitation",
     "airtable_cat_id": "5611",
+    "external_id": 5611,
     "show": false,
     "parent_id": 9
   },
   {
     "name": "Rent Payment Assistance",
     "airtable_cat_id": "5612",
+    "external_id": 5612,
     "show": true,
     "parent_id": 10
   },
   {
     "name": "Senior Ride Programs",
     "airtable_cat_id": "5613",
+    "external_id": 5613,
     "show": false,
     "parent_id": 10
   },
   {
     "name": "Student Financial Aid",
     "airtable_cat_id": "5614",
+    "external_id": 5614,
     "show": false,
     "parent_id": 10
   },
   {
     "name": "In Home Supportive Services Subsidies",
     "airtable_cat_id": "5615",
+    "external_id": 5615,
     "show": false,
     "parent_id": 10
   },
   {
     "name": "Medically Indigent Adult Programs",
     "airtable_cat_id": "5616",
+    "external_id": 5616,
     "show": false,
     "parent_id": 10
   },
   {
     "name": "Medicare",
     "airtable_cat_id": "5617",
+    "external_id": 5617,
     "show": false,
     "parent_id": 10
   },
   {
     "name": "Supplemental Nutrition Assistance Program",
     "airtable_cat_id": "5618",
+    "external_id": 5618,
     "show": false,
     "parent_id": 10
   },
-  { "name": "WIC", "airtable_cat_id": "5619", "show": false, "parent_id": 10 },
+  {
+    "name": "WIC",
+    "airtable_cat_id": "5619",
+    "external_id": 5619,
+    "show": false,
+    "parent_id": 10
+  },
   {
     "name": "Mortuary Services",
     "airtable_cat_id": "5620",
+    "external_id": 5620,
     "show": false,
     "parent_id": 10
   },
   {
     "name": "Veteran Home Loans",
     "airtable_cat_id": "5621",
+    "external_id": 5621,
     "show": false,
     "parent_id": 11
   },
   {
     "name": "Veteran Benefits Assistance",
     "airtable_cat_id": "5622",
+    "external_id": 5622,
     "show": false,
     "parent_id": 11
   },
   {
     "name": "Veteran Outpatient Health Facilities",
     "airtable_cat_id": "5623",
+    "external_id": 5623,
     "show": false,
     "parent_id": 11
   },
   {
     "name": "Veteran Burial Benefits",
     "airtable_cat_id": "5624",
+    "external_id": 5624,
     "show": false,
     "parent_id": 11
   },
   {
     "name": "Insurance Claims Assistance for Veterans",
     "airtable_cat_id": "5625",
+    "external_id": 5625,
     "show": false,
     "parent_id": 11
   },
   {
     "name": "Veteran Reintegration Counseling",
     "airtable_cat_id": "5626",
+    "external_id": 5626,
     "show": false,
     "parent_id": 11
   },
   {
     "name": "Military Family Service/Support Centers",
     "airtable_cat_id": "5627",
+    "external_id": 5627,
     "show": false,
     "parent_id": 11
   },
   {
     "name": "Families of Military Personnel/Veterans",
     "airtable_cat_id": "5628",
+    "external_id": 5628,
     "show": false,
     "parent_id": 11
   },
   {
     "name": "Active Military",
     "airtable_cat_id": "5629",
+    "external_id": 5629,
     "show": false,
     "parent_id": 11
   },
   {
     "name": "Veteran Employment Programs",
     "airtable_cat_id": "5630",
+    "external_id": 5630,
     "show": false,
     "parent_id": 11
   },
   {
     "name": "Homeless Veterans",
     "airtable_cat_id": "5631",
+    "external_id": 5631,
     "show": false,
     "parent_id": 11
   },
   {
     "name": "Veteran Home Loans",
     "airtable_cat_id": "5621",
+    "external_id": 5621,
     "show": false,
     "parent_id": 11
   },
   {
     "name": "Veteran Benefits Assistance",
     "airtable_cat_id": "5622",
+    "external_id": 5622,
     "show": false,
     "parent_id": 11
   },
   {
     "name": "Veteran Outpatient Health Facilities",
     "airtable_cat_id": "5623",
+    "external_id": 5623,
     "show": false,
     "parent_id": 11
   },
   {
     "name": "Veteran Burial Benefits",
     "airtable_cat_id": "5624",
+    "external_id": 5624,
     "show": false,
     "parent_id": 11
   },
   {
     "name": "Insurance Claims Assistance for Veterans",
     "airtable_cat_id": "5625",
+    "external_id": 5625,
     "show": false,
     "parent_id": 11
   },
   {
     "name": "Veteran Reintegration Counseling",
     "airtable_cat_id": "5626",
+    "external_id": 5626,
     "show": false,
     "parent_id": 11
   },
   {
     "name": "Military Family Service/Support Centers",
     "airtable_cat_id": "5627",
+    "external_id": 5627,
     "show": false,
     "parent_id": 11
   },
   {
     "name": "Families of Military Personnel/Veterans",
     "airtable_cat_id": "5628",
+    "external_id": 5628,
     "show": false,
     "parent_id": 11
   },
   {
     "name": "Active Military",
     "airtable_cat_id": "5629",
+    "external_id": 5629,
     "show": false,
     "parent_id": 11
   },
   {
     "name": "Veteran Employment Programs",
     "airtable_cat_id": "5630",
+    "external_id": 5630,
     "show": false,
     "parent_id": 11
   },
   {
     "name": "Homeless Veterans",
     "airtable_cat_id": "5631",
+    "external_id": 5631,
     "show": true,
     "parent_id": 11
   },
   {
     "name": "After School Meal Programs",
     "airtable_cat_id": "5632",
+    "external_id": 5632,
     "show": true,
     "parent_id": 13
   },
   {
     "name": "Summer Food Service Programs",
     "airtable_cat_id": "5633",
+    "external_id": 5633,
     "show": true,
     "parent_id": 13
   },
   {
     "name": "Runaway/Youth Shelters",
     "airtable_cat_id": "5634",
+    "external_id": 5634,
     "show": true,
     "parent_id": 13
   },
   {
     "name": "Runaway Help",
     "airtable_cat_id": "5635",
+    "external_id": 5635,
     "show": true,
     "parent_id": 13
   },
   {
     "name": "Clothing",
     "airtable_cat_id": "5636",
+    "external_id": 5636,
     "show": false,
     "parent_id": 13
   },
   {
     "name": "Child Care Complaints",
     "airtable_cat_id": "5637",
+    "external_id": 5637,
     "show": false,
     "parent_id": 13
   },
   {
     "name": "Child Care",
     "airtable_cat_id": "5638",
+    "external_id": 5638,
     "show": false,
     "parent_id": 13
   },
   {
     "name": "Children's",
     "airtable_cat_id": "5639",
+    "external_id": 5639,
     "show": false,
     "parent_id": 13
   },
   {
     "name": "Anti Bullying Programs",
     "airtable_cat_id": "5640",
+    "external_id": 5640,
     "show": false,
     "parent_id": 13
   },
   {
     "name": "Child Abuse Prevention",
     "airtable_cat_id": "5641",
+    "external_id": 5641,
     "show": false,
     "parent_id": 13
   },
   {
     "name": "Child Sexual Assault Prevention",
     "airtable_cat_id": "5642",
+    "external_id": 5642,
     "show": false,
     "parent_id": 13
   },
   {
     "name": "Advance Medical Directives",
     "airtable_cat_id": "5643",
+    "external_id": 5643,
     "show": false,
     "parent_id": 13
   },
   {
     "name": "Child Custody/Visitation Assistance",
     "airtable_cat_id": "5644",
+    "external_id": 5644,
     "show": false,
     "parent_id": 13
   },
   {
     "name": "Child Support Assistance/Enforcement",
     "airtable_cat_id": "5645",
+    "external_id": 5645,
     "show": false,
     "parent_id": 13
   },
   {
     "name": "Preschools",
     "airtable_cat_id": "5646",
+    "external_id": 5646,
     "show": false,
     "parent_id": 13
   },
   {
     "name": "Migrant Education Programs",
     "airtable_cat_id": "5647",
+    "external_id": 5647,
     "show": false,
     "parent_id": 13
   },
   {
     "name": "Special Education and Assessment",
     "airtable_cat_id": "5648",
+    "external_id": 5648,
     "show": false,
     "parent_id": 13
   },
   {
     "name": "Home Safety Evaluations",
     "airtable_cat_id": "5649",
+    "external_id": 5649,
     "show": false,
     "parent_id": 13
   },
   {
     "name": "Childbirth Education",
     "airtable_cat_id": "5650",
+    "external_id": 5650,
     "show": false,
     "parent_id": 13
   },
   {
     "name": "Birth Control",
     "airtable_cat_id": "5651",
+    "external_id": 5651,
     "show": false,
     "parent_id": 13
   },
   {
     "name": "Abortion Services",
     "airtable_cat_id": "5652",
+    "external_id": 5652,
     "show": false,
     "parent_id": 13
   },
   {
     "name": "Prenatal Care",
     "airtable_cat_id": "5653",
+    "external_id": 5653,
     "show": false,
     "parent_id": 13
   },
   {
     "name": "Reproductive Health Education",
     "airtable_cat_id": "5654",
+    "external_id": 5654,
     "show": false,
     "parent_id": 13
   },
   {
     "name": "Early Intervention for Children With Disabilties/D...",
     "airtable_cat_id": "5655",
+    "external_id": 5655,
     "show": false,
     "parent_id": 13
   },
   {
     "name": "Childhood Immunizations",
     "airtable_cat_id": "5656",
+    "external_id": 5656,
     "show": false,
     "parent_id": 13
   },
   {
     "name": "Pediatric Dental Services",
     "airtable_cat_id": "5657",
+    "external_id": 5657,
     "show": false,
     "parent_id": 13
   },
   {
     "name": "Pediatrics",
     "airtable_cat_id": "5658",
+    "external_id": 5658,
     "show": false,
     "parent_id": 13
   },
-  { "name": "WIC", "airtable_cat_id": "5659", "show": false, "parent_id": 13 },
+  {
+    "name": "WIC",
+    "airtable_cat_id": "5659",
+    "external_id": 5659,
+    "show": false,
+    "parent_id": 13
+  },
   {
     "name": "Leisure Activities",
     "airtable_cat_id": "5660",
+    "external_id": 5660,
     "show": false,
     "parent_id": 13
   },
   {
     "name": "Sexual Assualt/Incest Support Groups",
     "airtable_cat_id": "5661",
+    "external_id": 5661,
     "show": false,
     "parent_id": 13
   },
   {
     "name": "Bereaved Child and Parent Support Groups",
     "airtable_cat_id": "5662",
+    "external_id": 5662,
     "show": false,
     "parent_id": 13
   },
   {
     "name": "Adoption and Foster/Kinship Support Groups",
     "airtable_cat_id": "5663",
+    "external_id": 5663,
     "show": false,
     "parent_id": 13
   },
   {
     "name": "Youth Development",
     "airtable_cat_id": "5664",
+    "external_id": 5664,
     "show": false,
     "parent_id": 13
   },
   {
     "name": "Child Guidance",
     "airtable_cat_id": "5665",
+    "external_id": 5665,
     "show": false,
     "parent_id": 13
   },
   {
     "name": "Youth Issues Lines",
     "airtable_cat_id": "5666",
+    "external_id": 5666,
     "show": false,
     "parent_id": 13
   },
   {
     "name": "Youth Development and Youth Centers",
     "airtable_cat_id": "5667",
+    "external_id": 5667,
     "show": false,
     "parent_id": 13
   },
   {
     "name": "Pregnant Women",
     "airtable_cat_id": "5668",
+    "external_id": 5668,
     "show": false,
     "parent_id": 13
   },
   {
     "name": "Single Parent Families",
     "airtable_cat_id": "5669",
+    "external_id": 5669,
     "show": false,
     "parent_id": 13
   },
   {
     "name": "Juvenile Detention Facilities",
     "airtable_cat_id": "5670",
+    "external_id": 5670,
     "show": false,
     "parent_id": 13
   },
   {
     "name": "Abused Children",
     "airtable_cat_id": "5671",
+    "external_id": 5671,
     "show": false,
     "parent_id": 13
   },
   {
     "name": "Home Safety Evaluations and Accessibility Improvem...",
     "airtable_cat_id": "6003",
+    "external_id": 6003,
     "show": false,
     "parent_id": 14
   },
   {
     "name": "Independent Living Skills Instruction",
     "airtable_cat_id": "6004",
+    "external_id": 6004,
     "show": false,
     "parent_id": 14
   },
   {
     "name": "Resources for People Living with HIV",
     "airtable_cat_id": "5331",
+    "external_id": 5331,
     "show": false,
     "parent_id": 15
   },
   {
     "name": "Transportation Resources Portal",
     "airtable_cat_id": "5332",
+    "external_id": 5332,
     "show": false,
     "parent_id": 15
   },
   {
     "name": "Reentry Resources Portal",
     "airtable_cat_id": "5334",
+    "external_id": 5334,
     "show": false,
     "parent_id": 15
   },
   {
     "name": "Alameda County Housing Choices",
     "airtable_cat_id": "5336",
+    "external_id": 5336,
     "show": false,
     "parent_id": 15
   }

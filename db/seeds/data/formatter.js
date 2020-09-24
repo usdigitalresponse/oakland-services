@@ -52,6 +52,7 @@ async function generateCategories() {
           const formattedRow = {
             name: row.text,
             airtable_cat_id: row.cat_id,
+            external_id: parseInt(row.cat_id),
             airtable_parent_id: row.parent_id,
             show: row.show === "" ? false : true,
           };
@@ -242,8 +243,6 @@ async function generateResources() {
 }
 
 async function enhanceResources() {
-  const organizations = require("./formatted/organizations");
-  const cities = require("./formatted/cities");
   const resources = require("./formatted/resources");
   const resource_results = require("./json/resource_results");
 

@@ -7,6 +7,7 @@
     "start": "node server/index.js",
     "dev": "concurrently \"nodemon server/index.js\" \"react-scripts start\"",
     "build": "npx react-scripts build",
+    "seed:format": "cd db/seeds/data && node formatter.js",
     "format": "prettier . --write"
   },
   "dependencies": {
