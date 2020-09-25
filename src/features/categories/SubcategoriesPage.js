@@ -20,7 +20,7 @@ export const SubcategoriesPage = () => {
   const { t } = useTranslation();
   const { data } = useSWR(`/api/categories/${categoryId}/subcategories`);
   const { categoryName } = useQueryParams();
-  console.log(data);
+  const { debug } = useQueryParams();
   return (
     <section>
       <CategoriesHeader>
@@ -46,6 +46,7 @@ export const SubcategoriesPage = () => {
               >
                 <img src={`/assets/category-icons/${c.external_id}.svg`} />
                 {c.preferred_name ?? c.name}
+                {!!debug && <span>[{c.external_id}]</span>}
               </CategoryLink>
             ))}
           </CategoriesSectionItemsContainer>

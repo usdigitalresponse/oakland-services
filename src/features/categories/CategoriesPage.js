@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import useSWR from "swr";
 import { useTranslation } from "react-i18next";
+import { useQueryParams } from "utils/useQueryParams";
 import { Link } from "react-router-dom";
 import { Heading, Heading2, Text } from "components/Text";
 import { Container } from "components/Page";
@@ -12,7 +13,7 @@ import { Feedback } from "components/Feedback";
 export const CategoriesPage = () => {
   const { t } = useTranslation();
   const { data } = useSWR("/api/featured-categories");
-  console.log(data);
+  const { debug } = useQueryParams();
   return (
     <section>
       <CategoriesHeader>
@@ -48,6 +49,7 @@ export const CategoriesPage = () => {
               >
                 <img src={`/assets/category-icons/${c.external_id}.svg`} />
                 {c.preferred_name ?? c.name}
+                {!!debug && <span>[{c.external_id}]</span>}
               </CategoryLink>
             ))}
           </CategoriesSectionItemsContainer>
