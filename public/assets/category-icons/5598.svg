@@ -3,15 +3,16 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill-rule:evenodd;clip-rule:evenodd;}
+	.st0{fill:#FFFFFF;}
+	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
 </style>
 <g>
-	<path d="M35.5,65.8h-7.2v7.3h7.2V65.8z"/>
-	<path d="M18,55.2v17.9h6V61.5h15.8v11.6h6V55.2L31.9,41.3L18,55.2z"/>
-	<path d="M69.8,64.3h-7.5v8.8h7.5V64.3z"/>
-	<path d="M50.1,27v26.4v19.7H58V60h16.1v13.1H82V27H50.1z M64.3,54.4h-9.7v-8.7h9.7V54.4z M64.3,41.2h-9.7v-8.7h9.7V41.2z
-		 M77.5,54.4h-9.7v-8.7h9.7V54.4z M77.5,41.2h-9.7v-8.7h9.7V41.2z"/>
-	<path class="st0" d="M99,50c0,27.1-21.9,49-49,49S1,77.1,1,50S22.9,1,50,1S99,22.9,99,50z M78.2,82.5C70.7,89,60.8,93,50,93
+	<path class="st0" d="M35.5,65.8h-7.2v7.3h7.2V65.8z"/>
+	<path class="st0" d="M18,55.2v17.9h6V61.5h15.8v11.6h6V55.2L31.9,41.3L18,55.2z"/>
+	<path class="st0" d="M69.8,64.3h-7.5v8.8h7.5V64.3z"/>
+	<path class="st0" d="M50.1,27v26.4v19.7H58V60h16.1v13.1H82V27H50.1z M64.3,54.4h-9.7v-8.7h9.7V54.4z M64.3,41.2h-9.7v-8.7h9.7
+		V41.2z M77.5,54.4h-9.7v-8.7h9.7V54.4z M77.5,41.2h-9.7v-8.7h9.7V41.2z"/>
+	<path class="st1" d="M99,50c0,27.1-21.9,49-49,49S1,77.1,1,50S22.9,1,50,1S99,22.9,99,50z M78.2,82.5C70.7,89,60.8,93,50,93
 		C26.3,93,7,73.7,7,50c0-10.8,4-20.7,10.5-28.2L78.2,82.5z M82.5,78.2L21.8,17.5C29.3,11,39.2,7,50,7c23.7,0,43,19.3,43,43
 		C93,60.8,89,70.7,82.5,78.2z"/>
 </g>

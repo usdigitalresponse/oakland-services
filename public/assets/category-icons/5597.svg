@@ -3,12 +3,12 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill-rule:evenodd;clip-rule:evenodd;}
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
 </style>
 <g>
 	<path class="st0" d="M22.5,31H20h-0.2c-1,0.1-1.8,1-1.8,2v10l22.7,6.1L22.5,31z M51,59.5h-6c-1.1,0-2-0.9-2-2v-3.6l-25-6.7v28.4
 		c0,1.1,0.9,2,2,2h49.1L51,59.5z M82,73.5L61.3,52.8L82,47.2V73.5z M58,49.5L38.5,30v-6c0-1.1,0.9-2,2-2h19.1c1.1,0,2,0.9,2,2v7H80
-		c1.1,0,2,0.9,2,2v10.1L58,49.5z M57.6,26H42.4v5h15.1V26z"/>
+		c1.1,0,2,0.9,2,2v10.1L58,49.5z M57.6,26H42.4v5h15.1L57.6,26L57.6,26z"/>
 	<path class="st0" d="M99,50c0,27.1-21.9,49-49,49S1,77.1,1,50S22.9,1,50,1S99,22.9,99,50z M78.2,82.5C70.7,89,60.8,93,50,93
 		C26.3,93,7,73.7,7,50c0-10.8,4-20.7,10.5-28.2L78.2,82.5z M82.5,78.2L21.8,17.5C29.3,11,39.2,7,50,7c23.7,0,43,19.3,43,43
 		C93,60.8,89,70.7,82.5,78.2z"/>
