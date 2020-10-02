@@ -16,12 +16,12 @@
     "i18next": "^19.7.0",
     "i18next-browser-languagedetector": "^6.0.1",
     "i18next-http-backend": "^1.0.21",
-    "i18next-http-middleware": "^3.0.5",
+    "i18next-http-middleware": "^3.0.6",
     "json-formatter-js": "^2.3.4",
-    "knex": "^0.21.5",
+    "knex": "^0.21.6",
     "lodash": "^4.17.20",
     "pg": "^8.3.3",
-    "query-string": "^6.13.2",
+    "query-string": "^6.13.4",
     "raw.macro": "^0.4.2",
     "react": "^16.13.1",
     "react-content-loader": "^5.1.2",
@@ -31,7 +31,7 @@
     "react-router-dom": "^5.2.0",
     "styled-components": "^5.2.0",
     "styled-normalize": "^8.0.7",
-    "swr": "^0.3.4"
+    "swr": "^0.3.5"
   },
   "devDependencies": {
     "concurrently": "^5.3.0",

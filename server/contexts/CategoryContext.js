@@ -32,6 +32,7 @@ const CategoryContext = {
       )
       .join("category_details", "categories.id", "category_details.category_id")
       .where({ "categories.parent_id": null })
+      .whereNotIn("categories.external_id", [5330, 5327])
       .groupBy("categories.id");
   },
   getSubcategories: async (categoryId) => {

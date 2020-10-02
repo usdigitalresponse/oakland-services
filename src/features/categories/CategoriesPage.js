@@ -12,7 +12,7 @@ import { Feedback } from "components/Feedback";
 
 export const CategoriesPage = () => {
   const { t } = useTranslation();
-  const { data } = useSWR("/api/featured-categories");
+  const { data } = useSWR("/api/categories");
   const { debug } = useQueryParams();
   return (
     <section>
