@@ -32,6 +32,7 @@ const CategoryContext = {
       )
       .join("category_details", "categories.id", "category_details.category_id")
       .where({ "categories.parent_id": null })
+      // TODO: Remove later once we figure out how to deal with empty categories
       .whereNotIn("categories.external_id", [5330, 5327])
       .groupBy("categories.id");
   },
@@ -49,6 +50,22 @@ const CategoryContext = {
       )
       .join("category_details", "categories.id", "category_details.category_id")
       .where({ "categories.parent_id": categoryId })
+      // TODO: Remove later once we figure out how to deal with empty categories
+      .whereNotIn("categories.external_id", [
+        3524,
+        5335,
+        5336,
+        5332,
+        5334,
+        5621,
+        5624,
+        5555,
+        6005,
+        5582,
+        5331,
+        5632,
+        5666,
+      ])
       .groupBy("categories.id");
   },
 };
