@@ -9,7 +9,8 @@
     "name": "Shelter and Homeless Resources",
     "airtable_cat_id": "5320",
     "external_id": 5320,
-    "show": true
+    "show": true,
+    "preferred_name": "Emergency Shelter"
   },
   {
     "name": "Utility Assistance",
@@ -40,7 +41,7 @@
     "airtable_cat_id": "5323",
     "external_id": 5323,
     "show": true,
-    "preferred_name": "Substance Use Disorder"
+    "preferred_name": "Substance Use"
   },
   {
     "name": "Legal Assistance",
