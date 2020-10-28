@@ -79,7 +79,7 @@ export const CategoriesHeader = styled.section`
   h1 {
     margin-bottom: ${({ theme }) => theme.spacings(2)};
   }
-  background: ${({ theme }) => theme.colors.grayLightest};
+  background: ${({ theme }) => theme.colors.white};
   padding-top: ${({ theme }) => theme.spacings(3)};
   padding-bottom: ${({ theme }) => theme.spacings(3)};
   margin-bottom: ${({ theme }) => theme.spacings(6)};
@@ -90,6 +90,7 @@ export const CategoriesSection = styled(Container)`
   h2 {
     margin-bottom: ${({ theme }) => theme.spacings(4)};
   }
+  background: ${({ theme }) => theme.colors.grayLightest};
 `;
 
 export const CategoriesSectionItemsContainer = styled.section`
