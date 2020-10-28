@@ -25,11 +25,11 @@ export const CategoriesPage = () => {
       <CategoriesSection>
         <Heading2>{t("categories.speakTitle")}</Heading2>
         <CategoriesSectionItemsContainer>
-          <CallButton as="a" href="tel:+1-211" size="small" bgColor="green">
+          <CallButton as="a" href="tel:+1-211" size="small" bgColor="accentCoolDark">
             <img src="/assets/call-icon.svg" alt="Call 2-1-1" />
             Call 2-1-1
           </CallButton>
-          <CallButton as="a" href="sms:898211" size="small" bgColor="teal">
+          <CallButton as="a" href="sms:898211" size="small" bgColor="accentCoolDark">
             <img src="/assets/text-icon.svg" alt="Text 898211" />
             Text 898211
           </CallButton>
