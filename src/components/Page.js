@@ -12,8 +12,8 @@ export const Page = styled.section`
 `;
 
 export const Navigation = styled.nav`
-  color: ${({ theme }) => theme.ui.navigation.text};
-  background: ${({ theme }) => theme.ui.navigation.background};
+  color: ${({ theme }) => theme.colors.secondaryDark};
+  background: ${({ theme }) => theme.ui.navigation.backgroundHeader};
 
   .nav-content {
     display: flex;
@@ -22,6 +22,14 @@ export const Navigation = styled.nav`
     padding: ${({ theme }) => `${theme.spacings(2)} 0`};
     position: relative;
     z-index: 2;
+  }
+
+  .nav-title {
+    display: flex;
+    img {
+      margin-right: ${({ theme }) => theme.spacings(2)};
+      width: 50px;
+    }
   }
 
   .title {
@@ -38,11 +46,12 @@ export const Navigation = styled.nav`
     }
   }
 
+
   a,
   button {
     padding: ${({ theme }) => theme.spacings(3)};
     &:hover {
-      color: ${({ theme }) => theme.colors.grayMedLight};
+      color: ${({ theme }) => theme.colors.secondaryDarker};
     }
   }
 
@@ -53,7 +62,7 @@ export const Navigation = styled.nav`
     top: 0;
     padding-top: 80px;
     padding-bottom: 12px;
-    background: ${({ theme }) => theme.ui.navigation.background};
+    background: ${({ theme }) => theme.colors.grayLightest};
     transform: translateY(-100%);
     z-index: 1;
 
@@ -93,7 +102,7 @@ export const Container = styled.section`
 
 export const PageFooter = styled.footer`
   color: ${({ theme }) => theme.ui.navigation.text};
-  background: ${({ theme }) => theme.ui.navigation.background};
+  background: ${({ theme }) => theme.ui.navigation.backgroundFooter};
   padding: ${({ theme }) =>
     `${theme.spacings(4)} ${theme.spacings(4)} ${theme.spacings(17)}`};
   text-align: center;
@@ -102,6 +111,16 @@ export const PageFooter = styled.footer`
     margin: 0;
   }
 `;
+
+export const PageHeading = styled.h1`
+color: ${({ theme }) => theme.colors.primary};
+`;
+
+export const PageSubheading = styled.h1`
+color: ${({ theme }) => theme.colors.secondaryDark};
+font-weight: normal;
+`;
+
 
 export const PageLayout = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -117,10 +136,12 @@ export const PageLayout = ({ children }) => {
       <Navigation>
         <Container>
           <div className="nav-content">
+            <div className="nav-title">
+              <img src="/assets/icon-portal_home-multi.svg"/>
             <Link className="title" to="/">
-              <Heading>{t("title")}</Heading>
-              <Heading2>{t("subtitle")}</Heading2>
-            </Link>
+              <PageHeading>{t("title")}</PageHeading>
+              <PageSubheading>{t("subtitle")}</PageSubheading>
+            </Link></div>
             <button
               className="fixed"
               type="button"

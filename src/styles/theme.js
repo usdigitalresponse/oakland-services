@@ -96,15 +96,16 @@ export const lightTheme = {
     background: colors.white,
     border: colors.grayLight,
     navigation: {
+      backgroundHeader: colors.grayLightest,
       text: colors.white,
-      background: colors.secondaryDarker,
+      backgroundFooter: colors.secondaryDarker,
     },
     button: {
       primary: {
         color: colors.grayDarkest,
         background: colors.white,
         hover: {
-          background: colors.primaryLighter,
+          background: colors.grayLight,
         },
         disabled: {
           background: colors.grayMedLight,

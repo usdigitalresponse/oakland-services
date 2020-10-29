@@ -27,12 +27,14 @@ const MessageButtonContainer = styled.section`
 `;
 
 const MessageButton = styled(Button)`
-  background-color: ${({ theme }) => theme.colors.orange};
+  background-color: ${({ theme }) => theme.colors.accentCoolDark};
+  color: ${({ theme }) => theme.colors.white};
   font-size: 16px;
+  border: none;
   margin-top: ${({ theme }) => theme.spacings(6)};
   margin-bottom: ${({ theme }) => theme.spacings(8)};
   &:hover {
-    background-color: ${({ theme }) => theme.colors.orangeDark};
+    background-color: ${({ theme }) => theme.colors.accentCoolDarker};
   }
   img {
     margin-right: ${({ theme }) => theme.spacings(4)};

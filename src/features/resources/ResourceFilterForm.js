@@ -5,6 +5,7 @@ import { Checkbox } from "components/Checkbox";
 import { RadioSwitch } from "components/Radio";
 import { Button } from "components/Button";
 import { Heading } from "components/Text";
+import { ApplyFiltersButton } from "components/Button";
 
 export const ResourceFilterForm = ({ onComplete, filters, setFilters }) => {
   const { data } = useSWR("/api/cities");
@@ -101,7 +102,7 @@ export const ResourceFilterForm = ({ onComplete, filters, setFilters }) => {
           })}
       </div>
       <footer className="submit-container">
-        <Button onClick={onComplete}>Apply Filters</Button>
+        <ApplyFiltersButton onClick={onComplete}>Apply Filters</ApplyFiltersButton>
       </footer>
     </FilterBody>
   );
@@ -127,7 +128,7 @@ const FilterBody = styled.section`
     justify-content: space-between;
     align-items: center;
     button {
-      font-size: 0.8rem;
+      font-size: 1rem;
       color: ${({ theme }) => theme.colors.primary};
     }
   }
@@ -140,6 +141,7 @@ const FilterBody = styled.section`
   .submit-container {
     display: flex;
     justify-content: center;
+    font-size: 1.1rem;
     margin-top: ${({ theme }) => theme.spacings(10)};
   }
 

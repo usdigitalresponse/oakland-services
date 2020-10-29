@@ -6,6 +6,7 @@ import { Icon } from "./Icon";
 const variants = {
   primary: css`
     background-color: ${({ theme }) => theme.ui.button.primary.background};
+    border: 1px solid ${({ theme }) => theme.colors.grayMed};
     color: ${({ theme }) => theme.ui.button.primary.color};
     &:hover {
       background-color: ${({ theme }) =>
@@ -30,8 +31,8 @@ const variants = {
 export const Button = styled.button`
   display: inline-flex;
   align-items: center;
-  font-size: 14px;
-  line-height: 18px;
+  font-size: 8em;
+  line-height: 1.2em;
   padding: ${({ theme }) => `${theme.spacings(3)} ${theme.spacings(5)}`};
   border-radius: 8px;
   transition: 0.1s ease;
@@ -40,6 +41,13 @@ export const Button = styled.button`
   }
   ${(props) => variants[props.variant || "primary"]};
   width: ${({ fullWidth }) => (fullWidth ? "100%" : "auto")};
+`;
+
+export const ApplyFiltersButton = styled(Button)`
+  font-size: 1.2em;
+  border: none;
+  background-color: ${({ theme }) => theme.colors.secondaryDark};
+  color: ${({ theme }) => theme.colors.white};
 `;
 
 export const BackButton = ({ onClick = () => {}, withIcon, ...rest }) => {

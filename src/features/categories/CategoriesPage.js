@@ -24,7 +24,7 @@ export const CategoriesPage = () => {
       </CategoriesHeader>
       <CategoriesSection>
         <Heading2>{t("categories.speakTitle")}</Heading2>
-        <CategoriesSectionItemsContainer>
+        <ActionItemsContainer>
           <CallButton as="a" href="tel:+1-211" size="small" bgColor="accentCoolDark">
             <img src="/assets/call-icon.svg" alt="Call 2-1-1" />
             Call 2-1-1
@@ -33,9 +33,10 @@ export const CategoriesPage = () => {
             <img src="/assets/text-icon.svg" alt="Text 898211" />
             Text 898211
           </CallButton>
-        </CategoriesSectionItemsContainer>
+        </ActionItemsContainer>
       </CategoriesSection>
-      <CategoriesSection>
+      <CategoriesResources>
+      <Container>
         <Heading2>{t("categories.categoriesTitle")}</Heading2>
         {!data ? (
           <BlockLoader />
@@ -54,7 +55,8 @@ export const CategoriesPage = () => {
             ))}
           </CategoriesSectionItemsContainer>
         )}
-      </CategoriesSection>
+        </Container>
+      </CategoriesResources>
       <Feedback />
       <CategoriesSection>
         <Heading2>{t("categories.aboutTitle")}</Heading2>
@@ -90,45 +92,57 @@ export const CategoriesSection = styled(Container)`
   h2 {
     margin-bottom: ${({ theme }) => theme.spacings(4)};
   }
+  background: ${({ theme }) => theme.colors.white};
+`;
+
+export const CategoriesResources = styled.section`
+  margin-bottom: ${({ theme }) => theme.spacings(8)};
+  h2 {
+    margin-bottom: ${({ theme }) => theme.spacings(4)};
+  }
   background: ${({ theme }) => theme.colors.grayLightest};
+  padding-top: 24px;
+  padding-bottom: 24px;
 `;
 
 export const CategoriesSectionItemsContainer = styled.section`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: ${({ theme }) => theme.spacings(4)};
+  grid-template-columns: 1fr;
+  grid-gap: ${({ theme }) => theme.spacings(2)};
   margin-bottom: ${({ theme }) => theme.spacings(4)};
+`;
+
+export const ActionItemsContainer = styled(CategoriesSectionItemsContainer)`
+  grid-template-columns: 1fr 1fr;
 `;
 
 export const CategoryLink = styled(Button)`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  max-width: 360px;
   width: 100%;
   margin: auto;
-  height: 164px;
-  font-size: 16px;
+  height: 80px;
+  font-weight: 500;
+  font-size: 1.4em;
   img {
-    height: 85px;
-    margin-bottom: ${({ theme }) => theme.spacings(6)};
+    height: 64px;
+    margin-right: ${({ theme }) => theme.spacings(8)};
   }
 `;
 
 export const CallButton = styled(Button)`
   display: flex;
-  max-width: 360px;
+  max-width: 280px;
   width: 100%;
   margin: auto;
   height: 72px;
   font-size: 16px;
+  color: white;
+  border: none;
   background-color: ${({ theme, bgColor }) =>
     theme.colors[bgColor] || theme.ui.button.primary.background};
   &:hover {
     background-color: ${({ theme, bgColor }) =>
-      theme.colors[`${bgColor}Dark`] ||
-      theme.ui.button.primary.hover.background};
+      theme.colors.accentCoolDarker};
   }
   img {
     margin-right: ${({ theme }) => theme.spacings(4)};

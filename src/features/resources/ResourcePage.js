@@ -114,11 +114,11 @@ export const ResourcePage = () => {
                 </Text>
               </div>
             )}
-            {!!data.email && (
+            {!!data.data.contact__0__email && (
               <div>
                 <Heading5>{t("resource.email")}</Heading5>
                 <Text>
-                  <a href={`mailto:${data.email}`}>{data.email}</a>
+                  <a href={`mailto:${data.data.contact__0__email}`}>{data.data.contact__0__email}</a>
                 </Text>
               </div>
             )}

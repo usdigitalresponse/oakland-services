@@ -13,6 +13,7 @@ import {
   CategoriesSection,
   CategoryLink,
   CategoriesSectionItemsContainer,
+  CategoriesResources,
 } from "./CategoriesPage";
 
 export const SubcategoriesPage = () => {
@@ -32,7 +33,8 @@ export const SubcategoriesPage = () => {
           </Text>
         </Container>
       </CategoriesHeader>
-      <CategoriesSection>
+      <CategoriesResources>
+      <Container>
         <Heading2>{t("subcategories.categoriesTitle")}</Heading2>
         {!data ? (
           <BlockLoader />
@@ -51,7 +53,8 @@ export const SubcategoriesPage = () => {
             ))}
           </CategoriesSectionItemsContainer>
         )}
-      </CategoriesSection>
+        </Container>
+      </CategoriesResources>
       <Feedback />
     </section>
   );
