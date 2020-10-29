@@ -53,59 +53,7 @@ export const ResourcePage = () => {
         <ListLoader />
       ) : (
         <Resource>
-          <Text
-            className="resource-description"
-            dangerouslySetInnerHTML={{ __html: data.description }}
-          />
-          <div className="resource-program-information">
-            <Heading4>{t("resource.programInformation")}</Heading4>
-            {!!data.application && (
-              <div>
-                <Heading5>{t("resource.application")}</Heading5>
-                <Text>{data.application}</Text>
-              </div>
-            )}
-            {!!data.eligibility && (
-              <div className="resource-highlight">
-                <Heading5>{t("resource.eligibility")}</Heading5>
-                <Text>{data.eligibility}</Text>
-              </div>
-            )}
-            {!!data.fee && (
-              <div>
-                <Heading5>{t("resource.fee")}</Heading5>
-                <Text>{data.fee}</Text>
-              </div>
-            )}
-            {!!data.languages && (
-              <div>
-                <Heading5>{t("resource.languages")}</Heading5>
-                <Text>{data.languages}</Text>
-              </div>
-            )}
-          </div>
           <div className="resource-provider-information">
-            <Heading4>{t("resource.providerInformation")}</Heading4>
-            {!!data.organization && (
-              <div>
-                <Heading5>{t("resource.provider")}</Heading5>
-                <Text>{data.organization}</Text>
-              </div>
-            )}
-            {!!data.website && (
-              <div>
-                <Heading5>{t("resource.website")}</Heading5>
-                <Text>
-                  <a href={data.website}>{data.website}</a>
-                </Text>
-              </div>
-            )}
-            {!!data.address && (
-              <div>
-                <Heading5>{t("resource.address")}</Heading5>
-                <Text>{data.address}</Text>
-              </div>
-            )}
             {!!data.phone_number && (
               <div>
                 <Heading5>{t("resource.phoneNumber")}</Heading5>
@@ -120,6 +68,56 @@ export const ResourcePage = () => {
                 <Text>
                   <a href={`mailto:${data.data.contact__0__email}`}>{data.data.contact__0__email}</a>
                 </Text>
+              </div>
+            )}
+            {!!data.website && (
+              <div>
+                <Heading5>{t("resource.website")}</Heading5>
+                <Text>
+                  <a href={data.website}>{data.website}</a>
+                </Text>
+              </div>
+            )}
+            {!!data.address && (
+              <div>
+                <Heading5>{t("resource.address")}</Heading5>
+                <Text>{data.data.locations__0__physical_address__0__address1}, {data.data.locations__0__physical_address__0__city}, {data.data.locations__0__physical_address__0__state_province}</Text>
+              </div>
+            )}
+          </div>
+          <Text
+            className="resource-description"
+            dangerouslySetInnerHTML={{ __html: data.description }}
+          />
+          <div className="resource-program-information">
+            {!!data.application && (
+              <div>
+                <Heading5>{t("resource.application")}</Heading5>
+                <Text>{data.application}</Text>
+              </div>
+            )}
+            {!!data.eligibility && (
+              <div className="resource-highlight">
+                <Heading5>{t("resource.eligibility")}</Heading5>
+                <Text>{data.eligibility}</Text>
+              </div>
+            )}
+            {!!data.organization && (
+              <div>
+                <Heading5>{t("resource.provider")}</Heading5>
+                <Text>{data.organization}</Text>
+              </div>
+            )}
+            {!!data.data.fee__fee && (
+              <div>
+                <Heading5>{t("resource.fee")}</Heading5>
+                <Text>{data.fee}</Text>
+              </div>
+            )}
+            {!!data.languages && (
+              <div>
+                <Heading5>{t("resource.languages")}</Heading5>
+                <Text>{data.languages}</Text>
               </div>
             )}
           </div>

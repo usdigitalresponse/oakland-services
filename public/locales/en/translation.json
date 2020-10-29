@@ -38,7 +38,7 @@
     "provider": "Provider",
     "website": "Website",
     "address": "Address",
-    "phoneNumber": "Phone number",
+    "phoneNumber": "Call",
     "email": "Email",
     "lastUpdated": "Last updated"
   }
