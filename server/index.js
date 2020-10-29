@@ -12,6 +12,14 @@ const CLIENT_PATH = path.join(__dirname, "../", "build");
 const SUPPORTED_LANGUAGES = ["en", "es"];
 const DEFAULT_LANGUAGE_INDEX = 0;
 
+const INVALID_CITY_DICT = {
+  "San Francisco": true,
+  Richmond: true,
+  "Baton Rouge": true,
+  Chicago: true,
+  Washington: true,
+};
+
 i18next.use(i18nextMiddleware.LanguageDetector).init({
   supportedLngs: ["en", "es"],
   fallbackLng: "en",
@@ -155,7 +163,11 @@ app.get("/api/cities", async (req, res) => {
     .join("city_details", "cities.id", "city_details.city_id")
     .groupBy("cities.id");
 
-  res.status(200).json(translateInput(cities, req.lang, ["name"]));
+  const validCities = cities.filter(
+    (city) => !(city.name in INVALID_CITY_DICT)
+  );
+
+  res.status(200).json(translateInput(validCities, req.lang, ["name"]));
 });
 
 app.get("*", (_req, res) => {
