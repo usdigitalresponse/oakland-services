@@ -23,7 +23,11 @@ const ResourceContext = {
         database.raw(
           "ARRAY_AGG(organization_details.name ORDER BY organization_details.lang) as organization"
         ),
-        database.raw("ARRAY_AGG(category_details.name) as subcategories")
+        database.raw("ARRAY_AGG(category_details.name) as subcategories"),
+        database.raw(
+          "ARRAY_AGG(resource_languages.language_id) as language_id"
+        ),
+        database.raw("ARRAY_AGG(languages.name) as language_name")
       )
       .join("resource_details", "resources.id", "resource_details.resource_id")
       .join(
@@ -40,6 +44,12 @@ const ResourceContext = {
         "organization_details.organization_id",
         "organizations.id"
       )
+      .leftJoin(
+        "resource_languages",
+        "resources.id",
+        "resource_languages.resource_id"
+      )
+      .leftJoin("languages", "resource_languages.language_id", "languages.id")
       .where({ "categories.id": categoryId })
       .modify((queryBuilder) => {
         if (!params.neighborhoods) {
@@ -88,6 +98,17 @@ const ResourceContext = {
           return queryBuilder.orderBy("resource_details.name", "asc");
         }
         return queryBuilder.orderBy("resource_details.updated_at", "desc");
+      })
+      .modify((queryBuilder) => {
+        // ignore english, as all resources support this by default but is not always explicit in scraped data
+        if (!params.language || params.language == "english") {
+          return;
+        }
+        return queryBuilder.where(
+          "languages.name",
+          "ILIKE",
+          "%" + params.language + "%"
+        );
       })
       .groupBy(
         "resources.id",
