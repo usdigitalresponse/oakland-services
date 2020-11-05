@@ -58,8 +58,16 @@ export const ResourceFilterForm = ({ onComplete, filters, setFilters }) => {
       <div className="filter-group">
         <h4 className="filter-title">Languages Offered</h4>
         <select value={filters.language} onChange={onChangeLanguage}>
+          <option value="cantonese">Cantonese</option>
           <option value="english">English</option>
-          <option value="spanish">Español</option>
+          <option value="farsi">Farsi</option>
+          <option value="hindi">Hindi</option>
+          <option value="korean">Korean</option>
+          <option value="mandarin">Mandarin</option>
+          <option value="punjabi">Punjabi</option>
+          <option value="spanish">Spanish</option>
+          <option value="tagalog">Tagalog</option>
+          <option value="vietnamese">Vietnamese</option>
         </select>
       </div>
       <div className="filter-group">
@@ -102,7 +110,9 @@ export const ResourceFilterForm = ({ onComplete, filters, setFilters }) => {
           })}
       </div>
       <footer className="submit-container">
-        <ApplyFiltersButton onClick={onComplete}>Apply Filters</ApplyFiltersButton>
+        <ApplyFiltersButton onClick={onComplete}>
+          Apply Filters
+        </ApplyFiltersButton>
       </footer>
     </FilterBody>
   );
