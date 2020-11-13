@@ -66,7 +66,9 @@ export const ResourcePage = () => {
               <div>
                 <Heading5>{t("resource.email")}</Heading5>
                 <Text>
-                  <a href={`mailto:${data.data.contact__0__email}`}>{data.data.contact__0__email}</a>
+                  <a href={`mailto:${data.data.contact__0__email}`}>
+                    {data.data.contact__0__email}
+                  </a>
                 </Text>
               </div>
             )}
@@ -81,7 +83,11 @@ export const ResourcePage = () => {
             {!!data.address && (
               <div>
                 <Heading5>{t("resource.address")}</Heading5>
-                <Text>{data.data.locations__0__physical_address__0__address1}, {data.data.locations__0__physical_address__0__city}, {data.data.locations__0__physical_address__0__state_province}</Text>
+                <Text>
+                  {data.data.locations__0__physical_address__0__address1},{" "}
+                  {data.data.locations__0__physical_address__0__city},{" "}
+                  {data.data.locations__0__physical_address__0__state_province}
+                </Text>
               </div>
             )}
           </div>

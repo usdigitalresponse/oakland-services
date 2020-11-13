@@ -34,25 +34,25 @@ export const SubcategoriesPage = () => {
         </Container>
       </CategoriesHeader>
       <CategoriesResources>
-      <Container>
-        <Heading2>{t("subcategories.categoriesTitle")}</Heading2>
-        {!data ? (
-          <BlockLoader />
-        ) : (
-          <CategoriesSectionItemsContainer>
-            {data.map((c) => (
-              <CategoryLink
-                as={Link}
-                key={c.id}
-                to={`/category/${c.id}?categoryName=${c.name}`}
-              >
-                <img src={`/assets/category-icons/${c.external_id}.svg`} />
-                {c.preferred_name ?? c.name}
-                {!!debug && <span>[{c.external_id}]</span>}
-              </CategoryLink>
-            ))}
-          </CategoriesSectionItemsContainer>
-        )}
+        <Container>
+          <Heading2>{t("subcategories.categoriesTitle")}</Heading2>
+          {!data ? (
+            <BlockLoader />
+          ) : (
+            <CategoriesSectionItemsContainer>
+              {data.map((c) => (
+                <CategoryLink
+                  as={Link}
+                  key={c.id}
+                  to={`/category/${c.id}?categoryName=${c.name}`}
+                >
+                  <img src={`/assets/category-icons/${c.external_id}.svg`} />
+                  {c.preferred_name ?? c.name}
+                  {!!debug && <span>[{c.external_id}]</span>}
+                </CategoryLink>
+              ))}
+            </CategoriesSectionItemsContainer>
+          )}
         </Container>
       </CategoriesResources>
       <Feedback />

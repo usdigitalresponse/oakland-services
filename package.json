@@ -4,35 +4,38 @@
   "private": true,
   "homepage": "https://oakland-services.onrender.com/",
   "scripts": {
+    "postinstall": "npm run db:migrate",
     "start": "node server/index.js",
     "dev": "concurrently \"nodemon server/index.js\" \"react-scripts start\"",
     "build": "npx react-scripts build",
     "seed:format": "cd db/seeds/data && node formatter.js",
-    "format": "prettier . --write"
+    "db:migrate": "npx knex migrate:latest",
+    "db:seed": "npx knex seed:run",
+    "format": "prettier --write \"{src,server}/**/*.js\""
   },
   "dependencies": {
     "@react-google-maps/api": "^1.13.0",
     "express": "^4.17.1",
-    "helmet": "^4.1.1",
-    "i18next": "^19.8.2",
+    "helmet": "^4.2.0",
+    "i18next": "^19.8.3",
     "i18next-browser-languagedetector": "^6.0.1",
     "i18next-http-backend": "^1.0.21",
     "i18next-http-middleware": "^3.0.6",
     "json-formatter-js": "^2.3.4",
-    "knex": "^0.21.6",
+    "knex": "^0.21.12",
     "lodash": "^4.17.20",
-    "pg": "^8.4.1",
-    "query-string": "^6.13.6",
+    "pg": "^8.5.0",
+    "query-string": "^6.13.7",
     "raw.macro": "^0.4.2",
-    "react": "^16.14.0",
-    "react-content-loader": "^5.1.3",
-    "react-dom": "^16.14.0",
+    "react": "^17.0.1",
+    "react-content-loader": "^5.1.4",
+    "react-dom": "^17.0.1",
     "react-i18next": "^11.7.3",
     "react-modal": "^3.11.2",
     "react-router-dom": "^5.2.0",
-    "styled-components": "^5.2.0",
+    "styled-components": "^5.2.1",
     "styled-normalize": "^8.0.7",
-    "swr": "^0.3.6"
+    "swr": "^0.3.8"
   },
   "devDependencies": {
     "concurrently": "^5.3.0",
@@ -42,8 +45,8 @@
     "nodemon": "^2.0.6",
     "prettier": "^2.1.2",
     "pretty-quick": "^3.1.0",
-    "react-scripts": "^3.4.4",
-    "sanitize-html": "^2.1.1"
+    "react-scripts": "^4.0.0",
+    "sanitize-html": "^2.1.2"
   },
   "husky": {
     "hooks": {

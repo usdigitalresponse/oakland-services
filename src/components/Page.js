@@ -46,7 +46,6 @@ export const Navigation = styled.nav`
     }
   }
 
-
   a,
   button {
     padding: ${({ theme }) => theme.spacings(3)};
@@ -113,14 +112,13 @@ export const PageFooter = styled.footer`
 `;
 
 export const PageHeading = styled.h1`
-color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.primary};
 `;
 
 export const PageSubheading = styled.h1`
-color: ${({ theme }) => theme.colors.secondaryDark};
-font-weight: normal;
+  color: ${({ theme }) => theme.colors.secondaryDark};
+  font-weight: normal;
 `;
-
 
 export const PageLayout = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -137,11 +135,12 @@ export const PageLayout = ({ children }) => {
         <Container>
           <div className="nav-content">
             <div className="nav-title">
-              <img src="/assets/icon-portal_home-multi.svg"/>
-            <Link className="title" to="/">
-              <PageHeading>{t("title")}</PageHeading>
-              <PageSubheading>{t("subtitle")}</PageSubheading>
-            </Link></div>
+              <img src="/assets/icon-portal_home-multi.svg" />
+              <Link className="title" to="/">
+                <PageHeading>{t("title")}</PageHeading>
+                <PageSubheading>{t("subtitle")}</PageSubheading>
+              </Link>
+            </div>
             <button
               className="fixed"
               type="button"

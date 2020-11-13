@@ -25,36 +25,46 @@ export const CategoriesPage = () => {
       <CategoriesSection>
         <Heading2>{t("categories.speakTitle")}</Heading2>
         <ActionItemsContainer>
-          <CallButton as="a" href="tel:+1-211" size="small" bgColor="accentCoolDark">
+          <CallButton
+            as="a"
+            href="tel:+1-211"
+            size="small"
+            bgColor="accentCoolDark"
+          >
             <img src="/assets/call-icon.svg" alt="Call 2-1-1" />
             Call 2-1-1
           </CallButton>
-          <CallButton as="a" href="sms:898211" size="small" bgColor="accentCoolDark">
+          <CallButton
+            as="a"
+            href="sms:898211"
+            size="small"
+            bgColor="accentCoolDark"
+          >
             <img src="/assets/text-icon.svg" alt="Text 898211" />
             Text 898211
           </CallButton>
         </ActionItemsContainer>
       </CategoriesSection>
       <CategoriesResources>
-      <Container>
-        <Heading2>{t("categories.categoriesTitle")}</Heading2>
-        {!data ? (
-          <BlockLoader />
-        ) : (
-          <CategoriesSectionItemsContainer>
-            {data.map((c) => (
-              <CategoryLink
-                as={Link}
-                key={c.id}
-                to={`/category/${c.id}/subcategories?categoryName=${c.name}`}
-              >
-                <img src={`/assets/category-icons/${c.external_id}.svg`} />
-                {c.preferred_name ?? c.name}
-                {!!debug && <span>[{c.external_id}]</span>}
-              </CategoryLink>
-            ))}
-          </CategoriesSectionItemsContainer>
-        )}
+        <Container>
+          <Heading2>{t("categories.categoriesTitle")}</Heading2>
+          {!data ? (
+            <BlockLoader />
+          ) : (
+            <CategoriesSectionItemsContainer>
+              {data.map((c) => (
+                <CategoryLink
+                  as={Link}
+                  key={c.id}
+                  to={`/category/${c.id}/subcategories?categoryName=${c.name}`}
+                >
+                  <img src={`/assets/category-icons/${c.external_id}.svg`} />
+                  {c.preferred_name ?? c.name}
+                  {!!debug && <span>[{c.external_id}]</span>}
+                </CategoryLink>
+              ))}
+            </CategoriesSectionItemsContainer>
+          )}
         </Container>
       </CategoriesResources>
       <Feedback />
@@ -141,8 +151,7 @@ export const CallButton = styled(Button)`
   background-color: ${({ theme, bgColor }) =>
     theme.colors[bgColor] || theme.ui.button.primary.background};
   &:hover {
-    background-color: ${({ theme, bgColor }) =>
-      theme.colors.accentCoolDarker};
+    background-color: ${({ theme, bgColor }) => theme.colors.accentCoolDarker};
   }
   img {
     margin-right: ${({ theme }) => theme.spacings(4)};
