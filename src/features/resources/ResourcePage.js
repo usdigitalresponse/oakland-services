@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import useSWR from "swr";
 import { ListLoader } from "components/Loader";
-import { Heading, Heading4, Heading5, Text } from "components/Text";
+import { Heading, Heading5, Text } from "components/Text";
 import { useQueryParams } from "utils/useQueryParams";
 
 // Remove later
@@ -117,7 +117,7 @@ export const ResourcePage = () => {
             {!!data.data.fee__fee && (
               <div>
                 <Heading5>{t("resource.fee")}</Heading5>
-                <Text>{data.fee}</Text>
+                <Text>{data.data.fee__fee}</Text>
               </div>
             )}
             {!!data.languages && (
