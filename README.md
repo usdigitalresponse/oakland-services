@@ -36,13 +36,13 @@ CREATE DATABASE oakland_services_test;
 ### Migrate
 
 ```
-npx knex migrate:latest
+npm run db:migrate
 ```
 
 ### Run Seed
 
 ```
-npx knex seed:run
+npm run db:seed
 ```
 
 ## Deployment
