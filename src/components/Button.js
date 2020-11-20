@@ -46,8 +46,11 @@ export const Button = styled.button`
 export const ApplyFiltersButton = styled(Button)`
   font-size: 1.2em;
   border: none;
-  background-color: ${({ theme }) => theme.colors.secondaryDark};
+  background-color: ${({ theme }) => theme.colors.secondary};
   color: ${({ theme }) => theme.colors.white};
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.secondaryDarker};
+  }
 `;
 
 export const BackButton = ({ onClick = () => {}, withIcon, ...rest }) => {

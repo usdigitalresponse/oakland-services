@@ -20,6 +20,10 @@ const sortData = (d) => {
   return orderedData;
 };
 
+const unique = (arr) => {
+  return [...new Set(arr)].filter((l) => !!l).join(", ");
+};
+
 export const ResourcePage = () => {
   const { resourceId } = useParams();
   const { debug } = useQueryParams();
@@ -44,6 +48,16 @@ export const ResourcePage = () => {
     }
   }, [data, dataEl, debug]);
 
+  let languagesStr = "";
+  if (data && data.data) {
+    languagesStr = unique([
+      data.data.lanaguage__1__language,
+      data.data.lanaguage__2__language,
+      data.data.lanaguage__3__language,
+      data.data.lanaguage__4__language,
+    ]);
+  }
+
   return (
     <section>
       <HeaderContainer>
@@ -55,7 +69,7 @@ export const ResourcePage = () => {
         <Resource>
           <div className="resource-provider-information">
             {!!data.phone_number && (
-              <div>
+              <div className="resource-section">
                 <Heading5>{t("resource.phoneNumber")}</Heading5>
                 <Text>
                   <a href={`tel:${data.phone_number}`}>{data.phone_number}</a>
@@ -63,7 +77,7 @@ export const ResourcePage = () => {
               </div>
             )}
             {!!data.data.contact__0__email && (
-              <div>
+              <div className="resource-section">
                 <Heading5>{t("resource.email")}</Heading5>
                 <Text>
                   <a href={`mailto:${data.data.contact__0__email}`}>
@@ -73,15 +87,15 @@ export const ResourcePage = () => {
               </div>
             )}
             {!!data.website && (
-              <div>
+              <div className="resource-section">
                 <Heading5>{t("resource.website")}</Heading5>
                 <Text>
                   <a href={data.website}>{data.website}</a>
                 </Text>
               </div>
             )}
-            {!!data.address && (
-              <div>
+            {!!data.locations__0__physical_address__0__address1 && (
+              <div className="resource-section">
                 <Heading5>{t("resource.address")}</Heading5>
                 <Text>
                   {data.data.locations__0__physical_address__0__address1},{" "}
@@ -96,34 +110,34 @@ export const ResourcePage = () => {
             dangerouslySetInnerHTML={{ __html: data.description }}
           />
           <div className="resource-program-information">
-            {!!data.application && (
-              <div>
+            {!!data.data.application_process && (
+              <div className="resource-section">
                 <Heading5>{t("resource.application")}</Heading5>
-                <Text>{data.application}</Text>
+                <Text>{data.data.application_process}</Text>
               </div>
             )}
             {!!data.eligibility && (
-              <div className="resource-highlight">
+              <div className="resource-section resource-highlight">
                 <Heading5>{t("resource.eligibility")}</Heading5>
                 <Text>{data.eligibility}</Text>
               </div>
             )}
             {!!data.organization && (
-              <div>
+              <div className="resource-section">
                 <Heading5>{t("resource.provider")}</Heading5>
                 <Text>{data.organization}</Text>
               </div>
             )}
             {!!data.data.fee__fee && (
-              <div>
+              <div className="resource-section">
                 <Heading5>{t("resource.fee")}</Heading5>
                 <Text>{data.data.fee__fee}</Text>
               </div>
             )}
-            {!!data.languages && (
-              <div>
+            {!!languagesStr && (
+              <div className="resource-section">
                 <Heading5>{t("resource.languages")}</Heading5>
-                <Text>{data.languages}</Text>
+                <Text>{languagesStr}</Text>
               </div>
             )}
           </div>
@@ -159,15 +173,21 @@ const Resource = styled.section`
     border-radius: 4px;
     padding: ${({ theme }) => theme.spacings(1)};
     margin: ${({ theme }) => theme.spacings(-1)};
+    margin-bottom: ${({ theme }) => theme.spacings(3)};
+    p {
+      margin: 0;
+    }
   }
   .resource-updated {
     text-align: center;
     font-style: italic;
     margin: ${({ theme }) => `${theme.spacings(5)} 0`};
   }
-  h4 {
-    text-decoration: underline;
+  .resource-section {
     margin-bottom: ${({ theme }) => theme.spacings(3)};
+  }
+  h5 {
+    margin-bottom: ${({ theme }) => theme.spacings(1)};
   }
   p {
     overflow-wrap: anywhere;
