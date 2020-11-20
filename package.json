@@ -16,15 +16,16 @@
   "dependencies": {
     "@react-google-maps/api": "^1.13.0",
     "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
     "helmet": "^4.2.0",
-    "i18next": "^19.8.3",
+    "i18next": "^19.8.4",
     "i18next-browser-languagedetector": "^6.0.1",
     "i18next-http-backend": "^1.0.21",
     "i18next-http-middleware": "^3.0.6",
     "json-formatter-js": "^2.3.4",
     "knex": "^0.21.12",
     "lodash": "^4.17.20",
-    "pg": "^8.5.0",
+    "pg": "^8.5.1",
     "query-string": "^6.13.7",
     "raw.macro": "^0.4.2",
     "react": "^17.0.1",
@@ -35,7 +36,7 @@
     "react-router-dom": "^5.2.0",
     "styled-components": "^5.2.1",
     "styled-normalize": "^8.0.7",
-    "swr": "^0.3.8"
+    "swr": "^0.3.9"
   },
   "devDependencies": {
     "concurrently": "^5.3.0",
